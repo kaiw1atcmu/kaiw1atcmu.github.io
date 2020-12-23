@@ -1,9 +1,10 @@
 ---
 title: "On Approximating Differential Entropy with Riemann Sum"
 categories: jekyll update
+tags: [news]
+sidebar: mydoc_sidebar
 permalink: on-approximating-differential-entropy-with-riemann-sum.html
 date:   2020-08-12 10:10:15 +0700
-tags: [news]
 ---
 
 - [Differential Entropy Has Bad Features](#differential-entropy-has-bad-features)
