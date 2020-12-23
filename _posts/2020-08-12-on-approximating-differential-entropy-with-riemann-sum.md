@@ -3,6 +3,7 @@ title: "On Approximating Differential Entropy with Riemann Sum"
 categories: jekyll update
 tags: [news]
 permalink: on-approximating-differential-entropy-with-riemann-sum.html
+date: 2020-08-12 10:10:15 +0700
 summary: "This post formulated a general procedural framework on approximating differential entropy with Riemann sum, a
 basic practice borrowed from mathematical analysis. The author made the loose assumption that intended readers should be
 familiar with Calculus and its formal definitions."
