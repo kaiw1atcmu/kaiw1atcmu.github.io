@@ -50,6 +50,9 @@ theory), its differential entropy is constantly $0$ and cannot equal that of an 
 support $[a,b]$. A contradiction. In contrast, the fact that discrete entropy is invariant under bijective mappings is
 self-evident.
 
+{% include note.html content="If you're not clear with this important property of the probability cumulative function,
+please consult any elementary textbook on probability theory for clarification." %}
+
 ## The Riemann Integral
 Applying the mean value theorem of calculus to $p(x)$, we reformulate integral with summation since
 $\forall\Delta_i\in\Delta_I, \exists\xi_i\in\Delta_i$, such that $\int_{\Delta_i}p(x)dx=p(\xi_i)\Delta_i$. Insert this
