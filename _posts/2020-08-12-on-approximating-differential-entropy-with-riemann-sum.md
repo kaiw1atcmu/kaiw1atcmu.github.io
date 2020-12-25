@@ -104,6 +104,10 @@ $$
   =H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y}).}
 $$
 
+{% include note.html content="The requirement of uniform convergence is a sufficient but not necessary condition for
+the above equation to hold true. Intuitively, this corresponds exactly to finding a common $n$ and its resulting error
+bound, for all possible choices of the conditioning variable $\mathcal{Y}$." %}
+
 The uniform convergence condition holds true for nearly all discrete distributions of variable $\mathcal{Y}$, including
 but not limited to $\mathcal{Y}$ taking on finitely many or countably many values. Naively, we are able to compute the
 weighted conditional entropy $(H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y}=y))\cdot P(\mathcal{Y}=y)$ for each
