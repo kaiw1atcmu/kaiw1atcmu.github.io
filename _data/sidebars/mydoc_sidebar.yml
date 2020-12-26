@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: Jekyll Doc Theme
-  version: 6.0
+  product: Tech Blog
+  version: 20.12.24.0
   folders:
 
   - title:
@@ -19,14 +19,113 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Overview
+  - title: Welcome
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: A Little Something Before You Read
       url: /index.html
       output: web, pdf
-      type: homepage
+
+    - title: Site Launched
+      url: /site_launched.html
+      output: web, pdf
+
+    - title: Template
+      url: /template.html
+      output: web, pdf
+
+  - title: Maths
+    output: web, pdf
+    folderitems:
+
+    - title: Could Two Bent Ellipses Coincide Perfectly In Circumferences?
+      url: /could_two_bent_ellipses_coincide_perfectly_in_circumferences.html
+      output: web, pdf
+
+  - title: Statistics
+    output: web, pdf
+    folderitems:
+
+    - title: Expectation Maximization and Beyond
+      url: /expectation_maximization_and_beyond.html
+      output: web, pdf
+
+    - title: Variational Inference
+      url: /variational_inference.html
+      output: web, pdf
+
+  - title: Data Structures
+    output: web, pdf
+    folderitems:
+
+  - title: Algorithms
+    output: web, pdf
+    folderitems:
+
+    - title: Brain Teaser In Coding Interview
+      url: /brain_teaser_in_coding_interview.html
+      output: web, pdf
+
+  - title: Hackers Delight
+    output: web, pdf
+    folderitems:
+
+    - title: A Property Of Add-Xor Mixed Operations
+      url: /a_property_of_add-xor_mixed_operations.html
+      output: web, pdf
+
+    - title: The Defective Calculator
+      url: /the_defective_calculator.html
+      output: web, pdf
+
+    - title: The Friendly Arrays [more to come]
+      url: /the_friendly_arrays.html
+      output: web, pdf
+
+  - title: Machine Learning
+    output: web, pdf
+    folderitems:
+
+    - title: On Approximating Differential Entropy With Riemann Sum
+      url: /on_approximating_differential_entropy_with_riemann_sum.html
+      output: web, pdf
+
+    - title: A View On Entropy With Applications
+      url: /a_view_on_entropy_with_applications.html
+      output: web, pdf
+
+    - title: Kullback-Leibler Divergence, Cross-Entropy, And Mutual Information
+      url: /kullback-leibler_divergence_cross-entropy_and_mutual_information.html
+      output: web, pdf
+
+    - title: A Property Of Continuous Attributes In Decision Trees
+      url: /a_property_of_continuous_attributes_in_decision_trees.html
+      output: web, pdf
+
+  - title: Deep Learning
+    output: web, pdf
+    folderitems:
+
+  - title: Foreign Languages
+    output: web, pdf
+    folderitems:
+
+  - title: DL/Auto-Encoders
+    output: web, pdf
+    folderitems:
+
+    - title: Variational Auto-Encoders
+      url: /variational_auto-encoders.html
+      output: web, pdf
+
+  - title: Getting Started
+    output: web, pdf
+    folderitems:
+
+    - title: Theme Author's Homepage
+      url: /mydoc_index.html
+      output: web, pdf
 
     - title: Introduction
       url: /mydoc_introduction.html

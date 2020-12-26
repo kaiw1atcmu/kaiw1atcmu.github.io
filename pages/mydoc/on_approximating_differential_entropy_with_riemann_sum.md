@@ -1,21 +1,18 @@
 ---
-title: "On Approximating Differential Entropy with Riemann Sum"
-categories: jekyll update
-tags: [news]
-permalink: on-approximating-differential-entropy-with-riemann-sum.html
-date: 2020-08-12 10:10:15 +0700
+title: "On Approximating Differential Entropy With Riemann Sum"
+keywords: differential entropy, entropy, Riemann sum
+date: 2020-08-12 10:10:15 -0800
+last_updated: August 12, 2020
+tags: [maths, statistics, machine_learning]
 summary: "This post formulated a general procedural framework on approximating differential entropy with Riemann sum, a
 basic practice borrowed from mathematical analysis. The author made the loose assumption that intended readers should be
 familiar with Calculus and its formal definitions."
+sidebar: mydoc_sidebar
+permalink: on_approximating_differential_entropy_with_riemann_sum.html
+folder: mydoc
 ---
 
-- [Differential Entropy Has Bad Features](#differential-entropy-has-bad-features)
-- [The Riemann Integral](#the-riemann-integral)
-- [Mutual Information Remains Unaffected for Most Discrete Conditioning Variables](#mutual-information-remains-unaffected-for-most-discrete-conditioning-variables)
-- [The Differential Entropy for a Variable with Infinite Support](#the-differential-entropy-for-a-variable-with-infinite-support)
-- [A Worked Example](#a-worked-example)
-
-It seems obvious to approximate differential entropy (i.e., entropy of continuous variables) with Riemann sum. But
+It seems obvious to approximate differential entropy (i.e., the entropy of continuous variables) with Riemann sum. But
 unfortunately, there are lots of intricacies involved in doing so. It deserves an entire blog post to disentangle the
 nuances and sort all tricky things out.
 
