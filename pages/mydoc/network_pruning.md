@@ -105,7 +105,7 @@ As pointed out by the authors, in some rare cases such as two-layer xor, both Ma
 might delete an incorrect weight, and this mistake could not be overcome by further network training, so that they could
 never learn that function correctly (i.e., achieve zero error).
 
-![OBS outperformed others](http://i.caigoubao.cc/627357/github_blog/20191112-1.png)
+<img src="{{ "images/20191112-1.png" }}" alt="OBS outperformed others"/>
 _Figure 1: Comparison That Demonstrates The Superiority Of Optimal Brain Damage (OBS). By courtesy of Figure 3 in
 [Babak Hassibi et al. (1993)](#references). Reproduced for better visualization._
 

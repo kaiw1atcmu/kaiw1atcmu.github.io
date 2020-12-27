@@ -14,7 +14,7 @@ folder: mydoc
 Decision tree pruning is a key technique to prevent overfitting and improve generalization performance on unseen data.
 There are several approaches and their variants to tree pruning in decision tree learning.
 
-![decision tree learning](http://i.caigoubao.cc/627357/github_blog/20191129-1.jpeg)
+<img src="{{ "images/20191129-1.jpeg" }}" alt="decision tree learning"/>
 _Figure 1: An Illustrative Example Of General Decision Tree Learning._
 
 Broadly speaking, these approaches can be grouped into two categories: 1) approaches that stop growing the tree earlier,

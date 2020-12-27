@@ -16,7 +16,7 @@ geometry is raised by maths geeks in *Zhihu (知乎)*, a.k.a. the Chinese *Quora
 accessible to the general public (i.e., people outside of the mathematical community): can two ellipses perfectly
 coincide in circumference when bent along the major axis?
 
-![simulation](http://i.caigoubao.cc/627357/github_blog/20191126-1.jpg)
+<img src="{{ "images/20191126-1.jpg" }}" alt="image1 simulation"/>
 _Figure 1: Simulation. By courtesy of users from Zhihu (知乎)._
 
 ## At First Glance
@@ -25,7 +25,7 @@ integrals are generally intractable where a closed-form solution is desirable. H
 its bent circumference is to use arc length $s$. By careful analysis, I think the answer is simply "yes". And there is
 only one way to bend the ellipses.
 
-![image1](http://i.caigoubao.cc/627357/github_blog/20191126-2.jpg)
+<img src="{{ "images/20191126-2.jpg" }}" alt="image2"/>
 _Figure 2: Coordinates of bent ellipses re-parameterized by arc length $s$._
 
 ## An Assumption on $dx(s)/ds$
@@ -121,7 +121,7 @@ $$
 which is exactly the desired inequality. **This is also instrumental in explaining why two ellipses can perfectly
 coincide in circumference when bent along the major axis, not along the minor axis!**
 
-![image2](http://i.caigoubao.cc/627357/github_blog/20191126-3.jpg)
+<img src="{{ "images/20191126-3.jpg" }}" alt="image3"/>
 _Figure 3: Condition under which bending towards the origin along the opposite direction of $\mathcal{Z}$ is feasible._
 
 ## How Do We Render It?
@@ -134,7 +134,7 @@ bending is always feasible. By doing this successively from $s=0$ to $s=l$, we a
 other ellipse is bent identically and positioned symmetrically. As we have already verified, the two circumferences
 coincide.
 
-![image3](http://i.caigoubao.cc/627357/github_blog/20191126-4.jpg)
+<img src="{{ "images/20191126-4.jpg" }}" alt="image4"/>
 _Figure 4: Illustration of how bending towards the origin along the opposite direction of $\mathcal{Z}$ is performed._
 
 ## Without the Assumption on $dx(s)/ds$
@@ -178,7 +178,7 @@ It happens if and only if the foregoing assumption on $x(s)$, that $x(s)$ is eit
 monotonically decreasing, is violated. Whenever it happens, although the ellipses share circumferences, they intercept
 into each other and thus can not make a solution to the problem.
 
-![image4](http://i.caigoubao.cc/627357/github_blog/20191126-5.jpg)
+<img src="{{ "images/20191126-5.jpg" }}" alt="image5"/>
 _Figure 5: Illustration of $x(s)$ "warping around"._
 
 ## Concluding Remarks

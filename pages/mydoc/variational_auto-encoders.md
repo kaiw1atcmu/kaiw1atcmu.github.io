@@ -47,7 +47,7 @@ $p_{\theta}(\mathbf{x}\vert\mathbf{z})$, since given a code $\mathbf{z}$ it prod
 corresponding values of $\mathbf{x}$. Without further simplifying assumptions, the authors introduced a method for
 learning the recognition model parameters $\phi$ jointly with the generative model parameters $\theta$.
 
-![the model](http://pic2.027cgb.com/627357/github_blog/20200821-2.PNG)
+<img src="{{ "images/20200821-2.PNG" }}" alt="the model"/>
 _Figure 1: The Type Of Directed Graphical Model Under Consideration_
 
 In Figure 1, solid lines denote the generative model $p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$,
@@ -151,7 +151,7 @@ variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $
 Unsurprisingly, as a novel generative auto-encoder model, VAEs have interesting details for researchers to delve into.
 
 ### The Impact of Latent Dimensionalities
-![the impact of latent dimensionalities](http://pic2.027cgb.com/627357/github_blog/20200821-1.PNG)
+<img src="{{ "images/20200821-1.PNG" }}" alt="the impact of latent dimensionalities"/>
 _Figure 2: The Impact Of Latent Dimensionalities_
 
 Figure 2 demonstrates the impact of latent dimensionalities. Interestingly enough, more latent variables does not result

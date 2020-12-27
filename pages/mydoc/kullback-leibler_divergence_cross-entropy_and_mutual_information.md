@@ -61,7 +61,7 @@ $$
 It remains to show why the triangle inequality still does not hold for $D_{\text{JS}}(p\Vert q)$.
 
 ### Choose Between $D_{\text{KL}}(p\Vert q)$ and $D_{\text{KL}}(q\Vert p)$
-![KL Divergence](http://i.caigoubao.cc/627357/github_blog/20191209-1.png)
+<img src="{{ "images/20191209-1.png" }}" alt="KL Divergence"/>
 _Figure 1. Asymmetry in the KL-divergence by courtesy of [Kevin P. Murphy (2012)](#references) Figure 21.1._
 
 Suppose we wish to approximate a multimodal Gaussian distribution $p(x)$ with a unimodal Gaussian distribution $q(x)$.

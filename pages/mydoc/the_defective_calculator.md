@@ -20,7 +20,7 @@ relatively infrequently, so their mean time to failure should be longer in respo
 fractional number $\frac{355}{113}$ dates back to the 5th century A.D. when the famous Chinese mathematician 祖冲之
 approximated $\pi$ with it.)
 
-![祖冲之](http://i.caigoubao.cc/627357/github_blog/20200116-1.png)
+<img src="{{ "images/20200116-1.png" }}" alt="a profile of 祖冲之"/>
 _Figure 1: A profile of the famous Chinese mathematician 祖冲之 who appeared on a Chinese postal stamp._
 
 ## Function Compositions

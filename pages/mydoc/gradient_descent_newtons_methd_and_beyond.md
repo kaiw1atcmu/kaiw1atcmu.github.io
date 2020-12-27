@@ -30,7 +30,7 @@ information contained in the Hessian matrix, which makes it difficult to choose 
 appropriate stepsize must be small enough to avoid overshooting the minimum and going uphill in directions with strong
 positive curvature.
 
-![overshooting](http://i.caigoubao.cc/627357/github_blog/20200202-1.png)
+<img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
 _Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in
 [Ian Goodfellow et al.](#references)._
 
@@ -193,7 +193,7 @@ from an arbitrary $\mathbf{x}_0$ and $\mathbf{B}_0=\mathbf{I}$, the BFGS algorit
 > $\mathbf{x_{k+1}}=\mathbf{x_k}+\lambda_k\mathbf{d_k}$. Calculate $\mathbf{B}_{k+1}
 =\mathbf{B}_k+\Delta\mathbf{B}_k$ and increment $k$.
 
-![BFGS](http://i.caigoubao.cc/627357/github_blog/20200202-2.jpg)
+<img src="{{ "images/20200202-2.jpg" }}" alt="BFGS Gang of Four"/>
 _Figure 2: Yet Another "Gang Of Four". By courtesy of [understanding-lbfgs](#references)._
 
 ## Broyden's Algorithm
