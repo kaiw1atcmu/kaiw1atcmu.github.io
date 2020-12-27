@@ -3,7 +3,7 @@ title: "Expectation Maximization and Beyond"
 keywords: expectation maximization
 date: 2020-01-02 17:32:35 -0800
 last_updated: December 26, 2020
-tags: [statistics, machine_learning]
+tags: [statistics,machine_learning]
 summary: "In this post, let us discuss a classical algorithm in statistics, i.e. the expectation maximization (EM) and
 its variants, e.g. generalized expectation maximization (GEM)."
 sidebar: mydoc_sidebar

@@ -3,7 +3,7 @@ title: "The Friendly Arrays [more to come]"
 keywords: friendly array
 date: 2020-01-22 22:14:35 -0800
 last_updated: December 26, 2020
-tags: [algorithms,hackers_delight]
+tags: [hackers_delight,algorithms]
 summary: "Today we are discussing a very interesting algorithmic problem called the friendly arrays."
 sidebar: mydoc_sidebar
 permalink: the_friendly_arrays.html

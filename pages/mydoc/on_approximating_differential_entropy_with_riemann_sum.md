@@ -3,7 +3,7 @@ title: "On Approximating Differential Entropy With Riemann Sum"
 keywords: differential entropy, entropy, Riemann sum
 date: 2020-08-12 10:10:15 -0800
 last_updated: August 12, 2020
-tags: [maths, statistics, machine_learning]
+tags: [maths,statistics,machine_learning]
 summary: "This post formulated a general procedural framework on approximating differential entropy with Riemann sum, a
 basic practice borrowed from mathematical analysis. The author made the loose assumption that intended readers should be
 familiar with Calculus and its formal definitions."

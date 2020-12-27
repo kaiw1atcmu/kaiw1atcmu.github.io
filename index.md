@@ -2,14 +2,15 @@
 title: "A Little Something Before You Read"
 keywords: homepage, self introduction
 last_updated: December 26, 2020
-tags: [logistics]
+tags: [welcome,getting_started]
 sidebar: mydoc_sidebar
 permalink: index.html
 summary: "A brief introduction to myself that should help you get to know me."
 ---
 
 ![Pittsburgh Dawn](http://d1.027cgb.com/627357/github_blog/Pittsburgh_dawn_city_pano.jpg)
-*Panorama at Dawntime, City of Pittsburgh*
+_Panorama at Dawntime, City of Pittsburgh. Carnegie Mellon University and The University of Pittsburgh are located far
+from the downtown area, over the upper right horizon of the landscape. You simply can not see them._
 
 ## About Me
 Hi there! I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. Welcome to my personal website!

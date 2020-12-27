@@ -39,12 +39,24 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: On Approximating Differential Entropy With Riemann Sum
+      url: /on_approximating_differential_entropy_with_riemann_sum.html
+      output: web, pdf
+
+    - title: A View On Entropy With Applications
+      url: /a_view_on_entropy_with_applications.html
+      output: web, pdf
+
     - title: Could Two Bent Ellipses Coincide Perfectly In Circumferences?
       url: /could_two_bent_ellipses_coincide_perfectly_in_circumferences.html
       output: web, pdf
 
     - title: The Hessian Matrix [more to come]
       url: /the_hessian_matrix.html
+      output: web, pdf
+
+    - title: Gradient Descent, Newton's Method, and Beyond [more to come]
+      url: /gradient_descent_newtons_method_and_beyond.html
       output: web, pdf
 
   - title: Statistics
@@ -95,14 +107,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: On Approximating Differential Entropy With Riemann Sum
-      url: /on_approximating_differential_entropy_with_riemann_sum.html
-      output: web, pdf
-
-    - title: A View On Entropy With Applications
-      url: /a_view_on_entropy_with_applications.html
-      output: web, pdf
-
     - title: Kullback-Leibler Divergence, Cross-Entropy, And Mutual Information
       url: /kullback-leibler_divergence_cross-entropy_and_mutual_information.html
       output: web, pdf
@@ -127,6 +131,10 @@ entries:
       url: /decision_tree_pruning.html
       output: web, pdf
 
+    - title: Historical Notes on Neuron Model Prototypes [more to come]
+      url: /historical_notes_on_neuron_model_prototypes.html
+      output: web, pdf
+
   - title: Deep Learning
     output: web, pdf
     folderitems:
@@ -135,16 +143,24 @@ entries:
       url: /network_pruning_the_old-school_methods.html
       output: web, pdf
 
-  - title: Foreign Languages
-    output: web, pdf
-    folderitems:
-
-  - title: DL/Auto-Encoders
+  - title: DL/Variational Auto-Encoders
     output: web, pdf
     folderitems:
 
     - title: Variational Auto-Encoders
       url: /variational_auto-encoders.html
+      output: web, pdf
+
+    - title: Stochastic Backpropagation And Approximate Inference [more to come]
+      url: /stochastic_backpropagation_and_approximate_inference.html
+      output: web, pdf
+
+  - title: Foreign Languages
+    output: web, pdf
+    folderitems:
+
+    - title: Budgeting The Use Of Articles When Writing English Articles
+      url: /budgeting_the_use_of_articles_when_writing_english_articles.html
       output: web, pdf
 
   - title: Getting Started

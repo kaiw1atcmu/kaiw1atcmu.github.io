@@ -3,7 +3,7 @@ title: "Variational Auto-Encoders"
 keywords: representation learning, variational inference, variational Bayes
 date: 2020-08-21 21:18:19 -0800
 last_updated: December 26, 2020
-tags: [getting_started]
+tags: [deep_learning,statistics]
 summary: "This post introduced fundamentals of the variational auto-encoder (VAE), a powerful generative component for
 representation learning, and explained its mathematical properties with applications."
 sidebar: mydoc_sidebar
@@ -194,7 +194,12 @@ encoders and decoders, trained jointly with AEVB.
 * Supervised models with latent variables, useful for learning complicated noise distributions.
 
 ## References
+Diederik P. Kingma, Max Welling. 2014. Auto-Encoding Variational Bayes. In ICML 2014.
+
 Gabriel Loaiza-Ganem, John P. Cunningham. 2019. The continuous Bernoulli: fixing a pervasive error in variational
 autoencoders. In NeurIPS 2019.
+
+Danilo Jimenez Rezende, Shakir Mohamed, and Daan Wierstra. 2014. Stochastic backpropagation and variational inference in
+deep latent gaussian models. In ICML 2014.
 
 {% include links.html %}

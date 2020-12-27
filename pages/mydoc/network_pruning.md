@@ -3,7 +3,7 @@ title: "Network Pruning The Old-School Methods [more to come]"
 keywords: network pruning, old-school
 date: 2019-11-12 09:08:08 -0800
 last_updated: December 26, 2020
-tags: [machine_learning,deep_learning]
+tags: [deep_learning,machine_learning]
 summary: "As deep neural networks grow exponentially in size, the topic of network pruning comes into play with
 ever-increasing importance. This post described a couple of typical old-school (pre-deep-learning) network pruning
 methods, in reverent reminiscence of the pioneers of network pruning techniques."
