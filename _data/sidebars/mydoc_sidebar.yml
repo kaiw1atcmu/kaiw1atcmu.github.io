@@ -43,6 +43,10 @@ entries:
       url: /could_two_bent_ellipses_coincide_perfectly_in_circumferences.html
       output: web, pdf
 
+    - title: The Hessian Matrix [more to come]
+      url: /the_hessian_matrix.html
+      output: web, pdf
+
   - title: Statistics
     output: web, pdf
     folderitems:
@@ -53,6 +57,10 @@ entries:
 
     - title: Variational Inference
       url: /variational_inference.html
+      output: web, pdf
+
+    - title: Extending Jensen's Inequality
+      url: /extending_jensens_inequality.html
       output: web, pdf
 
   - title: Data Structures
@@ -103,9 +111,29 @@ entries:
       url: /a_property_of_continuous_attributes_in_decision_trees.html
       output: web, pdf
 
+    - title: MSE And CE Estimate Posterior Class Probabilities And Achieve Bayes Error
+      url: /mse_and_ce_estimate_posterior_class_probabilities_and_achieve_bayes_error.html
+      output: web, pdf
+
+    - title: Philosophy Behind Machine Learning [more to come]
+      url: /philosophy_behind_machine_learning.html
+      output: web, pdf
+
+    - title: Bias-Variance Tradeoff
+      url: /bias-variance_tradeoff.html
+      output: web, pdf
+
+    - title: Decision Tree Pruning
+      url: /decision_tree_pruning.html
+      output: web, pdf
+
   - title: Deep Learning
     output: web, pdf
     folderitems:
+
+    - title: Network Pruning The Old-School Methods [more to come]
+      url: /network_pruning_the_old-school_methods.html
+      output: web, pdf
 
   - title: Foreign Languages
     output: web, pdf

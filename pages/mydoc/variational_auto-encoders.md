@@ -19,14 +19,14 @@ go through a couple of typical applications of it.
 The auto-encoding variational Bayes does not make the common simplifying about the marginal or posterior probabilities.
 Conversely, this algorithm makes it more generally applicable to such problem scenarios including:
 
-* *Intractability*. 1) The integral of the evidence function
+* **Intractability**. 1) The integral of the evidence function
 $p_{\theta}(\mathbf{x})=\int p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$ is intractable, or else we
 will be able to differential $p_{\theta}(\mathbf{x})$ w.r.t. $\theta$ directly. Or, 2) the exact posterior density
 $p_{\theta}(\mathbf{z}\vert\mathbf{x})$ is intractable, so the EM algorithm cannot be used. Or, 3) the required
 integrals for any reasonable mean-field VB algorithm are also intractable, so the mean-field approach is not possible.
 All these cases appear in the common case of moderately complicated likelihood functions
 $p_{\theta}(\mathbf{x}\vert\mathbf{z})$, e.g. a neural network with a nonlinear hidden layer.
-* *A large dataset*. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM, would in general be too slow.
+* **A large dataset**. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM, would in general be too slow.
 In addition, the SGVB algorithm naturally enables the online learning procedure, an advantage not found in most similar
 algorithms.
 
@@ -40,22 +40,24 @@ inference tasks where a prior over $\mathbf{x}$ is required.
 
 ## The Model
 The authors made some conventions for notational simplicity in variational inference. Given variational parameters
-$\phi$ and generative parameters $\theta$, they introduced a *recognition model* or *encoder*
+$\phi$ and generative parameters $\theta$, they introduced a **recognition model** or **encoder**
 $q_{\phi}(\mathbf{z}\vert\mathbf{x})$, an approximation to the intractable true posterior
-$p_{\theta}(\mathbf{z}\vert\mathbf{x})$, and a *generative model* or *decoder* $p_{\theta}(\mathbf{x}\vert\mathbf{z})$,
-since given a code $\mathbf{z}$ it produces a distribution over the possible corresponding values of $\mathbf{x}$.
-Without further simplifying assumptions, the authors introduced a method for learning the recognition model parameters
-$\phi$ jointly with the generative model parameters $\theta$.
+$p_{\theta}(\mathbf{z}\vert\mathbf{x})$, and a **generative model** or **decoder**
+$p_{\theta}(\mathbf{x}\vert\mathbf{z})$, since given a code $\mathbf{z}$ it produces a distribution over the possible
+corresponding values of $\mathbf{x}$. Without further simplifying assumptions, the authors introduced a method for
+learning the recognition model parameters $\phi$ jointly with the generative model parameters $\theta$.
 
 ![the model](http://pic2.027cgb.com/627357/github_blog/20200821-2.PNG)
-The type of directed graphical model under consideration. Solid lines denote the generative model
-$p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$, dashed lines denote the variational approximation
-$q_{\phi}(\mathbf{z}\vert\mathbf{x})$ to the intractable posterior $p_{\phi}(\mathbf{z}\vert\mathbf{x})$. The
-variational parameters $\phi$ are learned jointly with the generative model parameters $\theta$.
+_Figure 1: The Type Of Directed Graphical Model Under Consideration_
 
-Notice that in the variational inference literature, an *approximate* probability $q$ is used to emphasize the true
+In Figure 1, solid lines denote the generative model $p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$,
+dashed lines denote the variational approximation $q_{\phi}(\mathbf{z}\vert\mathbf{x})$ to the intractable posterior
+$p_{\phi}(\mathbf{z}\vert\mathbf{x})$. The variational parameters $\phi$ are learned jointly with the generative model
+parameters $\theta$.
+
+Notice that in the variational inference literature, an **approximate** probability $q$ is used to emphasize the true
 probability $p$ is intractable. In the above settings, since we normally assume that $\mathbf{x}$ given $\theta$ and
-$\mathbf{z}$ are drawn from a predefined distribution, then its probability is *exact*, denoted by $p$.
+$\mathbf{z}$ are drawn from a predefined distribution, then its probability is **exact**, denoted by $p$.
 
 ## The Variational Bound
 The marginal likelihood is composed of a sum over the marginal likelihoods of individual datapoints
@@ -72,8 +74,8 @@ $$
 $$
 
 Since the Kullback-Leibler divergence is non-negative, the $\mathcal{L}(\theta,\phi;\mathbf{x}^i)$ term is called the
-*(variational) lower bound* or the more frequently referenced evidence lower bound (ELBO) on the marginal likelihood of
-datapoint $\mathbf{x}^i$, and can be written as:
+(variational) lower bound or the more frequently referenced **evidence lower bound (ELBO)** on the marginal likelihood
+of datapoint $\mathbf{x}^i$, and can be written as:
 
 $$
 {\log p_{\theta}(\mathbf{x}^i)\ge\mathcal{L}(\theta,\phi;\mathbf{x}^i)
@@ -132,15 +134,16 @@ where $\epsilon$ is an auxiliary noise variable $\epsilon\sim\mathcal{N}(0,1)$. 
 noise $\epsilon$ is randomly sampled entirely independent of the datasets and models. The authors formulated general
 guidelines to generate $\mathbf{z}$ by change of variables:
 
-* *Tractable inverse CDF*. Recall the basic result in probability theory that the value of the cumulative distribution
+* **Tractable inverse CDF**. Recall the basic result in probability theory that the value of the cumulative distribution
 function (CDF) is always $\mathcal{U}(0,1)$ for a variable with any arbitrary probability density functions (PDFs). Then
 it is straight-forward to sample from $\mathcal{U}(0,1)$ (i.e. $p(F(\mathbf{z}))$) and reversely map it to $\mathbf{z}$,
 as long as the inverse CDF is tractable. Examples: Exponential, Cauchy, Logistic, Rayleigh, Pareto, Weibull, Reciprocal,
 Gompertz, Gumbel and Erlang distributions.
-* *Location-scale families*. For these distributions, we can choose the standard distribution (with $\text{location}=0$
-and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let $g(\cdot)=\text{location}+\text{scale}\ \epsilon$.
-Examples: Laplace, Elliptical, Student's t, Logistic, Uniform, Triangular and Gaussian distributions.
-* *Composition*. It is often possible to express random variables as different transformations of auxiliary variables.
+* **Location-scale families**. For these distributions, we can choose the standard distribution (with
+$\text{location}=0$ and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let
+$g(\cdot)=\text{location}+\text{scale}\ \epsilon$. Examples: Laplace, Elliptical, Student's t, Logistic, Uniform,
+Triangular and Gaussian distributions.
+* **Composition**. It is often possible to express random variables as different transformations of auxiliary variables.
 Examples: Log-Normal (exponentiation of normally distributed variable), Gamma (a sum over exponentially distributed
 variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $F$ distributions.
 
@@ -149,11 +152,11 @@ Unsurprisingly, as a novel generative auto-encoder model, VAEs have interesting 
 
 ### The Impact of Latent Dimensionalities
 ![the impact of latent dimensionalities](http://pic2.027cgb.com/627357/github_blog/20200821-1.PNG)
-*Figure 1: the Impact of Latent Dimensionalities*
+_Figure 2: The Impact Of Latent Dimensionalities_
 
-The figure demonstrate the impact of latent dimensionalities. Interestingly enough, more latent variables does not
-result in more overfitting, which is explained by the regularizing effect of the lower bound imposed by the
-Kullback-Leibler divergence term.
+Figure 2 demonstrates the impact of latent dimensionalities. Interestingly enough, more latent variables does not result
+in more overfitting, which is explained by the regularizing effect of the lower bound imposed by the Kullback-Leibler
+divergence term.
 
 ### MLP's as probabilistic encoders and decoders
 The paper listed two exemplary encoder-decoder pipelines based on relatively simple neural networks, namely
@@ -171,14 +174,15 @@ $$
 {\log p_{\theta}(\mathbf{x}\vert\mathbf{z})=\log\mathcal{N}(\mathbf{x};\mathbf{\mu},\mathbf{\sigma}^2\mathbf{I}).}
 $$
 
-**Note**. A most commonly encountered mistake committed by casual researchers on the VAE might be their unawareness of
-using improper probabilities $\tilde{p_{\theta}}(\mathbf{x}\vert\mathbf{z})$. It could be a minor mistake, but it could
-also cause serious consequences, as pinpointed and investigated by [the continuous Bernoulli paper](#references) as
-"fixing a pervasive error". In short, the probabilities $p_{\theta}(\mathbf{x}\vert\mathbf{z})$ must be a normalized
-one, which usually implies tractability. As a counter-example, let's consider an incorrect model which directly outputs
-$\log p_{\theta}(\mathbf{x}\vert\mathbf{z})$ with an MLP. The problem is, we can not ensure this is a normalized
-probability due to the non-linearity of MLPs. Fortunately, if we bypass this issue by modeling the parameters of a
-predefined distribution family, not the probabilities, then the normalization requirement is automatically met.
+{% include note.html content="A most commonly encountered mistake committed by casual researchers on the VAE might be
+their unawareness of using improper probabilities $\tilde{p_{\theta}}(\mathbf{x}\vert\mathbf{z})$. It could be a minor
+mistake, but it could also cause serious consequences, as pinpointed and investigated by <a href='#references'>the
+continuous Bernoulli paper</a> as \"fixing a pervasive error\". In short, the probabilities
+$p_{\theta}(\mathbf{x}\vert\mathbf{z})$ must be a normalized one, which usually implies tractability. As a
+counter-example, let's consider an incorrect model which directly outputs $\log p_{\theta}(\mathbf{x}\vert\mathbf{z})$
+with an MLP. The problem is, we can not ensure this is a normalized probability due to the non-linearity of MLPs.
+Fortunately, if we bypass this issue by modeling the parameters of a predefined distribution family, not the
+probabilities, then the normalization requirement is automatically met." %}
 
 ## Future Work
 The paper made several proposals for future research directions, such as:

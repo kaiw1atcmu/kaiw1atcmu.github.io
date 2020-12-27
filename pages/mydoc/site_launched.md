@@ -15,9 +15,9 @@ Welcome to my personal blog!
 ## Full-Featured Website For Free
 Finally I got around to setting up my personal blog. Hosted by *GitHub* at essentially no cost, this personal website is
 a light-weight one forked from [Tom Johnson's GitHub Repo](https://github.com/tomjoht/documentation-theme-jekyll). A lot
-easier than you thought it was going to be, isn't it? To be frank, I switched to GitHub powered by *Jekyll* primarily
-because it's free of charge, and most of all, provides a light-weighted personal blog solution to folks with minimal
-front-end programming experiences. However, you might have to browse
+easier than you thought it was going to be, isn't it? To be frank, I switched to GitHub powered by
+[Jekyll](https://jekyllrb.com) primarily because it's free of charge, and most of all, provides a light-weighted
+personal blog solution to folks with minimal front-end programming experiences. However, you might have to browse
 [Shopify documentation](https://shopify.github.io/liquid) before becoming an expert on Jekyll's *Liquid* syntax.
 
 Now I am authoring posts primarily using *Markdown*, an HTML-compatible format that delivers succinct syntax and stays
