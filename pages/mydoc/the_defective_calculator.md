@@ -167,8 +167,8 @@ The Python 3.0 program yields the complete and lengthy sequence of function comp
 
 ```python
 (sin arctan ) ^ 9 tan arccos sin arctan sin arctan tan arccos sin arctan (sin arctan ) ^ 6 tan arccos sin arctan
-sin arctan tan arccos sin arctan (sin arctan ) ^ 2 tan arccos sin arctan (sin arctan ) ^ 45 tan arccos sin arctan sin
-arctan tan arccos sin arctan (sin arctan ) ^ 10 sin arccos 0
+sin arctan tan arccos sin arctan (sin arctan ) ^ 2 tan arccos sin arctan (sin arctan ) ^ 45 tan arccos sin arctan
+sin arctan tan arccos sin arctan (sin arctan ) ^ 10 sin arccos 0
 ```
 
 ## Remarks
