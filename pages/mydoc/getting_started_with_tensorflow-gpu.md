@@ -21,17 +21,17 @@ My *LEGION* (a sub-brand of *LENOVO*) laptop has Windows 10 installed. The machi
 
 ## Install Pycharm
 Many believe *PyCharm* is one of the best (if not the best) Integrated Development Environments (IDEs) for Python
-programming. It comes with powerful tools for code editing, navigating, refactoring, debugging and etc. The *community
+programming. It comes with powerful tools for code editing, navigating, refactoring, debugging, etc. The *community
 version* of this software is free and you can download it through
 [its official website](https://www.jetbrains.com/pycharm/download). To facilitate our discussion, I am supposing that
 your machine already has PyCharm installed.
 
 ## Install Python & Conda
-*Conda* is an open source package management system and environment management system that runs on multiple OSes. It was
+*Conda* is an open-source package management system and environment management system that runs on multiple OSes. It was
 created for Python programs but it can package and distribute software for nearly any language (e.g. C++/Java), with a
 focus on data sciences. Conda manager gives you the ability to create multiple environments with different versions of
 Python and other libraries. This becomes useful when some codes are written with specific versions of a library. The
-conda package and environment manager is included in all versions of Anaconda, Miniconda and Anaconda Repository.
+Conda package and environment manager is included in all versions of Anaconda, Miniconda, and Anaconda Repository.
 
 *Anaconda* is the world's most popular open-source, multi-channel Python distribution platform for free public Conda
 package hosting. The *individual edition* of this software is free and you can download it through
@@ -44,7 +44,7 @@ within Anaconda, such as jieba, a frequently used natural language processing pa
 
 ## Install TensorFlow
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
-environment from the installed Anaconda Navigator and have almost all required packages there. Although searching
+environment from the installed Anaconda Navigator and have almost all the required packages there. Although searching
 plainly for "tensorflow" will prompt you to install TensorFlow, it might not be the specific version that serves your
 purpose. To resolve this, you probably have to download the specific version from TensorFlow's official website (e.g.
 `tensorflow-2.3.0`). If downloading with the web browser (e.g. *Chrome*, *Internet Explorer*) is unsuccessful due to
@@ -52,12 +52,12 @@ poor Internet connections, you are encouraged to try an alternative software, su
 
 ## Install CUDA & cuDNN
 Before you start, check that your machine should have GPUs, and should have their drivers correctly installed. Normally,
-you don't need to worry about this, if your machine is pre-installed with Windows 10 and its corresponding hardware
+you don't need to worry about this if your machine is pre-installed with Windows 10 and its corresponding hardware
 drivers, for example. Otherwise, you'll probably have to download and install the appropriate GPU drivers. I recommend
-you to search [NVIDIA's official website](https://www.nvidia.com/en-us/geforce/drivers) for authenticate NVIDIA Geforce
+you to search [NVIDIA's official website](https://www.nvidia.com/en-us/geforce/drivers) for authentic NVIDIA Geforce
 drivers, rather than test your Google-Fu by making a random search.
 
-If you want to use the GPU version of the TensorFlow you must have a CUDA-enabled GPU. (My *LEGION* laptop has an NVIDIA
+If you want to use the GPU version of TensorFlow you must have a CUDA-enabled GPU. (My *LEGION* laptop has an NVIDIA
 GeForce 1060 Graphic Card, which is a CUDA-enabled GPU.) Then you need to install *CUDA* and *cuDNN* with their
 appropriate versions.
 
@@ -139,20 +139,20 @@ coreClock: 1.6705GHz coreCount: 10 deviceMemorySize: 6.00GiB deviceMemoryBandwid
 
 ## Performance Test
 A code snippet from [TensorFlow's official guide page](https://www.tensorflow.org/guide/gpu) verified the usability of
-GPUs
+GPUs:
 
 ```python
 import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 ```
 
-and the console output the number of GPUs available.
+and the console output the number of GPUs available:
 
 ```
 Num GPUs Available:  1
 ```
 
-Another code snippet convinced you that your GPUs really performed computations
+Another code snippet convinced you that your GPUs performed computations as expected:
 
 ```python
 import tensorflow as tf
@@ -166,7 +166,7 @@ c = tf.matmul(a, b)
 print(c)
 ```
 
-and the console output the location to execute operations.
+and the console output the location to execute operations:
 
 ```
 Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
@@ -177,11 +177,11 @@ tf.Tensor(
 
 If all prerequisites are installed correctly, the GPUs should perform computation instead of CPU whenever possible
 without being explicitly told to do so. Finally, you should run the TensorFlow-imported Python script with clean console
-outputs, and should observe significant execution speed-ups. You can also verify this by looking at the Performance tab
+outputs and should observe significant execution speed-ups. You can also verify this by looking at the Performance tab
 of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which is an integrated Graphic Card.)
 
 <img src="{{ "images/20201228-1.png" }}" alt="Performance Tab"/>
-_Figure 1: Details about GPU 1 in Performance tab of Task Manager while using TensorFlow's GPU functionalities._
+_Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities._
 
 ## References
 [A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
