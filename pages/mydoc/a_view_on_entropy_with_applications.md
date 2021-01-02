@@ -3,7 +3,7 @@ title: "A View On Entropy With Applications"
 keywords: entropy
 date: 2020-08-08 10:10:15 -0800
 last_updated: December 26, 2020
-tags: [maths,machine_learning]
+tags: [mathematics,machine_learning]
 summary: "This post demonstrated an alternative view on the definition of entropy."
 sidebar: mydoc_sidebar
 permalink: a_view_on_entropy_with_applications.html

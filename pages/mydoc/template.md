@@ -3,7 +3,7 @@ title: "Template"
 keywords: template
 date: 2019-11-08 18:26:39 -0800
 last_updated: December 26, 2020
-tags: [welcome,getting_started]
+tags: [welcome,logistics]
 summary: "It's very easy to automate decorations with Markdown. That's why I primarily use markdown for this website."
 sidebar: mydoc_sidebar
 permalink: template.html

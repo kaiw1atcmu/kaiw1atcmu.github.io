@@ -2,7 +2,7 @@
 title: "A Little Something Before You Read"
 keywords: homepage, self introduction
 last_updated: December 26, 2020
-tags: [welcome,getting_started]
+tags: [welcome,logistics]
 sidebar: mydoc_sidebar
 permalink: index.html
 summary: "A brief introduction to myself that should help you get to know me."
@@ -30,17 +30,22 @@ for the purpose of personal weblogs.
 Again, thanks for reading, and please keep an eye on what's going on here!
 
 ## Hierarchy Of This Site
-### Where To Find Posts
-I will temporarily store sketched posts under *News* in the navigation bar. After being edited and refined, it will be
-removed from *News* and be permanently placed in the side bar under the folder for its respective category. Further
-updates to the posts are still possible, if necessary.
+### Where To Find Public Posts
+I will place public posts in the side bar, where they appear under corresponding categories they belong to. The public
+posts placed here are fairly stable, while still subject to minor updates, such as adding most recent SOTA algorithms.
 
-### Where To Find Repositories
-I will provide a link to my GitHub page under *GitHub* in the navigation bar, where all my repositories are displayed.
+### Where To Find Sketch Posts
+I will temporarily store sketched posts under *Sketch Posts* in the navigation bar. After being edited and refined, they
+will be removed from *Sketch Posts* and permanently placed in the side bar under the dropdown folder corresponding to
+the categories they belong to. Further updates to the posts are still possible, if necessary.
 
-### Where To Find Publications
+### Where To Find Github Repositories
+I will provide a link to my GitHub page under *GitHub Repos* in the navigation bar, where all my repositories/projects
+are displayed.
+
+### Where To Find Academic Publications
 I will post copies of my publications (including pre-prints on *arxiv*, technical reports, conference/journal papers,
-etc.) under *Products* in the navigation bar.
+etc.) under *Publications* in the navigation bar, if any.
 
 ## Logistics
 ### Versioning Convention
@@ -49,6 +54,6 @@ That is, I will version it 20.12.26.00 if the last major change I pushed to GitH
 prefer the timezone -0800, i.e. Pacific Standard Time (PST).
 
 ### Comment Areas
-I have to withhold the activation of comment areas, since subscribing to this service costs $5 per month. 
+I have to temporarily withhold the activation of comment areas, since subscribing to this service costs $5 per month. 
 
 {% include links.html %}
