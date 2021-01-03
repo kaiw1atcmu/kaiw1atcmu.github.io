@@ -159,9 +159,13 @@ entries:
     output: web, pdf
     folderitems:
 
-      - title: Getting Started With TensorFlow-GPU
-        url: /getting_started_with_tensorflow-gpu.html
-        output: web, pdf
+    - title: Getting Started With TensorFlow-GPU
+      url: /getting_started_with_tensorflow-gpu.html
+      output: web, pdf
+
+  - title: DL/Bert
+    output: web, pdf
+    folderitems:
 
   - title: Foreign Languages
     output: web, pdf
