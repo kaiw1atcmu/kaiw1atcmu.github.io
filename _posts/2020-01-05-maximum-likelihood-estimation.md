@@ -2,19 +2,11 @@
 title: "Maximum Likelihood Estimation [more to come]"
 permalink: maximum_likelihood_estimation.html
 date: 2020-01-05 14:42:42 +0700
-categories: [ml-dl, maths]
+tags: [machine_learning,deep_learning,mathematics,statistics]
+published: false
 ---
 
-- [Identifiable Probability Densities](#identifiable-probability-densities)
-- [Asymptotically Gaussian](#asymptotically-gaussian)
-- [Asymptotically Unbiased](#asymptotically-unbiased)
-- [Asymptotically Consistent](#asymptotically-consistent)
-- [Asymptotically Efficient](#asymptotically-efficient)
-- [MLE with Regularization](#mle-with-regularization)
-- [MLE with Missing or Noisy Data](#mle-with-missing-or-noisy-data)
-- [References](#references)
-
-The *maximum likelihood estimator (MLE)* has many desirable properties which make it popular in the machine learning
+The **maximum likelihood estimator (MLE)** has many desirable properties which make it popular in the machine learning
 community. Let's try to discuss some of them today.
 
 ## Identifiable Probability Densities
@@ -22,7 +14,7 @@ For most of the typically encountered probability densities $p(\mathbf{x}\vert\t
 densities does indeed converge to a delta function. Roughly speaking, this implies that with a large number of samples
 there is only one value for $\theta$ that causes $p(\mathbf{x}\vert\theta)$ to fit the data, i.e., that $\theta$ can be
 determined uniquely from $p(\mathbf{x}\vert\theta)$. When this is the case, $p(\mathbf{x}\vert\theta)$ is said to be
-*identifiable*. There are occasions, however, when more than one value of $\theta$ may yield the same value for
+**identifiable**. There are occasions, however, when more than one value of $\theta$ may yield the same value for
 $p(\mathbf{x}\vert\theta)$. In such cases, $\theta$ cannot be determined uniquely from $p(\mathbf{x}\vert\theta)$, and
 $p(\mathbf{x}\vert\mathcal{D})$ will peak near all of the values of $\theta$ that explain the data. Fortunately, this
 ambiguity is often erased when $p(\mathbf{x}\vert\theta)$ is the same for all of these values of $\theta$. Thus,
@@ -120,7 +112,7 @@ predictive information for categorization), the equation reduces to the case of 
 
 However, the formula shows that we must integrate (marginalize) the posterior probability over the missing or corrupted
 features, and this integral often proves difficult to compute in closed form. We shall bypass the integral and consider
-alternative estimation techniques, such as the *expectation maximization (EM)* algorithm.
+alternative estimation techniques, such as the **expectation maximization (EM)** algorithm.
 
 ## References
 Duda, Richard O. and Hart, Peter E. and Stork, David G. 2001. Pattern Classification. Chapter 2.10, 3.5.
@@ -128,3 +120,5 @@ Duda, Richard O. and Hart, Peter E. and Stork, David G. 2001. Pattern Classifica
 Ian Goodfellow, Yoshua Bengio, and Aaron Courville. 2016. Deep Learning. Chapter 5.4.5, 5.5.2.
 
 Sergios Theodoridis and Konstantinos Koutroumbas. 2009. Pattern Recognition. Chapter 2.5.1.
+
+{% include links.html %}
