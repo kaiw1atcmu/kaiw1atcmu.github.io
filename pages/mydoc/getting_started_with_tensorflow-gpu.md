@@ -185,7 +185,7 @@ _Figure 1: Details about GPU 1 in the Performance tab of Task Manager while usin
 
 ## Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
 According to a highly upvoted answer in [stackoverflow](https://stackoverflow.com/questions/52624703/difference-between-installation-libraries-of-tensorflow-gpu-vs-cpu),
-the *yes*/*no* in the tabular means "Will the package work out of the box when executing `import tensorflow as tf`?"
+the *yes*/*no* in the tabular means "if the package will work out of the box when executing `import tensorflow as tf`":
 
 | Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
 | :----------: | :----------: | :----------: |
@@ -194,8 +194,9 @@ the *yes*/*no* in the tabular means "Will the package work out of the box when e
 | gpu without cuda+cudnn installed |    yes     |   no (~tf-like) |
 
 _Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings_  
-"~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow library. However, I am
-not sure about the behaviors when it comes to installing the TensorFlow-cpu library.
+
+Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
+library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library.
 
 ## References
 [A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
