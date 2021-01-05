@@ -203,7 +203,7 @@ library. However, I am not sure about the behaviors when it comes to installing 
 no longer provided in Anaconda channels. You could have it downloaded and installed by executing
 `pip install tensorflow-cpu` and see what will happen. Two more comments in the post are worth mentioning, i.e.
 - From TensorFlow version 2.0 onward, these libraries are not separated, and you could simply install TensorFlow to make
-use of GPUs, supposed that you have GPU hardware and appropriate CUDA/cuDNN installed.
+use of GPUs, supposing that you have GPU hardware and appropriate CUDA/cuDNN installed.
 - Under a conda environment, installation of CUDA/cuDNN will automatically be done using `conda install tensorflow`, but
 `pip install tensorflow` won't so that you've got to install them manually.
  
