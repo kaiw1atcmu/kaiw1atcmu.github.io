@@ -40,15 +40,15 @@ as the minimum average length to encode the variable $\mathcal{X}$, it must go u
 infinitely many values.
 
 Another inconvenience associated with differential entropy is its lack of invariance under bijective mappings. To see
-this, consider a bijective mapping $p\mapsto P$ from the probability density function $p(x)$ to its probability
-cumulative function $P(x)$, which is bijective as $p(x)>0$ in $\mathcal{X}$'s support $[a,b]$. Since the probability
-cumulative function $P(x)$ is always uniform in $[0,1]$ irrespective of $p(x)$ (a basic result taken from probability
-theory), its differential entropy is constantly $0$ and cannot equal that of an arbitrary density function having
-support $[a,b]$. A contradiction. In contrast, the fact that discrete entropy is invariant under bijective mappings is
-self-evident.
+this, consider a bijective mapping $p\mapsto P$ from the probability density function $p(x)$ to its cumulative
+distribution function $P(x)$, which is bijective as $p(x)>0$ in $\mathcal{X}$'s support $[a,b]$. Since the cumulative
+distribution function $P(x)$ is always uniform in $[0,1]$ irrespective of $p(x)$ (a basic result taken from probability
+theory), its differential entropy is constantly $0$ and cannot equal that of an arbitrary probability density function
+having support $[a,b]$. A contradiction. In contrast, the fact that discrete entropy is invariant under bijective
+mappings is self-evident.
 
-{% include note.html content="If you're not clear with this important property of the probability cumulative function,
-please consult any elementary textbook on probability theory for clarification." %}
+{% include note.html content="If you're unfamiliar with this important property of cumulative distribution functions
+(CDFs), please consult any elementary textbook on probability theory for clarification." %}
 
 ## The Riemann Integral
 Applying the mean value theorem of calculus to $p(x)$, we reformulate integral with summation since
