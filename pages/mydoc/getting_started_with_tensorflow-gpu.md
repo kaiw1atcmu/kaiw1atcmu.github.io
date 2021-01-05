@@ -187,8 +187,8 @@ _Figure 1: Details about GPU 1 in the Performance tab of Task Manager while usin
 What is the differences between installing tensorflow and tensorflow-gpu, if both support GPU operations in the presence
 of GPU hardware, CUDA and cuDNN? According to a highly upvoted answer (updated for recently released TF versions) in
 [stackoverflow](https://stackoverflow.com/questions/52624703/difference-between-installation-libraries-of-tensorflow-gpu-vs-cpu),
-the answers can be summarized below. Please note that running the script always work in all the combinations, and the
-*yes*/*no* in the tabular means "if the package will work out of the box when executing `import tensorflow as tf`":
+the answers can be summarized below. Please note that running the script always work in all combinations, and the
+*yes*/*no* in the table means "if the package will work out of the box when executing `import tensorflow as tf`":
 
 | Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
 | :----------: | :----------: | :----------: |
@@ -199,8 +199,8 @@ the answers can be summarized below. Please note that running the script always 
 _Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings_  
 
 Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
-library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since this
-TensorFlow library is no more provided in Anaconda channels. You could have it downloaded and installed by executing
+library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since it is
+no longer provided in Anaconda channels. You could have it downloaded and installed by executing
 `pip install tensorflow-cpu` and see what will happen. Two more comments in the post are worth mentioning, i.e.
 - From TensorFlow version 2.0 onward, these libraries are not separated, and you could simply install TensorFlow to make
 use of GPUs, supposed that you have GPU hardware and appropriate CUDA/cuDNN installed.
