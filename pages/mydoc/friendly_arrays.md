@@ -43,26 +43,27 @@ come ...
 ```python
 # Friendly Arrays
 
-n = 8
+n = 8   # specify n for n-th friendly arrays
 stack = []
-status = {'filled': [0] * 2 * n, 'cur_val': n + 1}
+status = {'filled': [0] * 2 * n, 'cur_val': n + 1}  # 'filled' is (partly) filled array, 'cur_val' is last value filled.
 stack.append(status)
 cnt = 0
+
 while stack:
     status = stack[-1]
     array = status['filled']
-    next_val = status['cur_val'] - 1
+    cur_val = status['cur_val'] - 1
     stack = stack[:-1]
-    if next_val == 0:
+    if cur_val == 0:    # already have filled 1, and you are done.
         cnt += 1
         print('The {}-th friendly array is {}'.format(cnt, status['filled']))
         continue
-    for pos in range(2 * n - next_val -1):
-        if array[pos] == 0 and array[pos + next_val + 1] == 0:
+    for pos in range(2 * n - cur_val -1):
+        if array[pos] == 0 and array[pos + cur_val + 1] == 0:
             arr = array[:]  # clone by slicing
-            arr[pos] = next_val
-            arr[pos + next_val + 1] = next_val
-            stack.append({'filled': arr, 'cur_val': next_val})
+            arr[pos] = cur_val
+            arr[pos + cur_val + 1] = cur_val
+            stack.append({'filled': arr, 'cur_val': cur_val})
 print(f'There are in total {cnt} friendly arrays corresponding to the {n}-th ordinal as printed above.')
 ```
 
