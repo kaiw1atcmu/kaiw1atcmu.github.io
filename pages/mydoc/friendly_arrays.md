@@ -58,7 +58,7 @@ while stack:
         cnt += 1
         print('The {}-th friendly array is {}'.format(cnt, status['filled']))
         continue
-    for pos in range(2 * n - cur_val -1):
+    for pos in range(2 * n - cur_val - 1):
         if array[pos] == 0 and array[pos + cur_val + 1] == 0:
             arr = array[:]  # clone by slicing
             arr[pos] = cur_val
