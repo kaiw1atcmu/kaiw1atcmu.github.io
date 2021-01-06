@@ -31,8 +31,8 @@ entries:
       url: /site_launched.html
       output: web, pdf
 
-    - title: Template
-      url: /template.html
+    - title: Markdown Template For Posts
+      url: /markdown_template_for_posts.html
       output: web, pdf
 
   - title: Maths
@@ -51,8 +51,8 @@ entries:
       url: /could_two_bent_ellipses_coincide_perfectly_in_circumferences.html
       output: web, pdf
 
-    - title: The Hessian Matrix [more to come]
-      url: /the_hessian_matrix.html
+    - title: Hessian Matrices [more to come]
+      url: /hessian_matrices.html
       output: web, pdf
 
     - title: Gradient Descent, Newton's Method, and Beyond [more to come]
@@ -95,12 +95,12 @@ entries:
       url: /a_property_of_add-xor_mixed_operations.html
       output: web, pdf
 
-    - title: The Defective Calculator
-      url: /the_defective_calculator.html
+    - title: Defective Calculators
+      url: /defective_calculators.html
       output: web, pdf
 
-    - title: The Friendly Arrays [more to come]
-      url: /the_friendly_arrays.html
+    - title: Friendly Arrays [more to come]
+      url: /friendly_arrays.html
       output: web, pdf
 
   - title: Machine Learning

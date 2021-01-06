@@ -51,7 +51,7 @@ $$
 Although lacking mathematical rigidity, we are still confident to make a well-founded guess that for sufficiently large
 $n$, $P(\mathcal{E})$ is maximized if and only if $n_i=np_i, 1\leq i\leq I$.
 
-## Two Interpretations of Entropy
+## Two Alternative Interpretations of Entropy
 Assuming the same context as before, we are also interested in estimating the joint probability of observing an ordered
 sequence $\mathcal{S}$ of $\mathcal{X}$. That is,
 
@@ -63,16 +63,22 @@ If this sequence $\mathcal{S}$ is a realization of the ensemble $\mathcal{E}$ th
 $n_i=np_i, 1\leq i\leq I$, and
 
 $$
-  {P(\mathcal{S})=\exp(n\sum_{i=1}^Ip_i\log p_i)=\exp(\!-\!nH(X)).}
+  {P(\mathcal{S})=\exp(n\sum_{i=1}^Ip_i\log p_i)=\exp(\!-\!nH(X)),\qquad\text{(Equation 1)}} \\
+  {P(\mathcal{E})=\frac{n!}{\Pi_{i=1}^I n_i!}P(\mathcal{S})=\frac{n!}{\Pi_{i=1}^I (np_i)!}\exp(\!-\!nH(X)).\qquad\text{(Equation 2)}}
 $$
 
-Hence we have two different interpretations of entropy $H(\mathcal{X})$, i.e.
+Hence we have two different, alternative interpretations of entropy $H(\mathcal{X})$ in addition to its conventional
+definition, i.e.:
 
 * (The conventional definition of entropy) The entropy $H(\mathcal{X})$ is a metric for the average-case negative
-log-likelihood of ordered observations of $\mathcal{X}$. The sample space ranges over all **ordered** sequences.
+log-likelihood of an observation of $\mathcal{X}$.
 
-* (An alternative definition of entropy) The entropy $H(\mathcal{X})$ is closely related to the ensemble that induces
-the maximized joint probability of unordered observations of $\mathcal{X}$. The sample space ranges over all
-**unordered** ensembles.
+* (A first alternative interpretation) The entropy $H(\mathcal{X})$ is related by Equation 1 to the sequence
+$\mathcal{S}$ that induces the maximum joint probability of ordered observations of $\mathcal{X}$. The sample space
+ranges over all **ordered** sequences.
+
+* (A second alternative interpretation) The entropy $H(\mathcal{X})$ is related by Equation 2 to the ensemble
+$\mathcal{E}$ that induces the maximized joint probability of unordered observations of $\mathcal{X}$. The sample space
+ranges over all **unordered** ensembles.
 
 {% include links.html %}

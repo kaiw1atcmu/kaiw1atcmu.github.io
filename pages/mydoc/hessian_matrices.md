@@ -1,13 +1,13 @@
 ---
-title: "The Hessian Matrix [more to come]"
-keywords: hessian matrix
+title: "Hessian Matrices [more to come]"
+keywords: hessian matrix, hessian matrices
 date: 2019-11-11 10:41:20 -0800
 last_updated: December 26, 2020
 tags: [mathematics,machine_learning]
 summary: "Today we are introducing various techniques in evaluating the Hessian of neural networks, either approximately
 or accurately."
 sidebar: mydoc_sidebar
-permalink: the_hessian_matrix.html
+permalink: hessian_matrices.html
 folder: mydoc
 ---
 
