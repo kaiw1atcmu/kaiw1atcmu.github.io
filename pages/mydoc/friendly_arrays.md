@@ -3,7 +3,7 @@ title: "Friendly Arrays [more to come]"
 keywords: friendly array
 date: 2020-01-22 22:14:35 -0800
 last_updated: December 26, 2020
-tags: [hackers_delight,algorithms]
+tags: [hacker's_delight,algorithms]
 summary: "Today we are discussing a very interesting algorithmic problem called the friendly arrays."
 sidebar: mydoc_sidebar
 permalink: friendly_arrays.html
@@ -30,7 +30,10 @@ $i\in[1,k]$. Let us enumerate the first few friendly arrays, for example:
 
 _Table 1: The Friendly Arrays For The First Few Ordinals_
     
-Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays?
+Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
+the very beginning, I was tempted to crack this problem by following the tricks applied to *Joseph's Ring*. However, due
+to subtle differences, all efforts were in vain. Vicariously, it suddenly dawned on me that the friendly arrays might be
+approached from a pure programming perspective with stacks, and this opinion indeed worked out.
 
 ## Stack Version One
 Without considerations for memory efficiency, this straight-forward approach using a stack consumes the most memory
@@ -63,7 +66,7 @@ while stack:
 print(f'There are in total {cnt} friendly arrays corresponding to the {n}-th ordinal as printed above.')
 ```
 
-The complete output are:
+The complete outputs are:
 ```
 C:\ProgramData\Anaconda3\envs\mldl\python.exe C:/Users/lx/PycharmProjects/mldl/friendly_arrays.py
 {'filled': [1, 5, 1, 4, 6, 7, 8, 5, 4, 2, 3, 6, 2, 7, 3, 8], 'cur_val': 1}

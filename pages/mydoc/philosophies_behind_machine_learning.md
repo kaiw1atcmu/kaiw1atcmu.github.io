@@ -1,5 +1,5 @@
 ---
-title: "Philosophy Behind Machine Learning [more to come]"
+title: "Philosophies Behind Machine Learning [more to come]"
 keywords: philosophy
 date: 2019-11-28 11:34:25 -0800
 last_updated: December 26, 2020
@@ -7,7 +7,7 @@ tags: [machine_learning]
 summary: "Machine Learning, as a fast-developing research field, still has a relatively stable philosophical background
 on which many concepts and algorithms are based. Let us now explain and discuss some of them."
 sidebar: mydoc_sidebar
-permalink: philosophy_behind_machine_learning.html
+permalink: philosophies_behind_machine_learning.html
 folder: mydoc
 ---
 

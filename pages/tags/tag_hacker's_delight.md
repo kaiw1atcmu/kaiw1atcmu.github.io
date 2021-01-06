@@ -1,6 +1,6 @@
 ---
 title: "Hackers delight pages"
-tagName: hackers_delight
+tagName: hacker's_delight
 search: exclude
 permalink: tag_hackers_delight.html
 sidebar: mydoc_sidebar

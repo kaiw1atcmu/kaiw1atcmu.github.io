@@ -87,7 +87,7 @@ entries:
       url: /brain_teaser_in_coding_interview.html
       output: web, pdf
 
-  - title: Hackers Delight
+  - title: Hacker's Delight
     output: web, pdf
     folderitems:
 
@@ -119,8 +119,8 @@ entries:
       url: /mse_and_ce_estimate_posterior_class_probabilities_and_achieve_bayes_error.html
       output: web, pdf
 
-    - title: Philosophy Behind Machine Learning [more to come]
-      url: /philosophy_behind_machine_learning.html
+    - title: Philosophies Behind Machine Learning [more to come]
+      url: /philosophies_behind_machine_learning.html
       output: web, pdf
 
     - title: Bias-Variance Tradeoff

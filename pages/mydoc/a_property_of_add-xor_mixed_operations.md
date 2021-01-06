@@ -3,7 +3,7 @@ title: "A Property Of Add-Xor Mixed Operations"
 keywords: add-xor mixed operations
 date: 2020-01-20 22:32:34 -0800
 last_updated: December 26, 2020
-tags: [hackers_delight,algorithms]
+tags: [hacker's_delight,algorithms]
 summary: "In this post, we will introduce a relatively infrequently mentioned property between the addition and
 exclusive-or operators, when they are used in a mixed manner."
 sidebar: mydoc_sidebar
