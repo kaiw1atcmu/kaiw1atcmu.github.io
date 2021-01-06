@@ -2,7 +2,7 @@
 title: "Hackers delight pages"
 tagName: hacker's_delight
 search: exclude
-permalink: tag_hackers_delight.html
+permalink: tag_hacker's_delight.html
 sidebar: mydoc_sidebar
 folder: tags
 ---
