@@ -33,7 +33,7 @@ which the value of play tennis changes: $(48+60)/2$, and $(80+90)/2$. Note that 
 between the pair of adjacent attributes whose targets differ and makes no difference in training, the midway value is
 more often considered as a potential choice for better generalization. Let us show a concise proof of this property.
 
-# The Proof
+## The Proof
 Suppose we partition all samples at a node by a given threshold midway between two adjacent attribute values. Its left
 child consists of $n_{11}$ positive samples and $n_{12}$ negative samples, and its right child consists of $n_{21}$
 positive samples and $n_{22}$ negative samples, respectively. We want to find a splitting threshold which yields the
