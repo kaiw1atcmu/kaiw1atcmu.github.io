@@ -143,7 +143,7 @@ entries:
       url: /network_pruning_the_old-school_methods.html
       output: web, pdf
 
-  - title: DL/Variational Auto-Encoders
+  - title: + Variational Auto-Encoders
     output: web, pdf
     folderitems:
 
@@ -155,7 +155,7 @@ entries:
       url: /stochastic_backpropagation_and_approximate_inference.html
       output: web, pdf
 
-  - title: DL/TensorFlow
+  - title: + TensorFlow
     output: web, pdf
     folderitems:
 
@@ -163,7 +163,7 @@ entries:
       url: /getting_started_with_tensorflow-gpu.html
       output: web, pdf
 
-  - title: DL/Bert
+  - title: + Transformers
     output: web, pdf
     folderitems:
 
