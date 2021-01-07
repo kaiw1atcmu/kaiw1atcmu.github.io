@@ -31,9 +31,10 @@ $i\in[1,k]$. Let us enumerate the first few friendly arrays, for example:
 _Table 1: The Friendly Arrays For The First Few Ordinals_
     
 Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
-the very beginning, I was tempted to crack this problem by following the tricks applied to *Joseph's Ring*. However, due
-to subtle differences, all efforts were in vain. Vicariously, it suddenly dawned on me that the friendly arrays might be
-approached from a pure programming perspective with stacks, and this opinion indeed worked out.
+the very beginning, I was tempted to crack this problem by following the tricks applied to the
+[*Josephus Problem*](#refenences). However, due to subtle differences, all efforts were in vain. Vicariously, it
+suddenly dawned on me that the friendly arrays might be approached from a pure programming perspective with stacks, and
+this opinion indeed worked out.
 
 ## Stack Version One
 Without considerations for memory efficiency, this straight-forward approach using a stack consumes the most memory
@@ -738,5 +739,8 @@ Process finished with exit code 0
 ```
 
 ## Iterative Version
+
+## References
+Ronald L. Graham, Donald E. Knuth, and Oren Patashnik. 1994. Concrete Mathematics (Second Edition). Chapter 1.3.
 
 {% include links.html %}
