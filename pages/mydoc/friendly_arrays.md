@@ -37,9 +37,9 @@ suddenly dawned on me that the friendly arrays might be approached from a pure p
 this opinion indeed worked out.
 
 ## Stack Version One
-Without considerations for memory efficiency, this straight-forward approach using a stack consumes the most memory
-space. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by $f(n)$. more to
-come ...
+Without considerations for memory efficiency, this straight-forward Stack Version One approach using a stack consumes
+the most memory space. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by
+$f(n)$. more to come ...
 
 ```python
 # Friendly Arrays Stack Version One
@@ -377,10 +377,10 @@ Process finished with exit code 0
 ```
 
 ## Stack Version Two
-With considerations for memory efficiency, this slightly improved approach (still using a stack) consumes much less
-memory space. At any time, the stack at most unfolds one "status" for each level down through the hierarchy, essentially
-trading time complexity for space complexity. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays
-in total is given by $f(n)$. more to come ...
+With considerations for memory efficiency, this slightly improved Stack Version Two approach (still using a stack)
+consumes much less memory space. At any time, the stack at most unfolds one "status" for each level down through the
+hierarchy, essentially trading time complexity for space complexity. Supposing for the $n$-th ordinal, the number of the
+$n$-th friendly arrays in total is given by $f(n)$. more to come ...
 
 ```python
 # Friendly Arrays Stack Version Two
@@ -739,6 +739,359 @@ Process finished with exit code 0
 ```
 
 ## Iterative Version
+With more concern for memory efficiency, this largely improved Iterative Version approach (using no stack) consumes only
+constant O(1) memory space, i.e. an in-place algorithm. At any time, only the current status is maintained. It uses as
+low a space complexity as possible. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total
+is given by $f(n)$. more to come ...
+
+```python
+# Friendly Arrays Iterative Version
+
+n = 8   # specify n for n-th friendly arrays
+status = {'filled': [0] * 2 * n, 'cur_val': n + 1}  # 'filled' is (partly) filled array, 'cur_val' is last value filled.
+cnt = 0
+
+def next_step(status):
+    array = status['filled']
+    cur_val = status['cur_val'] - 1
+    for i in range(2 * n - cur_val - 1):
+        if array[i] == 0 and array[i + cur_val + 1] == 0:
+            array[i] = cur_val
+            array[i + cur_val + 1] = cur_val
+            return {'filled': array, 'cur_val': cur_val}
+    array = status['filled']
+    cur_val = status['cur_val']
+    while cur_val <= n:
+        pos = array.index(cur_val)
+        array[pos] = 0
+        array[pos + cur_val + 1] = 0
+        for i in range(pos + 1, 2 * n - cur_val - 1):
+            if array[i] == 0 and array[i + cur_val + 1] == 0:
+                array[i] = cur_val  # modify array itself in place, no need to clone.
+                array[i + cur_val + 1] = cur_val
+                status['cur_val'] = cur_val
+                return status
+        cur_val += 1
+    return {}
+
+while status:
+    array = status['filled']
+    cur_val = status['cur_val'] - 1
+    if cur_val == 0:    # already have filled 1, and you are done.
+        cnt += 1
+        print('The {}-th friendly array is {}'.format(cnt, status['filled']))
+    status = next_step(status)
+print('There are in total {} friendly arrays corresponding to the {}-th ordinal.'.format(cnt, n))
+```
+
+The complete friendly arrays are:
+
+```
+C:\ProgramData\Anaconda3\envs\mldl\python.exe C:/Users/lx/PycharmProjects/mldl/friendly_arrays_3.py
+The 1-th friendly array is [8, 3, 7, 2, 6, 3, 2, 4, 5, 8, 7, 6, 4, 1, 5, 1]
+The 2-th friendly array is [8, 2, 7, 3, 2, 6, 4, 3, 5, 8, 7, 4, 6, 1, 5, 1]
+The 3-th friendly array is [8, 2, 7, 1, 2, 1, 6, 4, 5, 8, 7, 3, 4, 6, 5, 3]
+The 4-th friendly array is [8, 2, 7, 1, 2, 1, 5, 6, 4, 8, 7, 3, 5, 4, 6, 3]
+The 5-th friendly array is [8, 4, 5, 7, 2, 6, 4, 2, 5, 8, 3, 7, 6, 1, 3, 1]
+The 6-th friendly array is [8, 2, 4, 7, 2, 6, 3, 4, 5, 8, 3, 7, 6, 1, 5, 1]
+The 7-th friendly array is [8, 5, 2, 7, 3, 2, 6, 5, 3, 8, 4, 7, 1, 6, 1, 4]
+The 8-th friendly array is [8, 3, 5, 7, 2, 3, 6, 2, 5, 8, 4, 7, 1, 6, 1, 4]
+The 9-th friendly array is [8, 4, 2, 7, 5, 2, 4, 6, 3, 8, 5, 7, 3, 1, 6, 1]
+The 10-th friendly array is [8, 2, 3, 7, 2, 4, 3, 5, 6, 8, 4, 7, 1, 5, 1, 6]
+The 11-th friendly array is [8, 6, 4, 2, 7, 5, 2, 4, 6, 8, 3, 5, 7, 1, 3, 1]
+The 12-th friendly array is [8, 6, 3, 1, 7, 1, 3, 5, 6, 8, 4, 2, 7, 5, 2, 4]
+The 13-th friendly array is [8, 4, 2, 6, 7, 2, 4, 3, 5, 8, 6, 3, 7, 1, 5, 1]
+The 14-th friendly array is [8, 1, 2, 1, 7, 2, 6, 3, 5, 8, 4, 3, 7, 6, 5, 4]
+The 15-th friendly array is [8, 4, 5, 1, 7, 1, 4, 6, 5, 8, 2, 3, 7, 2, 6, 3]
+The 16-th friendly array is [8, 3, 5, 2, 7, 3, 2, 6, 5, 8, 4, 1, 7, 1, 6, 4]
+The 17-th friendly array is [8, 1, 3, 1, 7, 4, 3, 5, 6, 8, 4, 2, 7, 5, 2, 6]
+The 18-th friendly array is [8, 1, 2, 1, 7, 2, 4, 5, 6, 8, 3, 4, 7, 5, 3, 6]
+The 19-th friendly array is [8, 6, 4, 2, 5, 7, 2, 4, 6, 8, 5, 3, 1, 7, 1, 3]
+The 20-th friendly array is [8, 6, 1, 3, 1, 7, 5, 3, 6, 8, 4, 2, 5, 7, 2, 4]
+The 21-th friendly array is [8, 4, 5, 6, 2, 7, 4, 2, 5, 8, 6, 3, 1, 7, 1, 3]
+The 22-th friendly array is [8, 4, 1, 6, 1, 7, 4, 3, 5, 8, 6, 3, 2, 7, 5, 2]
+The 23-th friendly array is [8, 1, 4, 1, 6, 7, 3, 4, 5, 8, 3, 6, 2, 7, 5, 2]
+The 24-th friendly array is [8, 1, 3, 1, 5, 7, 3, 4, 6, 8, 5, 2, 4, 7, 2, 6]
+The 25-th friendly array is [8, 2, 4, 6, 2, 5, 7, 4, 3, 8, 6, 5, 3, 1, 7, 1]
+The 26-th friendly array is [8, 1, 2, 1, 6, 2, 7, 5, 3, 8, 4, 6, 3, 5, 7, 4]
+The 27-th friendly array is [8, 5, 1, 4, 1, 6, 7, 5, 4, 8, 2, 3, 6, 2, 7, 3]
+The 28-th friendly array is [8, 2, 5, 3, 2, 6, 7, 3, 5, 8, 4, 1, 6, 1, 7, 4]
+The 29-th friendly array is [8, 2, 3, 6, 2, 5, 3, 7, 4, 8, 6, 5, 1, 4, 1, 7]
+The 30-th friendly array is [8, 3, 1, 6, 1, 3, 5, 7, 4, 8, 6, 2, 5, 4, 2, 7]
+The 31-th friendly array is [8, 1, 2, 1, 6, 2, 5, 7, 4, 8, 3, 6, 5, 4, 3, 7]
+The 32-th friendly array is [8, 1, 3, 1, 5, 6, 3, 7, 4, 8, 5, 2, 6, 4, 2, 7]
+The 33-th friendly array is [7, 8, 2, 3, 6, 2, 5, 3, 7, 4, 8, 6, 5, 1, 4, 1]
+The 34-th friendly array is [7, 8, 3, 1, 6, 1, 3, 5, 7, 4, 8, 6, 2, 5, 4, 2]
+The 35-th friendly array is [7, 8, 1, 2, 1, 6, 2, 5, 7, 4, 8, 3, 6, 5, 4, 3]
+The 36-th friendly array is [7, 8, 1, 3, 1, 5, 6, 3, 7, 4, 8, 5, 2, 6, 4, 2]
+The 37-th friendly array is [6, 8, 2, 7, 3, 2, 5, 6, 3, 4, 8, 7, 5, 1, 4, 1]
+The 38-th friendly array is [3, 8, 4, 7, 3, 6, 2, 4, 5, 2, 8, 7, 6, 1, 5, 1]
+The 39-th friendly array is [3, 8, 5, 7, 3, 1, 6, 1, 5, 4, 8, 7, 2, 6, 4, 2]
+The 40-th friendly array is [3, 8, 4, 7, 3, 2, 6, 4, 2, 5, 8, 7, 1, 6, 1, 5]
+The 41-th friendly array is [5, 8, 2, 7, 4, 2, 5, 6, 3, 4, 8, 7, 3, 1, 6, 1]
+The 42-th friendly array is [5, 8, 1, 7, 1, 3, 5, 6, 4, 3, 8, 7, 2, 4, 6, 2]
+The 43-th friendly array is [4, 8, 5, 7, 1, 4, 1, 6, 5, 3, 8, 7, 2, 3, 6, 2]
+The 44-th friendly array is [6, 8, 3, 1, 7, 1, 3, 6, 4, 5, 8, 2, 7, 4, 2, 5]
+The 45-th friendly array is [4, 8, 6, 2, 7, 4, 2, 3, 5, 6, 8, 3, 7, 1, 5, 1]
+The 46-th friendly array is [2, 8, 5, 2, 7, 1, 6, 1, 5, 4, 8, 3, 7, 6, 4, 3]
+The 47-th friendly array is [2, 8, 5, 2, 7, 3, 4, 6, 5, 3, 8, 4, 7, 1, 6, 1]
+The 48-th friendly array is [4, 8, 3, 5, 7, 4, 3, 6, 2, 5, 8, 2, 7, 1, 6, 1]
+The 49-th friendly array is [5, 8, 4, 1, 7, 1, 5, 4, 6, 3, 8, 2, 7, 3, 2, 6]
+The 50-th friendly array is [5, 8, 2, 3, 7, 2, 5, 3, 6, 4, 8, 1, 7, 1, 4, 6]
+The 51-th friendly array is [6, 8, 5, 2, 4, 7, 2, 6, 5, 4, 8, 3, 1, 7, 1, 3]
+The 52-th friendly array is [5, 8, 6, 4, 2, 7, 5, 2, 4, 6, 8, 3, 1, 7, 1, 3]
+The 53-th friendly array is [2, 8, 6, 2, 1, 7, 1, 4, 5, 6, 8, 3, 4, 7, 5, 3]
+The 54-th friendly array is [5, 8, 1, 4, 1, 7, 5, 6, 4, 2, 8, 3, 2, 7, 6, 3]
+The 55-th friendly array is [1, 8, 1, 5, 3, 7, 4, 6, 3, 5, 8, 4, 2, 7, 6, 2]
+The 56-th friendly array is [2, 8, 1, 2, 1, 7, 4, 6, 3, 5, 8, 4, 3, 7, 6, 5]
+The 57-th friendly array is [1, 8, 1, 3, 4, 7, 5, 3, 6, 4, 8, 2, 5, 7, 2, 6]
+The 58-th friendly array is [2, 8, 1, 2, 1, 7, 5, 3, 6, 4, 8, 3, 5, 7, 4, 6]
+The 59-th friendly array is [6, 8, 1, 4, 1, 5, 7, 6, 4, 3, 8, 5, 2, 3, 7, 2]
+The 60-th friendly array is [2, 8, 6, 2, 3, 5, 7, 4, 3, 6, 8, 5, 4, 1, 7, 1]
+The 61-th friendly array is [4, 8, 5, 3, 6, 4, 7, 3, 5, 2, 8, 6, 2, 1, 7, 1]
+The 62-th friendly array is [2, 8, 5, 2, 6, 3, 7, 4, 5, 3, 8, 6, 4, 1, 7, 1]
+The 63-th friendly array is [1, 8, 1, 4, 6, 3, 7, 5, 4, 3, 8, 6, 2, 5, 7, 2]
+The 64-th friendly array is [2, 8, 5, 2, 4, 6, 7, 3, 5, 4, 8, 3, 6, 1, 7, 1]
+The 65-th friendly array is [3, 8, 4, 5, 3, 6, 7, 4, 2, 5, 8, 2, 6, 1, 7, 1]
+The 66-th friendly array is [1, 8, 1, 5, 2, 6, 7, 2, 4, 5, 8, 3, 6, 4, 7, 3]
+The 67-th friendly array is [2, 8, 4, 2, 3, 6, 7, 4, 3, 5, 8, 1, 6, 1, 7, 5]
+The 68-th friendly array is [2, 8, 1, 2, 1, 6, 7, 3, 4, 5, 8, 3, 6, 4, 7, 5]
+The 69-th friendly array is [3, 8, 2, 5, 3, 2, 7, 4, 6, 5, 8, 1, 4, 1, 7, 6]
+The 70-th friendly array is [2, 8, 1, 2, 1, 5, 7, 4, 6, 3, 8, 5, 4, 3, 7, 6]
+The 71-th friendly array is [3, 8, 6, 2, 3, 5, 2, 7, 4, 6, 8, 5, 1, 4, 1, 7]
+The 72-th friendly array is [3, 8, 6, 1, 3, 1, 5, 7, 4, 6, 8, 2, 5, 4, 2, 7]
+The 73-th friendly array is [5, 8, 2, 4, 6, 2, 5, 7, 4, 3, 8, 6, 1, 3, 1, 7]
+The 74-th friendly array is [4, 8, 5, 2, 6, 4, 2, 7, 5, 3, 8, 6, 1, 3, 1, 7]
+The 75-th friendly array is [5, 8, 1, 4, 1, 6, 5, 7, 4, 3, 8, 2, 6, 3, 2, 7]
+The 76-th friendly array is [3, 8, 5, 2, 3, 6, 2, 7, 5, 4, 8, 1, 6, 1, 4, 7]
+The 77-th friendly array is [2, 8, 3, 2, 4, 6, 3, 7, 5, 4, 8, 1, 6, 1, 5, 7]
+The 78-th friendly array is [2, 8, 1, 2, 1, 6, 4, 7, 5, 3, 8, 4, 6, 3, 5, 7]
+The 79-th friendly array is [4, 8, 1, 5, 1, 4, 6, 7, 3, 5, 8, 2, 3, 6, 2, 7]
+The 80-th friendly array is [2, 8, 1, 2, 1, 5, 6, 7, 3, 4, 8, 5, 3, 6, 4, 7]
+The 81-th friendly array is [7, 3, 8, 6, 2, 3, 5, 2, 7, 4, 6, 8, 5, 1, 4, 1]
+The 82-th friendly array is [7, 3, 8, 6, 1, 3, 1, 5, 7, 4, 6, 8, 2, 5, 4, 2]
+The 83-th friendly array is [7, 5, 8, 2, 4, 6, 2, 5, 7, 4, 3, 8, 6, 1, 3, 1]
+The 84-th friendly array is [7, 4, 8, 5, 2, 6, 4, 2, 7, 5, 3, 8, 6, 1, 3, 1]
+The 85-th friendly array is [7, 5, 8, 1, 4, 1, 6, 5, 7, 4, 3, 8, 2, 6, 3, 2]
+The 86-th friendly array is [7, 3, 8, 5, 2, 3, 6, 2, 7, 5, 4, 8, 1, 6, 1, 4]
+The 87-th friendly array is [7, 2, 8, 3, 2, 4, 6, 3, 7, 5, 4, 8, 1, 6, 1, 5]
+The 88-th friendly array is [7, 2, 8, 1, 2, 1, 6, 4, 7, 5, 3, 8, 4, 6, 3, 5]
+The 89-th friendly array is [7, 4, 8, 1, 5, 1, 4, 6, 7, 3, 5, 8, 2, 3, 6, 2]
+The 90-th friendly array is [7, 2, 8, 1, 2, 1, 5, 6, 7, 3, 4, 8, 5, 3, 6, 4]
+The 91-th friendly array is [5, 7, 8, 4, 2, 6, 5, 2, 4, 7, 3, 8, 6, 1, 3, 1]
+The 92-th friendly array is [4, 7, 8, 2, 5, 4, 2, 6, 3, 7, 5, 8, 3, 1, 6, 1]
+The 93-th friendly array is [2, 7, 8, 2, 3, 4, 5, 6, 3, 7, 4, 8, 5, 1, 6, 1]
+The 94-th friendly array is [3, 7, 8, 2, 3, 4, 2, 5, 6, 7, 4, 8, 1, 5, 1, 6]
+The 95-th friendly array is [6, 4, 8, 5, 7, 2, 4, 6, 2, 5, 3, 8, 7, 1, 3, 1]
+The 96-th friendly array is [2, 3, 8, 2, 7, 3, 6, 1, 5, 1, 4, 8, 7, 6, 5, 4]
+The 97-th friendly array is [5, 1, 8, 1, 7, 2, 5, 6, 2, 3, 4, 8, 7, 3, 6, 4]
+The 98-th friendly array is [4, 1, 8, 1, 7, 4, 2, 5, 6, 2, 3, 8, 7, 5, 3, 6]
+The 99-th friendly array is [6, 1, 8, 1, 4, 7, 3, 6, 5, 4, 3, 8, 2, 7, 5, 2]
+The 100-th friendly array is [6, 2, 8, 4, 2, 7, 3, 6, 4, 5, 3, 8, 1, 7, 1, 5]
+The 101-th friendly array is [2, 6, 8, 2, 1, 7, 1, 4, 6, 5, 3, 8, 4, 7, 3, 5]
+The 102-th friendly array is [3, 5, 8, 6, 3, 7, 1, 5, 1, 4, 6, 8, 2, 7, 4, 2]
+The 103-th friendly array is [3, 4, 8, 6, 3, 7, 4, 1, 5, 1, 6, 8, 2, 7, 5, 2]
+The 104-th friendly array is [5, 1, 8, 1, 3, 7, 5, 6, 3, 2, 4, 8, 2, 7, 6, 4]
+The 105-th friendly array is [3, 4, 8, 5, 3, 7, 4, 6, 1, 5, 1, 8, 2, 7, 6, 2]
+The 106-th friendly array is [2, 4, 8, 2, 3, 7, 4, 6, 3, 5, 1, 8, 1, 7, 6, 5]
+The 107-th friendly array is [5, 2, 8, 3, 2, 7, 5, 3, 6, 4, 1, 8, 1, 7, 4, 6]
+The 108-th friendly array is [2, 5, 8, 2, 4, 7, 3, 5, 6, 4, 3, 8, 1, 7, 1, 6]
+The 109-th friendly array is [3, 5, 8, 2, 3, 7, 2, 5, 6, 4, 1, 8, 1, 7, 4, 6]
+The 110-th friendly array is [3, 4, 8, 5, 3, 7, 4, 2, 6, 5, 2, 8, 1, 7, 1, 6]
+The 111-th friendly array is [3, 1, 8, 1, 3, 7, 5, 2, 6, 4, 2, 8, 5, 7, 4, 6]
+The 112-th friendly array is [6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3, 1, 7, 1]
+The 113-th friendly array is [6, 3, 8, 4, 5, 3, 7, 6, 4, 2, 5, 8, 2, 1, 7, 1]
+The 114-th friendly array is [6, 1, 8, 1, 5, 3, 7, 6, 4, 3, 5, 8, 2, 4, 7, 2]
+The 115-th friendly array is [4, 6, 8, 3, 5, 4, 7, 3, 6, 2, 5, 8, 2, 1, 7, 1]
+The 116-th friendly array is [2, 6, 8, 2, 5, 3, 7, 4, 6, 3, 5, 8, 4, 1, 7, 1]
+The 117-th friendly array is [3, 6, 8, 1, 3, 1, 7, 5, 6, 2, 4, 8, 2, 5, 7, 4]
+The 118-th friendly array is [3, 6, 8, 1, 3, 1, 7, 4, 6, 5, 2, 8, 4, 2, 7, 5]
+The 119-th friendly array is [4, 5, 8, 6, 3, 4, 7, 5, 3, 2, 6, 8, 2, 1, 7, 1]
+The 120-th friendly array is [3, 1, 8, 1, 3, 6, 7, 2, 4, 5, 2, 8, 6, 4, 7, 5]
+The 121-th friendly array is [2, 3, 8, 2, 4, 3, 7, 5, 6, 4, 1, 8, 1, 5, 7, 6]
+The 122-th friendly array is [3, 1, 8, 1, 3, 4, 7, 5, 6, 2, 4, 8, 2, 5, 7, 6]
+The 123-th friendly array is [4, 6, 8, 2, 5, 4, 2, 7, 6, 3, 5, 8, 1, 3, 1, 7]
+The 124-th friendly array is [3, 6, 8, 1, 3, 1, 5, 7, 6, 4, 2, 8, 5, 2, 4, 7]
+The 125-th friendly array is [5, 2, 8, 6, 2, 3, 5, 7, 4, 3, 6, 8, 1, 4, 1, 7]
+The 126-th friendly array is [5, 1, 8, 1, 3, 6, 5, 7, 3, 4, 2, 8, 6, 2, 4, 7]
+The 127-th friendly array is [2, 3, 8, 2, 4, 3, 6, 7, 5, 4, 1, 8, 1, 6, 5, 7]
+The 128-th friendly array is [3, 1, 8, 1, 3, 4, 6, 7, 5, 2, 4, 8, 2, 6, 5, 7]
+The 129-th friendly array is [7, 4, 6, 8, 2, 5, 4, 2, 7, 6, 3, 5, 8, 1, 3, 1]
+The 130-th friendly array is [7, 3, 6, 8, 1, 3, 1, 5, 7, 6, 4, 2, 8, 5, 2, 4]
+The 131-th friendly array is [7, 5, 2, 8, 6, 2, 3, 5, 7, 4, 3, 6, 8, 1, 4, 1]
+The 132-th friendly array is [7, 5, 1, 8, 1, 3, 6, 5, 7, 3, 4, 2, 8, 6, 2, 4]
+The 133-th friendly array is [7, 2, 3, 8, 2, 4, 3, 6, 7, 5, 4, 1, 8, 1, 6, 5]
+The 134-th friendly array is [7, 3, 1, 8, 1, 3, 4, 6, 7, 5, 2, 4, 8, 2, 6, 5]
+The 135-th friendly array is [5, 7, 4, 8, 6, 2, 5, 4, 2, 7, 3, 6, 8, 1, 3, 1]
+The 136-th friendly array is [4, 7, 3, 8, 6, 4, 3, 2, 5, 7, 2, 6, 8, 1, 5, 1]
+The 137-th friendly array is [3, 7, 5, 8, 3, 1, 6, 1, 5, 7, 4, 2, 8, 6, 2, 4]
+The 138-th friendly array is [4, 7, 1, 8, 1, 4, 6, 2, 5, 7, 2, 3, 8, 6, 5, 3]
+The 139-th friendly array is [1, 7, 1, 8, 2, 4, 6, 2, 5, 7, 4, 3, 8, 6, 5, 3]
+The 140-th friendly array is [5, 7, 2, 8, 3, 2, 5, 6, 3, 7, 4, 1, 8, 1, 6, 4]
+The 141-th friendly array is [4, 7, 5, 8, 1, 4, 1, 6, 5, 7, 2, 3, 8, 2, 6, 3]
+The 142-th friendly array is [4, 7, 3, 8, 5, 4, 3, 6, 2, 7, 5, 2, 8, 1, 6, 1]
+The 143-th friendly array is [4, 7, 1, 8, 1, 4, 3, 5, 6, 7, 3, 2, 8, 5, 2, 6]
+The 144-th friendly array is [6, 2, 7, 8, 2, 3, 4, 6, 5, 3, 7, 4, 8, 1, 5, 1]
+The 145-th friendly array is [6, 3, 7, 8, 1, 3, 1, 6, 4, 5, 7, 2, 8, 4, 2, 5]
+The 146-th friendly array is [4, 2, 7, 8, 2, 4, 6, 1, 5, 1, 7, 3, 8, 6, 5, 3]
+The 147-th friendly array is [5, 3, 7, 8, 4, 3, 5, 6, 2, 4, 7, 2, 8, 1, 6, 1]
+The 148-th friendly array is [3, 4, 7, 8, 3, 2, 4, 6, 2, 5, 7, 1, 8, 1, 6, 5]
+The 149-th friendly array is [5, 3, 7, 8, 2, 3, 5, 2, 6, 4, 7, 1, 8, 1, 4, 6]
+The 150-th friendly array is [4, 5, 7, 8, 1, 4, 1, 5, 6, 3, 7, 2, 8, 3, 2, 6]
+The 151-th friendly array is [6, 2, 3, 8, 2, 7, 3, 6, 5, 1, 4, 1, 8, 7, 5, 4]
+The 152-th friendly array is [6, 4, 1, 8, 1, 7, 4, 6, 2, 5, 3, 2, 8, 7, 3, 5]
+The 153-th friendly array is [5, 6, 1, 8, 1, 7, 5, 2, 6, 4, 2, 3, 8, 7, 4, 3]
+The 154-th friendly array is [1, 6, 1, 8, 2, 7, 4, 2, 6, 5, 3, 4, 8, 7, 3, 5]
+The 155-th friendly array is [3, 5, 6, 8, 3, 7, 1, 5, 1, 6, 4, 2, 8, 7, 2, 4]
+The 156-th friendly array is [5, 2, 4, 8, 2, 7, 5, 4, 6, 1, 3, 1, 8, 7, 3, 6]
+The 157-th friendly array is [1, 5, 1, 8, 4, 7, 3, 5, 6, 4, 3, 2, 8, 7, 2, 6]
+The 158-th friendly array is [6, 2, 5, 8, 2, 3, 7, 6, 5, 3, 4, 1, 8, 1, 7, 4]
+The 159-th friendly array is [1, 6, 1, 8, 2, 5, 7, 2, 6, 3, 4, 5, 8, 3, 7, 4]
+The 160-th friendly array is [3, 6, 2, 8, 3, 2, 7, 5, 6, 1, 4, 1, 8, 5, 7, 4]
+The 161-th friendly array is [4, 6, 1, 8, 1, 4, 7, 3, 6, 5, 2, 3, 8, 2, 7, 5]
+The 162-th friendly array is [3, 5, 6, 8, 3, 4, 7, 5, 2, 6, 4, 2, 8, 1, 7, 1]
+The 163-th friendly array is [3, 5, 6, 8, 3, 2, 7, 5, 2, 6, 4, 1, 8, 1, 7, 4]
+The 164-th friendly array is [4, 2, 6, 8, 2, 4, 7, 5, 1, 6, 1, 3, 8, 5, 7, 3]
+The 165-th friendly array is [1, 5, 1, 8, 6, 2, 7, 5, 2, 3, 4, 6, 8, 3, 7, 4]
+The 166-th friendly array is [1, 3, 1, 8, 6, 3, 7, 2, 4, 5, 2, 6, 8, 4, 7, 5]
+The 167-th friendly array is [5, 6, 2, 8, 4, 2, 5, 7, 6, 4, 3, 1, 8, 1, 3, 7]
+The 168-th friendly array is [5, 6, 1, 8, 1, 4, 5, 7, 6, 3, 4, 2, 8, 3, 2, 7]
+The 169-th friendly array is [4, 2, 6, 8, 2, 4, 3, 7, 5, 6, 3, 1, 8, 1, 5, 7]
+The 170-th friendly array is [1, 4, 1, 8, 6, 3, 4, 7, 5, 3, 2, 6, 8, 2, 5, 7]
+The 171-th friendly array is [4, 2, 5, 8, 2, 4, 6, 7, 5, 1, 3, 1, 8, 6, 3, 7]
+The 172-th friendly array is [1, 3, 1, 8, 5, 3, 6, 7, 2, 4, 5, 2, 8, 6, 4, 7]
+The 173-th friendly array is [7, 5, 6, 2, 8, 4, 2, 5, 7, 6, 4, 3, 1, 8, 1, 3]
+The 174-th friendly array is [7, 5, 6, 1, 8, 1, 4, 5, 7, 6, 3, 4, 2, 8, 3, 2]
+The 175-th friendly array is [7, 4, 2, 6, 8, 2, 4, 3, 7, 5, 6, 3, 1, 8, 1, 5]
+The 176-th friendly array is [7, 1, 4, 1, 8, 6, 3, 4, 7, 5, 3, 2, 6, 8, 2, 5]
+The 177-th friendly array is [7, 4, 2, 5, 8, 2, 4, 6, 7, 5, 1, 3, 1, 8, 6, 3]
+The 178-th friendly array is [7, 1, 3, 1, 8, 5, 3, 6, 7, 2, 4, 5, 2, 8, 6, 4]
+The 179-th friendly array is [6, 7, 5, 2, 8, 4, 2, 6, 5, 7, 4, 3, 1, 8, 1, 3]
+The 180-th friendly array is [6, 7, 5, 1, 8, 1, 4, 6, 5, 7, 3, 4, 2, 8, 3, 2]
+The 181-th friendly array is [5, 7, 4, 6, 8, 2, 5, 4, 2, 7, 6, 3, 1, 8, 1, 3]
+The 182-th friendly array is [1, 7, 1, 2, 8, 6, 2, 3, 5, 7, 4, 3, 6, 8, 5, 4]
+The 183-th friendly array is [5, 7, 2, 4, 8, 2, 5, 6, 4, 7, 1, 3, 1, 8, 6, 3]
+The 184-th friendly array is [4, 7, 5, 2, 8, 4, 2, 6, 5, 7, 1, 3, 1, 8, 6, 3]
+The 185-th friendly array is [1, 7, 1, 4, 8, 5, 3, 6, 4, 7, 3, 5, 2, 8, 6, 2]
+The 186-th friendly array is [1, 7, 1, 2, 8, 5, 2, 6, 3, 7, 4, 5, 3, 8, 6, 4]
+The 187-th friendly array is [2, 7, 4, 2, 8, 5, 3, 4, 6, 7, 3, 5, 1, 8, 1, 6]
+The 188-th friendly array is [1, 7, 1, 2, 8, 5, 2, 4, 6, 7, 3, 5, 4, 8, 3, 6]
+The 189-th friendly array is [1, 7, 1, 3, 8, 4, 5, 3, 6, 7, 4, 2, 5, 8, 2, 6]
+The 190-th friendly array is [6, 4, 7, 5, 8, 2, 4, 6, 2, 5, 7, 3, 1, 8, 1, 3]
+The 191-th friendly array is [6, 1, 7, 1, 8, 2, 5, 6, 2, 4, 7, 3, 5, 8, 4, 3]
+The 192-th friendly array is [6, 4, 7, 1, 8, 1, 4, 6, 5, 2, 7, 3, 2, 8, 5, 3]
+The 193-th friendly array is [6, 1, 7, 1, 8, 3, 4, 6, 5, 3, 7, 4, 2, 8, 5, 2]
+The 194-th friendly array is [6, 4, 7, 1, 8, 1, 4, 6, 3, 5, 7, 2, 3, 8, 2, 5]
+The 195-th friendly array is [5, 6, 7, 1, 8, 1, 5, 3, 6, 4, 7, 3, 2, 8, 4, 2]
+The 196-th friendly array is [2, 6, 7, 2, 8, 1, 5, 1, 6, 4, 7, 3, 5, 8, 4, 3]
+The 197-th friendly array is [4, 6, 7, 2, 8, 4, 2, 3, 6, 5, 7, 3, 1, 8, 1, 5]
+The 198-th friendly array is [2, 5, 7, 2, 8, 6, 1, 5, 1, 4, 7, 3, 6, 8, 4, 3]
+The 199-th friendly array is [2, 4, 7, 2, 8, 6, 4, 1, 5, 1, 7, 3, 6, 8, 5, 3]
+The 200-th friendly array is [5, 3, 7, 4, 8, 3, 5, 6, 4, 1, 7, 1, 2, 8, 6, 2]
+The 201-th friendly array is [5, 1, 7, 1, 8, 3, 5, 4, 6, 3, 7, 2, 4, 8, 2, 6]
+The 202-th friendly array is [2, 5, 7, 2, 8, 3, 4, 5, 6, 3, 7, 4, 1, 8, 1, 6]
+The 203-th friendly array is [6, 3, 5, 7, 8, 3, 2, 6, 5, 2, 4, 7, 1, 8, 1, 4]
+The 204-th friendly array is [4, 6, 3, 7, 8, 4, 3, 2, 6, 5, 2, 7, 1, 8, 1, 5]
+The 205-th friendly array is [4, 5, 6, 7, 8, 4, 1, 5, 1, 6, 3, 7, 2, 8, 3, 2]
+The 206-th friendly array is [1, 3, 1, 7, 8, 3, 5, 2, 6, 4, 2, 7, 5, 8, 4, 6]
+The 207-th friendly array is [6, 1, 5, 1, 8, 4, 7, 6, 5, 2, 4, 3, 2, 8, 7, 3]
+The 208-th friendly array is [1, 6, 1, 5, 8, 4, 7, 3, 6, 5, 4, 3, 2, 8, 7, 2]
+The 209-th friendly array is [1, 6, 1, 3, 8, 5, 7, 3, 6, 2, 4, 5, 2, 8, 7, 4]
+The 210-th friendly array is [1, 3, 1, 6, 8, 3, 7, 4, 2, 5, 6, 2, 4, 8, 7, 5]
+The 211-th friendly array is [4, 6, 3, 5, 8, 4, 3, 7, 6, 5, 1, 2, 1, 8, 2, 7]
+The 212-th friendly array is [2, 6, 3, 2, 8, 5, 3, 7, 6, 4, 1, 5, 1, 8, 4, 7]
+The 213-th friendly array is [5, 3, 6, 4, 8, 3, 5, 7, 4, 6, 1, 2, 1, 8, 2, 7]
+The 214-th friendly array is [5, 1, 6, 1, 8, 4, 5, 7, 3, 6, 4, 2, 3, 8, 2, 7]
+The 215-th friendly array is [4, 1, 6, 1, 8, 4, 5, 7, 2, 6, 3, 2, 5, 8, 3, 7]
+The 216-th friendly array is [2, 3, 6, 2, 8, 3, 4, 7, 5, 6, 1, 4, 1, 8, 5, 7]
+The 217-th friendly array is [1, 3, 1, 6, 8, 3, 5, 7, 2, 4, 6, 2, 5, 8, 4, 7]
+The 218-th friendly array is [1, 3, 1, 6, 8, 3, 4, 7, 5, 2, 6, 4, 2, 8, 5, 7]
+The 219-th friendly array is [2, 4, 5, 2, 8, 6, 4, 7, 5, 1, 3, 1, 6, 8, 3, 7]
+The 220-th friendly array is [1, 4, 1, 5, 8, 6, 4, 7, 2, 5, 3, 2, 6, 8, 3, 7]
+The 221-th friendly array is [7, 4, 6, 3, 5, 8, 4, 3, 7, 6, 5, 1, 2, 1, 8, 2]
+The 222-th friendly array is [7, 2, 6, 3, 2, 8, 5, 3, 7, 6, 4, 1, 5, 1, 8, 4]
+The 223-th friendly array is [7, 5, 3, 6, 4, 8, 3, 5, 7, 4, 6, 1, 2, 1, 8, 2]
+The 224-th friendly array is [7, 5, 1, 6, 1, 8, 4, 5, 7, 3, 6, 4, 2, 3, 8, 2]
+The 225-th friendly array is [7, 4, 1, 6, 1, 8, 4, 5, 7, 2, 6, 3, 2, 5, 8, 3]
+The 226-th friendly array is [7, 2, 3, 6, 2, 8, 3, 4, 7, 5, 6, 1, 4, 1, 8, 5]
+The 227-th friendly array is [7, 1, 3, 1, 6, 8, 3, 5, 7, 2, 4, 6, 2, 5, 8, 4]
+The 228-th friendly array is [7, 1, 3, 1, 6, 8, 3, 4, 7, 5, 2, 6, 4, 2, 8, 5]
+The 229-th friendly array is [7, 2, 4, 5, 2, 8, 6, 4, 7, 5, 1, 3, 1, 6, 8, 3]
+The 230-th friendly array is [7, 1, 4, 1, 5, 8, 6, 4, 7, 2, 5, 3, 2, 6, 8, 3]
+The 231-th friendly array is [6, 7, 3, 4, 5, 8, 3, 6, 4, 7, 5, 1, 2, 1, 8, 2]
+The 232-th friendly array is [6, 7, 1, 4, 1, 8, 5, 6, 4, 7, 2, 3, 5, 2, 8, 3]
+The 233-th friendly array is [5, 7, 4, 6, 3, 8, 5, 4, 3, 7, 6, 1, 2, 1, 8, 2]
+The 234-th friendly array is [5, 7, 1, 6, 1, 8, 5, 3, 4, 7, 6, 3, 2, 4, 8, 2]
+The 235-th friendly array is [3, 7, 4, 6, 3, 8, 5, 4, 2, 7, 6, 2, 5, 1, 8, 1]
+The 236-th friendly array is [1, 7, 1, 6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3]
+The 237-th friendly array is [1, 7, 1, 6, 3, 8, 4, 5, 3, 7, 6, 4, 2, 5, 8, 2]
+The 238-th friendly array is [2, 7, 5, 2, 6, 8, 3, 4, 5, 7, 3, 6, 4, 1, 8, 1]
+The 239-th friendly array is [1, 7, 1, 4, 6, 8, 3, 5, 4, 7, 3, 6, 2, 5, 8, 2]
+The 240-th friendly array is [1, 7, 1, 2, 6, 8, 2, 5, 3, 7, 4, 6, 3, 5, 8, 4]
+The 241-th friendly array is [1, 7, 1, 4, 5, 8, 6, 3, 4, 7, 5, 3, 2, 6, 8, 2]
+The 242-th friendly array is [2, 7, 3, 2, 5, 8, 3, 4, 6, 7, 5, 1, 4, 1, 8, 6]
+The 243-th friendly array is [6, 4, 7, 5, 3, 8, 4, 6, 3, 5, 7, 1, 2, 1, 8, 2]
+The 244-th friendly array is [6, 2, 7, 5, 2, 8, 4, 6, 3, 5, 7, 4, 3, 1, 8, 1]
+The 245-th friendly array is [5, 6, 7, 3, 4, 8, 5, 3, 6, 4, 7, 1, 2, 1, 8, 2]
+The 246-th friendly array is [2, 6, 7, 2, 4, 8, 5, 3, 6, 4, 7, 3, 5, 1, 8, 1]
+The 247-th friendly array is [3, 6, 7, 2, 3, 8, 2, 4, 6, 5, 7, 1, 4, 1, 8, 5]
+The 248-th friendly array is [3, 5, 7, 4, 3, 8, 6, 5, 4, 1, 7, 1, 2, 6, 8, 2]
+The 249-th friendly array is [3, 1, 7, 1, 3, 8, 6, 4, 2, 5, 7, 2, 4, 6, 8, 5]
+The 250-th friendly array is [3, 1, 7, 1, 3, 8, 4, 5, 6, 2, 7, 4, 2, 5, 8, 6]
+The 251-th friendly array is [6, 4, 1, 7, 1, 8, 4, 6, 3, 5, 2, 7, 3, 2, 8, 5]
+The 252-th friendly array is [6, 2, 3, 7, 2, 8, 3, 6, 4, 5, 1, 7, 1, 4, 8, 5]
+The 253-th friendly array is [1, 6, 1, 7, 2, 8, 5, 2, 6, 3, 4, 7, 5, 3, 8, 4]
+The 254-th friendly array is [1, 6, 1, 7, 4, 8, 3, 5, 6, 4, 3, 7, 2, 5, 8, 2]
+The 255-th friendly array is [3, 4, 6, 7, 3, 8, 4, 5, 1, 6, 1, 7, 2, 5, 8, 2]
+The 256-th friendly array is [1, 5, 1, 7, 3, 8, 6, 5, 3, 2, 4, 7, 2, 6, 8, 4]
+The 257-th friendly array is [5, 2, 4, 7, 2, 8, 5, 4, 6, 3, 1, 7, 1, 3, 8, 6]
+The 258-th friendly array is [2, 6, 3, 2, 7, 8, 3, 5, 6, 1, 4, 1, 7, 5, 8, 4]
+The 259-th friendly array is [2, 6, 4, 2, 7, 8, 3, 4, 6, 5, 3, 1, 7, 1, 8, 5]
+The 260-th friendly array is [1, 6, 1, 3, 7, 8, 4, 3, 6, 5, 2, 4, 7, 2, 8, 5]
+The 261-th friendly array is [5, 1, 6, 1, 7, 8, 5, 2, 4, 6, 2, 3, 7, 4, 8, 3]
+The 262-th friendly array is [2, 4, 6, 2, 7, 8, 4, 5, 1, 6, 1, 3, 7, 5, 8, 3]
+The 263-th friendly array is [1, 5, 1, 6, 7, 8, 2, 5, 4, 2, 6, 3, 7, 4, 8, 3]
+The 264-th friendly array is [1, 4, 1, 5, 7, 8, 4, 3, 6, 5, 2, 3, 7, 2, 8, 6]
+The 265-th friendly array is [2, 4, 6, 2, 5, 8, 4, 7, 3, 6, 5, 1, 3, 1, 8, 7]
+The 266-th friendly array is [3, 4, 5, 6, 3, 8, 4, 7, 5, 2, 6, 1, 2, 1, 8, 7]
+The 267-th friendly array is [2, 4, 5, 2, 6, 8, 4, 7, 5, 3, 1, 6, 1, 3, 8, 7]
+The 268-th friendly array is [1, 4, 1, 5, 6, 8, 4, 7, 3, 5, 2, 6, 3, 2, 8, 7]
+The 269-th friendly array is [7, 2, 4, 6, 2, 5, 8, 4, 7, 3, 6, 5, 1, 3, 1, 8]
+The 270-th friendly array is [7, 3, 4, 5, 6, 3, 8, 4, 7, 5, 2, 6, 1, 2, 1, 8]
+The 271-th friendly array is [7, 2, 4, 5, 2, 6, 8, 4, 7, 5, 3, 1, 6, 1, 3, 8]
+The 272-th friendly array is [7, 1, 4, 1, 5, 6, 8, 4, 7, 3, 5, 2, 6, 3, 2, 8]
+The 273-th friendly array is [4, 7, 1, 6, 1, 4, 8, 5, 3, 7, 6, 2, 3, 5, 2, 8]
+The 274-th friendly array is [3, 7, 2, 6, 3, 2, 8, 4, 5, 7, 6, 1, 4, 1, 5, 8]
+The 275-th friendly array is [4, 7, 5, 3, 6, 4, 8, 3, 5, 7, 2, 6, 1, 2, 1, 8]
+The 276-th friendly array is [1, 7, 1, 3, 5, 6, 8, 3, 4, 7, 5, 2, 6, 4, 2, 8]
+The 277-th friendly array is [6, 2, 7, 4, 2, 5, 8, 6, 4, 3, 7, 5, 1, 3, 1, 8]
+The 278-th friendly array is [2, 5, 7, 2, 6, 3, 8, 5, 4, 3, 7, 6, 1, 4, 1, 8]
+The 279-th friendly array is [2, 5, 7, 2, 3, 6, 8, 5, 3, 4, 7, 1, 6, 1, 4, 8]
+The 280-th friendly array is [3, 1, 7, 1, 3, 6, 8, 5, 2, 4, 7, 2, 6, 5, 4, 8]
+The 281-th friendly array is [4, 2, 7, 5, 2, 4, 8, 6, 3, 5, 7, 1, 3, 1, 6, 8]
+The 282-th friendly array is [3, 1, 7, 1, 3, 5, 8, 6, 4, 2, 7, 5, 2, 4, 6, 8]
+The 283-th friendly array is [6, 3, 5, 7, 4, 3, 8, 6, 5, 4, 2, 7, 1, 2, 1, 8]
+The 284-th friendly array is [6, 2, 5, 7, 2, 4, 8, 6, 5, 3, 4, 7, 1, 3, 1, 8]
+The 285-th friendly array is [4, 6, 1, 7, 1, 4, 8, 5, 6, 2, 3, 7, 2, 5, 3, 8]
+The 286-th friendly array is [3, 6, 2, 7, 3, 2, 8, 5, 6, 4, 1, 7, 1, 5, 4, 8]
+The 287-th friendly array is [4, 5, 6, 7, 3, 4, 8, 5, 3, 6, 2, 7, 1, 2, 1, 8]
+The 288-th friendly array is [1, 5, 1, 7, 3, 6, 8, 5, 3, 4, 2, 7, 6, 2, 4, 8]
+The 289-th friendly array is [4, 2, 5, 7, 2, 4, 8, 6, 5, 3, 1, 7, 1, 3, 6, 8]
+The 290-th friendly array is [1, 3, 1, 7, 5, 3, 8, 6, 4, 2, 5, 7, 2, 4, 6, 8]
+The 291-th friendly array is [6, 1, 5, 1, 7, 4, 8, 6, 5, 3, 4, 2, 7, 3, 2, 8]
+The 292-th friendly array is [1, 6, 1, 3, 7, 5, 8, 3, 6, 4, 2, 5, 7, 2, 4, 8]
+The 293-th friendly array is [4, 1, 6, 1, 7, 4, 8, 5, 2, 6, 3, 2, 7, 5, 3, 8]
+The 294-th friendly array is [4, 1, 6, 1, 7, 4, 8, 3, 5, 6, 2, 3, 7, 2, 5, 8]
+The 295-th friendly array is [1, 5, 1, 6, 7, 3, 8, 5, 4, 3, 6, 2, 7, 4, 2, 8]
+The 296-th friendly array is [1, 3, 1, 6, 7, 3, 8, 5, 2, 4, 6, 2, 7, 5, 4, 8]
+The 297-th friendly array is [3, 6, 4, 5, 3, 7, 8, 4, 6, 5, 1, 2, 1, 7, 2, 8]
+The 298-th friendly array is [3, 5, 6, 4, 3, 7, 8, 5, 4, 6, 1, 2, 1, 7, 2, 8]
+The 299-th friendly array is [1, 5, 1, 6, 4, 7, 8, 5, 3, 4, 6, 2, 3, 7, 2, 8]
+The 300-th friendly array is [1, 5, 1, 4, 6, 7, 8, 5, 4, 2, 3, 6, 2, 7, 3, 8]
+There are in total 300 friendly arrays corresponding to the 8-th ordinal.
+
+Process finished with exit code 0
+```
 
 ## References
 Ronald L. Graham, Donald E. Knuth, and Oren Patashnik. 1994. Concrete Mathematics (Second Edition). Chapter 1.3.
