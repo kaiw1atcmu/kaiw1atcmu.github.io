@@ -32,7 +32,7 @@ _Table 1: The Friendly Arrays For The First Few Ordinals_
     
 Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
 the very beginning, I was tempted to crack this problem by following the tricks applied to the
-[*Josephus Problem*](#refenences). However, due to subtle differences, all efforts were in vain. Vicariously, it
+[*Josephus Problem*](#references). However, due to subtle differences, all efforts were in vain. Vicariously, it
 suddenly dawned on me that the friendly arrays might be approached from a pure programming perspective with stacks, and
 this opinion indeed worked out.
 
