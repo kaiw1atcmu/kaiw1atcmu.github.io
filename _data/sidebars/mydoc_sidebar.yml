@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: Tech Blog
-  version: 20.12.24.0
+  product: # Tech Blog
+  version: # 20.12.24.0
   folders:
 
   - title:
