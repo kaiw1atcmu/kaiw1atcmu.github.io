@@ -1,5 +1,5 @@
 ---
-title: "Friendly Arrays [more to come]"
+title: "Friendly Arrays"
 keywords: friendly array
 date: 2020-01-22 22:14:35 -0800
 last_updated: December 26, 2020
@@ -44,10 +44,16 @@ $f(n)$. more to come ...
 ```python
 # Friendly Arrays Stack Version One
 
-n = 8   # specify n for n-th friendly arrays
-stack = []
-status = {'filled': [0] * 2 * n, 'cur_val': n + 1}  # 'filled' is (partly) filled array, 'cur_val' is last value filled.
-stack.append(status)
+"""
+n:      specify n for n-th friendly arrays
+stack:  stack to pack in unexplored status
+status: current status. 'filled' is (partly) filled array, 'cur_val' is last value filled for current status.
+cnt:    counter to store number of n-th friendly arrays
+"""
+
+n = 8
+status = {'filled': [0] * 2 * n, 'cur_val': n + 1}
+stack = [status]
 cnt = 0
 
 while stack:
@@ -55,7 +61,7 @@ while stack:
     array = status['filled']
     cur_val = status['cur_val'] - 1
     stack = stack[:-1]
-    if cur_val == 0:    # already have filled 1, and you are done.
+    if cur_val == 0:    # already have filled 1 so that 0 is next to fill, and you are done.
         cnt += 1
         print('The {}-th friendly array is {}'.format(cnt, status['filled']))
         continue
@@ -385,12 +391,18 @@ $n$-th friendly arrays in total is given by $f(n)$. more to come ...
 ```python
 # Friendly Arrays Stack Version Two
 
-n = 8   # specify n for n-th friendly arrays
-stack = []
-status = {'filled': [0] * 2 * n, 'cur_val': n}  # 'filled' is (partly) filled array, 'cur_val' is last value filled.
+"""
+n:      specify n for n-th friendly arrays
+stack:  stack to pack in unexplored status
+status: current status. 'filled' is (partly) filled array, 'cur_val' is last value filled for current status.
+cnt:    counter to store number of n-th friendly arrays
+"""
+
+n = 8
+status = {'filled': [0] * 2 * n, 'cur_val': n}
 status['filled'][0] = n
 status['filled'][n + 1] = n
-stack.append(status)
+stack = [status]
 cnt = 0
 
 def next_step(stack):
@@ -422,7 +434,7 @@ while stack:
     status = stack[-1]
     array = status['filled']
     cur_val = status['cur_val'] - 1
-    if cur_val == 0:    # already have filled 1, and you are done.
+    if cur_val == 0:    # already have filled 1 so that 0 is next to fill, and you are done.
         cnt += 1
         print('The {}-th friendly array is {}'.format(cnt, status['filled']))
     stack = next_step(stack)
@@ -747,8 +759,14 @@ is given by $f(n)$. more to come ...
 ```python
 # Friendly Arrays Iterative Version
 
-n = 8   # specify n for n-th friendly arrays
-status = {'filled': [0] * 2 * n, 'cur_val': n + 1}  # 'filled' is (partly) filled array, 'cur_val' is last value filled.
+"""
+n:      specify n for n-th friendly arrays
+status: current status. 'filled' is (partly) filled array, 'cur_val' is last value filled for current status.
+cnt:    counter to store number of n-th friendly arrays
+"""
+
+n = 8
+status = {'filled': [0] * 2 * n, 'cur_val': n + 1}
 cnt = 0
 
 def next_step(status):
@@ -759,8 +777,7 @@ def next_step(status):
             array[i] = cur_val
             array[i + cur_val + 1] = cur_val
             return {'filled': array, 'cur_val': cur_val}
-    array = status['filled']
-    cur_val = status['cur_val']
+    cur_val += 1
     while cur_val <= n:
         pos = array.index(cur_val)
         array[pos] = 0
@@ -777,7 +794,7 @@ def next_step(status):
 while status:
     array = status['filled']
     cur_val = status['cur_val'] - 1
-    if cur_val == 0:    # already have filled 1, and you are done.
+    if cur_val == 0:    # already have filled 1 so that 0 is next to fill, and you are done.
         cnt += 1
         print('The {}-th friendly array is {}'.format(cnt, status['filled']))
     status = next_step(status)

@@ -99,7 +99,7 @@ entries:
       url: /defective_calculators.html
       output: web, pdf
 
-    - title: Friendly Arrays [more to come]
+    - title: Friendly Arrays
       url: /friendly_arrays.html
       output: web, pdf
 
