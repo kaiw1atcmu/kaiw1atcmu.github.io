@@ -24,7 +24,7 @@ entries:
     folderitems:
 
     - title: A Little Something Before You Read
-      url: /index.html
+      url: /a_little_something_before_you_read.html
       output: web, pdf
 
     - title: Site Launched
