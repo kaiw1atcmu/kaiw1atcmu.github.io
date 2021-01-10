@@ -7,5 +7,7 @@ last_updated: December 26, 2020
 sidebar: mydoc_sidebar
 ---
 
+# Welcome To My Weblog!
+
 <img src="{{ "images/windows10_desktop.jpg" }}" alt="A Long Journey"/>
-_Life Is More Like A Long Journey in Solitude_
+<center><I>Life Is More Like A Long Journey in Solitude</I></center>
