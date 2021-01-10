@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Weblog!"
-layout: page
+layout: post
 keywords: welcome, weblog
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
