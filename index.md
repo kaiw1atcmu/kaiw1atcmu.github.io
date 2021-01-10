@@ -1,13 +1,13 @@
 ---
-title: "Welcome to my Weblogs!"
-keywords: welcome, welcome to weblogs
+title: "Welcome To My Research Blogs!"
+keywords: welcome, research blogs
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
 sidebar: mydoc_sidebar
 ---
 
 <img src="{{ "images/windows10_desktop.jpg" }}" alt="Windows 10 Desktop"/>
-_Figure 1: My Perspective on Scientific Research._
+_Scientific Research Is More Like A Long Journey in Solitude._
 
 ## How Is Research Formally Defined?
 In some universities, *research* might probably be define in this way:
@@ -25,8 +25,9 @@ In some universities, *research* might probably be define in this way:
 
 ## What Is My Perspective On Scientific Research?
 As a veteran software developer and seasoned algorithm engineer, I constantly feel unfulfilled with the passive
-acquisition of ready-made knowledge alone, and I am in the conviction that quality research should be conducted and
-consolidated with a principled, mathematical methodology.
+acquisition of ready-made knowledge alone, and I am always in the conviction that quality research should be conducted
+and consolidated with a principled, mathematical methodology. Sentimentally, scientific research is more like a long
+journey in solitude.
 
 ## References
 [Definition of Research](https://researchwhisperer.org/2012/09/18/what-is-research)
