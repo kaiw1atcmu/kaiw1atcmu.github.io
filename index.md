@@ -8,6 +8,6 @@ sidebar: mydoc_sidebar
 ---
 
 # Welcome To My Weblog!
-
+<br/>
 <img src="{{ "images/windows10_desktop.jpg" }}" alt="A Long Journey"/>
 <center><I>Life Is More Like A Long Journey in Solitude</I></center>
