@@ -1,5 +1,6 @@
 ---
-title: "Welcome To Blogs!"
+title: "Welcome To My Blogs!"
+template: none
 keywords: welcome, blogs
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
