@@ -24,13 +24,9 @@ In some universities, *research* might probably be define in this way:
 > specific, practical aim or objective (including a client-driven purpose).
 
 ## What Is My Perspective On Scientific Research?
-As a veteran software developer and seasoned algorithm engineer, I constantly feel unfulfilled with passive acquisition
-of ready-made knowledge, and simply conducting self-motivated research in general AI-related fields. Rather, I sincerely
-look forward to learning from pioneers in the AI research community, hope to take part in serious research-oriented
-training, and proactively push forward AI frontiers.
-
-Personally, I have a definitive mission toward doing quality research and consolidating my research with a principled
-mathematical methodology.
+As a veteran software developer and seasoned algorithm engineer, I constantly feel unfulfilled with the passive
+acquisition of ready-made knowledge alone, and I am in the conviction that quality research should be conducted and
+consolidated with a principled, mathematical methodology.
 
 ## References
 [Definition of Research](https://researchwhisperer.org/2012/09/18/what-is-research)
