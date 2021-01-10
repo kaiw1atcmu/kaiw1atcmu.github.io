@@ -10,7 +10,7 @@ sidebar: mydoc_sidebar
 _Figure 1: My Perspective on Scientific Research._
 
 ## How Is Research Formally Defined?
-In some universities, *research* might be define in this way:
+In some universities, *research* might probably be define in this way:
 > Research is defined as the creation of new knowledge and/or the use of existing knowledge in a new and creative way so
 > as to generate new concepts, methodologies and understandings. This could include synthesis and analysis of previous
 > research to the extent that it leads to new and creative outcomes.
@@ -24,6 +24,13 @@ In some universities, *research* might be define in this way:
 > specific, practical aim or objective (including a client-driven purpose).
 
 ## What Is My Perspective On Scientific Research?
+As a veteran software developer and seasoned algorithm engineer, I constantly feel unfulfilled with passive acquisition
+of ready-made knowledge, and simply conducting self-motivated research in general AI-related fields. Rather, I sincerely
+look forward to learning from pioneers in the AI research community, hope to take part in serious research-oriented
+training, and proactively push forward AI frontiers.
+
+Personally, I have a definitive mission toward doing quality research and consolidating my research with a principled
+mathematical methodology.
 
 ## References
 [Definition of Research](https://researchwhisperer.org/2012/09/18/what-is-research)
