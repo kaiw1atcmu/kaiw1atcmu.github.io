@@ -10,5 +10,5 @@ sidebar: mydoc_sidebar
 <br/>
 <center>
     <img src="{{ "images/a_long_journey.jpg" }}" alt="a long journey"/>
-    <I>Life Is More Like A Long Journey in Solitude, Striving For Deterministicity Amongst Tons Of Stochasticities.</I>
+    <I>Life Is More Like A Long Journey In Solitude, Striving For Deterministicity Amongst Tons Of Stochasticities.</I>
 </center>
