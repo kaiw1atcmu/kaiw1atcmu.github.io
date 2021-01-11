@@ -1,7 +1,6 @@
 ---
 title: "Welcome To Kaiser's Tech Blog!"
-layout: page
-keywords: welcome, blog
+layout: post_index
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
 sidebar: mydoc_sidebar
