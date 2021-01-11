@@ -9,6 +9,6 @@ sidebar: mydoc_sidebar
 
 <br/>
 <center>
-    <img src="{{ "images/a_long_journey.jpg" }}" alt="a long journey" width=1200/>
+    <img src="{{ "images/a_long_journey.jpg" }}" alt="a long journey" width=1500/>
 </center>
 <center><I>Life Is More Like A Long Journey in Solitude</I></center>
