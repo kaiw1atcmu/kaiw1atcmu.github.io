@@ -35,7 +35,7 @@ entries:
       url: /markdown_template_for_posts.html
       output: web, pdf
 
-  - title: Maths
+  - title: Mathematics
     output: web, pdf
     folderitems:
 
