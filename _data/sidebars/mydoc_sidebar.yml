@@ -6,19 +6,6 @@ entries:
   version: # 20.12.24.00
   folders:
 
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage.html
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage.html
-      output: pdf
-      type: frontmatter
-
   - title: Welcome
     output: web, pdf
     folderitems:
@@ -143,30 +130,30 @@ entries:
       url: /network_pruning_the_old-school_methods.html
       output: web, pdf
 
-    subfolders:
-    - title: Variational Auto-Encoders
-      output: web, pdf
-      subfolderitems:
-
+      subfolders:
       - title: Variational Auto-Encoders
-        url: /variational_auto-encoders.html
         output: web, pdf
+        subfolderitems:
 
-      - title: Stochastic Backpropagation And Approximate Inference [more to come]
-        url: /stochastic_backpropagation_and_approximate_inference.html
+        - title: Variational Auto-Encoders
+          url: /variational_auto-encoders.html
+          output: web, pdf
+
+        - title: Stochastic Backpropagation And Approximate Inference [more to come]
+          url: /stochastic_backpropagation_and_approximate_inference.html
+          output: web, pdf
+
+      - title: TensorFlow
         output: web, pdf
+        subfolderitems:
 
-    - title: TensorFlow
-      output: web, pdf
-      subfolderitems:
+        - title: Getting Started With TensorFlow-GPU
+          url: /getting_started_with_tensorflow-gpu.html
+          output: web, pdf
 
-      - title: Getting Started With TensorFlow-GPU
-        url: /getting_started_with_tensorflow-gpu.html
+      - title: Transformers
         output: web, pdf
-
-    - title: Transformers
-      output: web, pdf
-      subfolderitems:
+        subfolderitems:
 
   - title: Foreign Languages
     output: web, pdf
