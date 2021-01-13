@@ -79,8 +79,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    -
-
   - title: Algorithms
     output: web, pdf
     folderitems:
@@ -169,8 +167,6 @@ entries:
       - title: Transformers
         output: web, pdf
         subfolderitems:
-
-        -
 
   - title: Foreign Languages
     output: web, pdf
