@@ -143,6 +143,7 @@ entries:
       url: /network_pruning_the_old-school_methods.html
       output: web, pdf
 
+    subfolders:
     - title: Variational Auto-Encoders
       output: web, pdf
       subfolderitems:
