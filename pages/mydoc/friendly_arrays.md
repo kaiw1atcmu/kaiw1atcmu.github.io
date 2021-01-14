@@ -27,8 +27,7 @@ $i\in[1,k]$. Let us enumerate the first few friendly arrays, for example:
 | the 6-th | (none) |
 | the 7-th | (4, 6, 1, 7, 1, 4, 3, 5, 6, 2, 3, 7, 2, 5), and 51 more... |
 | the 8-th | (6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3, 1, 7, 1), and 299 more... |
-
-_Table 1: The Friendly Arrays For The First Few Ordinals_
+<center><I>Table 1: The Friendly Arrays For The First Few Ordinals</I></center>
     
 Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
 the very beginning, I was tempted to crack this problem by following the tricks applied to the
@@ -37,9 +36,14 @@ suddenly dawned on me that the friendly arrays might be approached from a pure p
 this opinion indeed worked out.
 
 ## Stack Version One
-Without considerations for memory efficiency, this straight-forward Stack Version One approach using a stack consumes
-the most memory space. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by
-$f(n)$. more to come ...
+Without considerations for memory efficiency, this straight-forward Stack Version One implements a *breadth-first-search
+(BFS)* approach using a stack, which consumes the most memory space. Supposing for the $n$-th ordinal, the number of the
+$n$-th friendly arrays in total is given by $f(n)$. more to come to estimate time and space complexity in details ...
+
+<center>
+    <img src="{{ "images/20200122-2.png" }}" alt="Breadth-First-Search"/>
+    <I>Figure 1: Illustration Of Stack Details In Breadth-First-Search.</I>
+</center>
 
 ```python
 # Friendly Arrays Stack Version One
@@ -383,10 +387,16 @@ Process finished with exit code 0
 ```
 
 ## Stack Version Two
-With considerations for memory efficiency, this slightly improved Stack Version Two approach (still using a stack)
-consumes much less memory space. At any time, the stack at most unfolds one "status" for each level down through the
-hierarchy, essentially trading time complexity for space complexity. Supposing for the $n$-th ordinal, the number of the
-$n$-th friendly arrays in total is given by $f(n)$. more to come ...
+With considerations for memory efficiency, this slightly improved Stack Version Two approach implements a
+*Depth-First-Search (DFS)* still using a stack, which consumes much less memory space. At any time, the stack at most
+unfolds one status for each level down through the hierarchy, essentially trading time complexity for space complexity.
+Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by $f(n)$. more to come to
+estimate time and space complexity in details ...
+
+<center>
+    <img src="{{ "images/20200122-3.png" }}" alt="Depth-First-Search"/>
+    <I>Figure 2: Illustration Of Stack Details In Depth-First-Search.</I>
+</center>
 
 ```python
 # Friendly Arrays Stack Version Two
@@ -754,7 +764,7 @@ Process finished with exit code 0
 With more concern for memory efficiency, this largely improved Iterative Version approach (using no stack) consumes only
 constant O(1) memory space, i.e. an in-place algorithm. At any time, only the current status is maintained. It uses as
 low a space complexity as possible. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total
-is given by $f(n)$. more to come ...
+is given by $f(n)$. more to come to estimate time and space complexity in details ...
 
 ```python
 # Friendly Arrays Iterative Version
