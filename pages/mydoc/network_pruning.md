@@ -105,9 +105,11 @@ As pointed out by the authors, in some rare cases such as two-layer xor, both Ma
 might delete an incorrect weight, and this mistake could not be overcome by further network training, so that they could
 never learn that function correctly (i.e., achieve zero error).
 
-<img src="{{ "images/20191112-1.png" }}" alt="OBS outperformed others"/>
-_Figure 1: Comparison That Demonstrates The Superiority Of Optimal Brain Damage (OBS). By courtesy of Figure 3 in
-[Babak Hassibi et al. (1993)](#references). Reproduced for better visualization._
+<center>
+    <img src="{{ "images/20191112-1.png" }}" alt="OBS outperformed others"/>
+    <I>Figure 1: Comparison That Demonstrates The Superiority Of Optimal Brain Damage (OBS). By courtesy of Figure 3 in
+    [Babak Hassibi et al. (1993)](#references). Reproduced for better visualization.</I>
+</center>
 
 ## Cascade-Correlation
 One contrary idea to network pruning is to begin with a network containing no hidden units, then grow the network as

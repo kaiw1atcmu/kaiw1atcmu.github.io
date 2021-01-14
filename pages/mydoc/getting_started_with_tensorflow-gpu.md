@@ -180,8 +180,10 @@ without being explicitly told to do so. Finally, you should run the TensorFlow-i
 outputs and should observe significant execution speed-ups. You can also verify this by looking at the Performance tab
 of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which is an integrated Graphic Card.)
 
-<img src="{{ "images/20201228-1.png" }}" alt="Performance Tab"/>
-_Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities._
+<center>
+    <img src="{{ "images/20201228-1.png" }}" alt="Performance Tab"/>
+    <I>Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</I>
+</center>
 
 ## Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
 What is the differences between installing tensorflow and tensorflow-gpu, if both support GPU operations in the presence
@@ -196,7 +198,7 @@ the answers can be summarized below. Please note that running the script always 
 | gpu with cuda+cudnn installed    |    yes     |   yes           |
 | gpu without cuda+cudnn installed |    yes     |   no (~tf-like) |
 
-_Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings_  
+<center><I>Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</I></center>  
 
 Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
 library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since it is

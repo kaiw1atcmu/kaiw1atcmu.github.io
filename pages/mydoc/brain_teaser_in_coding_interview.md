@@ -62,7 +62,7 @@ at least two ways with integers ranging between 1 and 20 inclusive. It is high t
 |    31     |                       (15, 16)                        |    32    |                       (12, 20)       |
 |  $\ge$33  |                        (none)                         |            |                                    |
 
-_Table 1: What A In The Second Round Was Able To Infer To The Best Of Information Known_
+<center><I>Table 1: What A In The Second Round Was Able To Infer To The Best Of Information Known</I></center>
 
 ## B In The Second Round
 From this table, when A knew "the sum was 31" and "B was not able to decide the solution with product told", A inferred
@@ -76,7 +76,7 @@ demonstrate B's view, another table has to be constructed:
 | 180 | (20, 9) |
 | 240 | (15, 16), (12, 20) |
 
-_Table 2: What B In The Second Round Was Able To Infer To The Best Of Information Known_
+<center><I>Table 2: What B In The Second Round Was Able To Infer To The Best Of Information Known</I></center>
 
 ## The Solution
 From this table, B was able to infer the solution for products 4 and 180. Therefore, the possible answers to this puzzle

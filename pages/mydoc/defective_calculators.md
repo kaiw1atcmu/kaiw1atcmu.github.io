@@ -20,8 +20,10 @@ relatively infrequently, so their mean time to failure should be longer in respo
 fractional number $\frac{355}{113}$ dates back to the 5th century A.D. when the famous Chinese mathematician 祖冲之
 approximated $\pi$ with it.)
 
-<img src="{{ "images/20200116-1.png" }}" alt="a profile of 祖冲之"/>
-_Figure 1: A profile of the famous Chinese mathematician 祖冲之 who appeared on a Chinese postal stamp._
+<center>
+    <img src="{{ "images/20200116-1.png" }}" alt="a profile of 祖冲之"/>
+    <I>Figure 1: A profile of the famous Chinese mathematician 祖冲之 who appeared on a Chinese postal stamp.</I>
+</center>
 
 ## Function Compositions
 To kickoff, let us make clear the domains and ranges of frequently used inverse trigonometric functions for our cases:

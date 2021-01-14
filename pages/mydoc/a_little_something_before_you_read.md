@@ -10,9 +10,13 @@ permalink: a_little_something_before_you_read.html
 folder: mydoc
 ---
 
-![Pittsburgh Dawn](http://d1.027cgb.com/627357/github_blog/Pittsburgh_dawn_city_pano.jpg)
-_Panorama at Dawntime, City of Pittsburgh. Carnegie Mellon University and The University of Pittsburgh are located far
-from the downtown area, over the upper right horizon of the landscape. You simply can not see them._
+<center>
+    <img src="{{ "images/Pittsburgh_dawn_city_pano.jpg" }}" alt="Pittsburgh Dawn"/>
+    <I>
+        Panorama at Dawntime, City of Pittsburgh. Carnegie Mellon University and The University of Pittsburgh are
+        located far from the downtown area, over the upper right horizon of the landscape. You simply can not see them.
+    </I>
+</center>
 
 ## About Me
 Hi there! I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. Welcome to my personal website!

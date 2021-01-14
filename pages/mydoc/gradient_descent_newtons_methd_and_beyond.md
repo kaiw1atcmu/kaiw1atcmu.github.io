@@ -30,9 +30,10 @@ information contained in the Hessian matrix, which makes it difficult to choose 
 appropriate stepsize must be small enough to avoid overshooting the minimum and going uphill in directions with strong
 positive curvature.
 
-<img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
-_Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in
-[Ian Goodfellow et al.](#references)._
+<center>
+    <img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
+    <I>Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in [Ian Goodfellow et al.](#references).</I>
+</center>
 
 ## Gradient Descent or Steepest Descent with Line Search
 Figure 1 illustrates an example of overshooting occurred while performing the gradient descent method. Another approach
@@ -193,8 +194,10 @@ from an arbitrary $\mathbf{x}_0$ and $\mathbf{B}_0=\mathbf{I}$, the BFGS algorit
 > $\mathbf{x_{k+1}}=\mathbf{x_k}+\lambda_k\mathbf{d_k}$. Calculate $\mathbf{B}_{k+1}
 =\mathbf{B}_k+\Delta\mathbf{B}_k$ and increment $k$.
 
-<img src="{{ "images/20200202-2.jpg" }}" alt="BFGS Gang of Four"/>
-_Figure 2: Yet Another "Gang Of Four". By courtesy of [understanding-lbfgs](#references)._
+<center>
+    <img src="{{ "images/20200202-2.jpg" }}" alt="BFGS Gang of Four"/>
+    <I>Figure 2: Yet Another "Gang Of Four". By courtesy of [understanding-lbfgs](#references).</I>
+</center>
 
 ## Broyden's Algorithm
 Denote $\mathbf{G_k}=\mathbf{B_k}^{-1}$ and $\mathbf{G_{k+1}}=\mathbf{B}_{k+1}^{-1}$, and apply twice the

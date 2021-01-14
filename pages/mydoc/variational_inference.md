@@ -59,7 +59,7 @@ roughly summarize them as
 | closed-form | EM and VI | directly solving for roots |
 | no closed-form | VI | gradient descent |
 
-_Table 1: Conditions Under Which EM And VI Are Feasible_ 
+<center><I>Table 1: Conditions Under Which EM And VI Are Feasible</I></center>
 
 ## Variational Inference as Maximum a Posteriori (MAP)
 An alternative form of inference is to compute the single most likely value of the missing variables, rather than to

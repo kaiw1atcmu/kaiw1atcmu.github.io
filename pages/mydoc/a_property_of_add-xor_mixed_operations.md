@@ -59,11 +59,15 @@ until we arrive at $c_{ij(k+1)}$, the carry into the next bit higher than the MS
 creating a tree-shaped memory hierarchy to keep track of products such as $a_{i1}a_{i2}$. Concretely, the tree is
 constructed for the $i$-th integer $a_i$ in $\mathbf{a}$ and the $j$-th integer $b_j$ in $\mathbf{b}$, like this,
 
-<img src="{{ "images/20200120-1.png" }}" alt="tree for a_i"/>
-_Figure 1: tree for_ $a_i$
+<center>
+    <img src="{{ "images/20200120-1.png" }}" alt="tree for a_i"/>
+    <I>Figure 1: tree for</I> $a_i$
+</center>
 
-<img src="{{ "images/20200120-2.png" }}" alt="tree for b_j"/>
-_Figure 2: tree for_ $b_j$
+<center>
+    <img src="{{ "images/20200120-2.png" }}" alt="tree for b_j"/>
+    <I>Figure 2: tree for</I> $b_j$
+</center>
 
 (note that $\text{tree}\_\text{b}$ is created like $\text{tree}\_\text{a}$, plus a series of iterative and recursive
 node swappings, as illustrated), where $a_{ik}$ is the $k$-th digit of integer $a_i$,  $b_{jk}$ is the $k$-th digit of
@@ -75,11 +79,15 @@ $$
 $$
 
 ## The Algorithm in Vector Form
-<img src="{{ "images/20200120-3.png" }}" alt="tree for a_i vector"/>
-_Figure 3: tree for_ $\mathbf{a}$
+<center>
+    <img src="{{ "images/20200120-3.png" }}" alt="tree for a_i vector"/>
+    <I>Figure 3: tree for</I> $\mathbf{a}$
+</center>
 
-<img src="{{ "images/20200120-4.png" }}" alt="tree for b_j vector"/>
-_Figure 4: tree for_ $\mathbf{b}$
+<center>
+    <img src="{{ "images/20200120-4.png" }}" alt="tree for b_j vector"/>
+    <I>Figure 4: tree for</I> $\mathbf{b}$
+</center>
 
 This formula extends naturally to vectors $\mathbf{a}_k\in\mathbf{R}^m$ and $\mathbf{b}_k\in\mathbf{R}^n$, denoting the
 vectors for $\mathbf{a}$'s $k$-th digits and $\mathbf{b}$'s $k$-th digits, respectively, where $\mathbf{c}_k$

@@ -16,8 +16,10 @@ geometry is raised by maths geeks in *Zhihu (知乎)*, a.k.a. the Chinese *Quora
 accessible to the general public (i.e., people outside of the mathematical community): can two ellipses perfectly
 coincide in circumference when bent along the major axis?
 
-<img src="{{ "images/20191126-1.jpg" }}" alt="image1 simulation"/>
-_Figure 1: Simulation. By courtesy of users from Zhihu (知乎)._
+<center>
+    <img src="{{ "images/20191126-1.jpg" }}" alt="image1 simulation"/>
+    <I>Figure 1: Simulation. By courtesy of users from Zhihu (知乎).</I>
+</center>
 
 ## At First Glance
 At first glance, we should recourse to differential geometry to approach this problem. Even worse, the elliptic
@@ -25,8 +27,10 @@ integrals are generally intractable where a closed-form solution is desirable. H
 its bent circumference is to use arc length $s$. By careful analysis, I think the answer is simply "yes". And there is
 only one way to bend the ellipses.
 
-<img src="{{ "images/20191126-2.jpg" }}" alt="image2"/>
-_Figure 2: Coordinates of bent ellipses re-parameterized by arc length $s$._
+<center>
+    <img src="{{ "images/20191126-2.jpg" }}" alt="image2"/>
+    <I>Figure 2: Coordinates of bent ellipses re-parameterized by arc length</I> $s$.
+</center>
 
 ## An Assumption on $dx(s)/ds$
 Let us consider only quarter ellipses. Suppose the circumference of one bent ellipse is re-parameterized by
@@ -121,8 +125,10 @@ $$
 which is exactly the desired inequality. **This is also instrumental in explaining why two ellipses can perfectly
 coincide in circumference when bent along the major axis, not along the minor axis!**
 
-<img src="{{ "images/20191126-3.jpg" }}" alt="image3"/>
-_Figure 3: Condition under which bending towards the origin along the opposite direction of $\mathcal{Z}$ is feasible._
+<center>
+    <img src="{{ "images/20191126-3.jpg" }}" alt="image3"/>
+    <I>Figure 3: Condition under which bending towards the origin along the opposite direction of</I> $\mathcal{Z}$ <I>is feasible.</I>
+</center>
 
 ## How Do We Render It?
 This proof actually shows a constructive way of rendering this bending. Since $y(s)$ is fixed, we can position an end of
@@ -134,8 +140,10 @@ bending is always feasible. By doing this successively from $s=0$ to $s=l$, we a
 other ellipse is bent identically and positioned symmetrically. As we have already verified, the two circumferences
 coincide.
 
-<img src="{{ "images/20191126-4.jpg" }}" alt="image4"/>
-_Figure 4: Illustration of how bending towards the origin along the opposite direction of $\mathcal{Z}$ is performed._
+<center>
+    <img src="{{ "images/20191126-4.jpg" }}" alt="image4"/>
+    <I>Figure 4: Illustration of how bending towards the origin along the opposite direction of</I> $\mathcal{Z}$ <I>is performed.</I>
+</center>
 
 ## Without the Assumption on $dx(s)/ds$
 Without the assumption on $x(s)$, we can at best make a conclusion that $dx(l-s)/ds=\pm dx(s)/ds$, an equality of little
@@ -178,8 +186,10 @@ It happens if and only if the foregoing assumption on $x(s)$, that $x(s)$ is eit
 monotonically decreasing, is violated. Whenever it happens, although the ellipses share circumferences, they intercept
 into each other and thus can not make a solution to the problem.
 
-<img src="{{ "images/20191126-5.jpg" }}" alt="image5"/>
-_Figure 5: Illustration of $x(s)$ "warping around"._
+<center>
+    <img src="{{ "images/20191126-5.jpg" }}" alt="image5"/>
+    <I>Figure 5: Illustration of</I> $x(s)$ <I>"warping around".</I>
+</center>
 
 ## Concluding Remarks
 ### The Need For Positive Derivative Assumption
