@@ -27,6 +27,7 @@ $i\in[1,k]$. Let us enumerate the first few friendly arrays, for example:
 | the 6-th | (none) |
 | the 7-th | (4, 6, 1, 7, 1, 4, 3, 5, 6, 2, 3, 7, 2, 5), and 51 more... |
 | the 8-th | (6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3, 1, 7, 1), and 299 more... |
+
 <center><I>Table 1: The Friendly Arrays For The First Few Ordinals</I></center>
     
 Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
