@@ -212,7 +212,10 @@ create a gist in [GitHub' gist pages](#gist.github.com), copy its unique id, and
 
 {% gist c21b42b41f05ae3bd1f9f6264e5dae90 %}
 
-## Notes and Warnings
+## Tips, Notes, and Warnings
+{% include tip.html content="For a better terminal emulator on Windows, use
+[Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
+
 {% include note.html content="If you're cloning this theme, you're probably writing documentation of some kind. I have a
 blog on technical writing here called <a alt='technical writing blog' href='http://idratherbewriting.com'>I'd Rather Be
 Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing
