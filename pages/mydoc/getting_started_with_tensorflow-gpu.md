@@ -181,7 +181,7 @@ outputs and should observe significant execution speed-ups. You can also verify 
 of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which is an integrated Graphic Card.)
 
 <center>
-    <img src="{{ "images/20201228-1.png" }}" alt="Performance Tab"/>
+    <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab"/>
     <I>Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</I>
 </center>
 
@@ -199,7 +199,7 @@ the answers can be summarized below. Please note that running the script always 
 | gpu without cuda+cudnn installed |    yes     |   no (~tf-like) |
 
 <center><I>Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</I></center>  
-
+<br/>
 Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
 library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since it is
 no longer provided in Anaconda channels. You could have it downloaded and installed by executing
