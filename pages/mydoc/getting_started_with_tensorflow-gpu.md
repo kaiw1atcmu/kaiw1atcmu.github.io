@@ -182,7 +182,7 @@ outputs and should observe significant execution speed-ups. You can also verify 
 of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which is an integrated Graphic Card.)
 
 <center>
-    <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab"/>
+    <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab" max-width=1000/>
     <I>Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</I>
 </center>
 
