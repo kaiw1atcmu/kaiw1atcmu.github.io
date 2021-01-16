@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Getting Started With TensorFlow-gpu"
 keywords: tensorflow, gpu
 date: 2020-12-28 03:43:45 -0800
@@ -8,7 +8,7 @@ tags: [deep_learning]
 summary: "TensorFlow has been a powerful yet subtle deep learning framework for the research community and the industry
 alike. Today let me devote this post to getting readers started with TensorFlow's GPU packages, from essentially the
 very beginning."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: getting_started_with_tensorflow-gpu.html
 folder: mydoc
 ---
