@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Getting Started With TensorFlow-gpu"
 keywords: tensorflow, gpu
 date: 2020-12-28 03:43:45 -0800
@@ -18,7 +17,83 @@ Today let me devote this post to getting readers started with TensorFlow's GPU p
 beginning.
 
 ## My Operating System And Other Settings
-My *LEGION* (a sub-brand of *LENOVO*) laptop has Windows 10 installed. The machine's important settings are ...
+My *LEGION* (a sub-brand of *LENOVO*) laptop has Windows 10 installed. The machine's important settings are found by
+running command `systeminfo` in Windows 10's `CMD` terminal:
+
+```
+Host Name:                 LAPTOP-BFD2CE3C
+OS Name:                   Microsoft Windows 10 Home China
+OS Version:                10.0.18363 N/A Build 18363
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          lx
+Registered Organization:
+Product ID:                00342-30262-00002-AAOEM
+Original Install Date:     9/11/2019, 23:12:21
+System Boot Time:          1/13/2021, 13:51:46
+System Manufacturer:       LENOVO
+System Model:              81LC
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 158 Stepping 10 GenuineIntel ~2208 Mhz
+BIOS Version:              LENOVO 9VCN12WW, 8/6/2018
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              zh-cn;Chinese (China)
+Time Zone:                 (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+Total Physical Memory:     8,065 MB
+Available Physical Memory: 1,832 MB
+Virtual Memory: Max Size:  21,889 MB
+Virtual Memory: Available: 12,674 MB
+Virtual Memory: In Use:    9,215 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\LAPTOP-BFD2CE3C
+Hotfix(s):                 22 Hotfix(s) Installed.
+                           [01]: KB4586878
+                           [02]: KB4515383
+                           [03]: KB4516115
+                           [04]: KB4517245
+                           [05]: KB4521863
+                           [06]: KB4524569
+                           [07]: KB4528759
+                           [08]: KB4535680
+                           [09]: KB4537759
+                           [10]: KB4541338
+                           [11]: KB4552152
+                           [12]: KB4560959
+                           [13]: KB4561600
+                           [14]: KB4565554
+                           [15]: KB4569073
+                           [16]: KB4576751
+                           [17]: KB4577670
+                           [18]: KB4580325
+                           [19]: KB4584229
+                           [20]: KB4586863
+                           [21]: KB4598479
+                           [22]: KB4598229
+Network Card(s):           3 NIC(s) Installed.
+                           [01]: Realtek PCIe GbE Family Controller
+                                 Connection Name: 以太网
+                                 Status:          Media disconnected
+                           [02]: Realtek 8822BE Wireless LAN 802.11ac PCI-E NIC
+                                 Connection Name: WLAN
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.10.1
+                                 IP address(es)
+                                 [01]: 192.168.10.250
+                                 [02]: fe80::e941:523d:3760:8f5a
+                           [03]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: 蓝牙网络连接
+                                 Status:          Media disconnected
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: No
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+```
 
 ## Install Pycharm
 Many believe *PyCharm* is one of the best (if not the best) Integrated Development Environments (IDEs) for Python
@@ -182,7 +257,7 @@ outputs and should observe significant execution speed-ups. You can also verify 
 of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which is an integrated Graphic Card.)
 
 <center>
-    <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab" max-width=1000/>
+    <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab"/>
     <I>Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</I>
 </center>
 
