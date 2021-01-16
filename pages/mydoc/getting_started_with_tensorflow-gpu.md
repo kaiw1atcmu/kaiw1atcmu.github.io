@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Getting Started With TensorFlow-gpu"
 keywords: tensorflow, gpu
 date: 2020-12-28 03:43:45 -0800
