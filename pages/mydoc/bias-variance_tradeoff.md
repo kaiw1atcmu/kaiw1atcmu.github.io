@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [machine_learning]
 summary: "The bias-variance trade-off is a common issue generally present in machine learning systems. Today we
 characterize this issue quantitatively with the equality for bias-variance-noise decomposition."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: bias-variance_tradeoff.html
 folder: mydoc
 ---

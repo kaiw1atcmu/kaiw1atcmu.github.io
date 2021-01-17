@@ -1,8 +1,8 @@
 ---
-title: "Foreign languages pages"
-tagName: foreign_languages
+title: "Book reviews pages"
+tagName: book_reviews
 search: exclude
-permalink: tag_foreign_languages.html
+permalink: tag_book_reviews.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

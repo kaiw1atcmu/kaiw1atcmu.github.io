@@ -5,7 +5,7 @@ date: 2020-08-08 10:10:15 -0800
 last_updated: December 26, 2020
 tags: [mathematics,machine_learning]
 summary: "This post demonstrated an alternative view on the definition of entropy."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: a_view_on_entropy_with_applications.html
 folder: mydoc
 ---

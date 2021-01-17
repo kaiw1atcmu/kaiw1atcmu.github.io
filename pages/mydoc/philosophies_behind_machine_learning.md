@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [machine_learning]
 summary: "Machine Learning, as a fast-developing research field, still has a relatively stable philosophical background
 on which many concepts and algorithms are based. Let us now explain and discuss some of them."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: philosophies_behind_machine_learning.html
 folder: mydoc
 ---

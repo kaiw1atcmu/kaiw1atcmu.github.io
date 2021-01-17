@@ -8,7 +8,7 @@ summary: "Optimization methods always lie in the core of many successful machine
 optimization methods include gradient descent or steepest descent, Newton's method, quasi Newton method,
 Davidson-Fletcher-Powell (DFP) algorithm, Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm, limited-memory BFGS or
 limited-storage BFGS (L-BFGS) algorithm, and tons of variant algorithms based on them."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: gradient_descent_newtons_method_and_beyond.html
 folder: mydoc
 ---

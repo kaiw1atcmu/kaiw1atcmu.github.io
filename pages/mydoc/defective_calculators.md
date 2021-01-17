@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [hacker's_delight,algorithm]
 summary: "Suppose you are provided with a defective calculator, whose numerical and functional keys are all out of order
 except. Then what should you do if you get asked to produce a certain result with this calculator?"
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: defective_calculators.html
 folder: mydoc
 ---

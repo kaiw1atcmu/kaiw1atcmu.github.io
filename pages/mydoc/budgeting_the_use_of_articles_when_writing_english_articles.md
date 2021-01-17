@@ -8,7 +8,7 @@ summary: "Today we are discussing a little bit of grammar on the elegant use of 
 a/an and the definite article the). In my view, excessive use of articles generally distracts readers from the major
 train of thought, with a cluttered and fragmented writing style. In my view, we should care about readers' feelings by
 moderating our use of articles when writing in English."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: budgeting_the_use_of_articles_when_writing_english_articles.html
 folder: mydoc
 ---

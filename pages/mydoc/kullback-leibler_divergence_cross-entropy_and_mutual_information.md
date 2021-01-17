@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [machine_learning]
 summary: "The concepts of Kullback-Leibler (KL) divergence, cross-entropy (CE), and mutual information (MI) lie in the
 core of many machine learning optimization tasks."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: kullback-leibler_divergence_cross-entropy_and_mutual_information.html
 folder: mydoc
 ---

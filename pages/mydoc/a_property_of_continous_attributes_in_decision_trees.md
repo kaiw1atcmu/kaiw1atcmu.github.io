@@ -5,7 +5,7 @@ date: 2020-01-16 18:25:32 -0800
 last_updated: December 26, 2020
 categories: [machine_learning]
 summary: "This post discussed an important, yet seldom mentioned property of continuous attributes in decision trees."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: a_property_of_continuous_attributes_in_decision_trees.html
 folder: mydoc
 ---

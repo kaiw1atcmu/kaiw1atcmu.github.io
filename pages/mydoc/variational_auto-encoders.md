@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [deep_learning,statistics]
 summary: "This post introduced fundamentals of the variational auto-encoder (VAE), a powerful generative component for
 representation learning, and explained its mathematical properties with applications."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: variational_auto-encoders.html
 folder: mydoc
 ---

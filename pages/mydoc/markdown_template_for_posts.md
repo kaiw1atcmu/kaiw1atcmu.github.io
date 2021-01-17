@@ -5,7 +5,7 @@ date: 2019-11-08 18:26:39 -0800
 last_updated: December 26, 2020
 tags: [welcome,logistics]
 summary: "It's very easy to automate decorations with Markdown. That's why I primarily use markdown for this website."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: markdown_template_for_posts.html
 folder: mydoc
 ---
@@ -212,7 +212,7 @@ create a gist in [GitHub' gist pages](#gist.github.com), copy its unique id, and
 
 {% gist c21b42b41f05ae3bd1f9f6264e5dae90 %}
 
-## Tips, Notes, and Warnings
+## Tips, Notes, Warnings, and Importants
 {% include tip.html content="For a better terminal emulator on Windows, use
 [Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
 
@@ -225,5 +225,7 @@ documentation, consider <a href='https://tinyletter.com/tomjoht'>subscribing</a>
 {% include warning.html content="Don't make edits both online using Github's browser-based interface AND offline on your
 local machine using your local tools. When you try to push from your local, you'll likely get a merge conflict error.
 Instead, make sure you do a pull and update on your local after making any edits online." %}
+
+{% include important.html content="This is my important info." %}
 
 {% include links.html %}

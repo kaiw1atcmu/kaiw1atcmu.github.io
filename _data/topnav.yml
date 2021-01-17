@@ -5,7 +5,7 @@ topnav:
   items:
     - title: GitHub
       external_url: https://github.com/kaiw1atcmu/kaiw1atcmu.github.io
-    - title: Sketch Posts
+    - title: News
       url: /news
 
 #Topnav dropdowns
@@ -28,5 +28,5 @@ topnav_dropdowns:
           external_url: http://jekyllrb.com/docs/home/
         - title: Jekyll on Stack Overflow
           external_url: http://stackoverflow.com/questions/tagged/jekyll
-        - title: Jekyll on my blog
-          external_url: http://idratherbewriting.com/category-jekyll/
+        # - title: Jekyll on my blog
+        #   external_url: http://idratherbewriting.com/category-jekyll/

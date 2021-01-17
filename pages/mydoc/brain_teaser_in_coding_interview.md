@@ -7,7 +7,7 @@ last_updated: August 24, 2020
 summary: "This post discussed a brain teaser in a coding interview. It is worth noting that while most coding interview
 problems require a significant amount of coding effort; on the contrary, this problem is not programming-heavy and
 requires analytical thinking skills instead."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: brain_teaser_in_coding_interview.html
 folder: mydoc
 ---

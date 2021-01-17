@@ -7,7 +7,7 @@ tags: [deep_learning,machine_learning]
 summary: "As deep neural networks grow exponentially in size, the topic of network pruning comes into play with
 ever-increasing importance. This post described a couple of typical old-school (pre-deep-learning) network pruning
 methods, in reverent reminiscence of the pioneers of network pruning techniques."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: network_pruning_the_old-school_methods.html
 folder: mydoc
 ---

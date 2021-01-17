@@ -5,7 +5,7 @@ date: 2020-01-22 22:14:35 -0800
 last_updated: December 26, 2020
 tags: [hacker's_delight,algorithms]
 summary: "Today we are discussing a very interesting algorithmic problem called the friendly arrays."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: friendly_arrays.html
 folder: mydoc
 ---

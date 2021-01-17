@@ -5,7 +5,7 @@ date: 2020-12-26 19:39:02 -0800
 last_updated: December 26, 2020
 tags: [welcome,logistics]
 summary: "A brief introduction to myself that should help you get to know me."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: a_little_something_before_you_read.html
 folder: mydoc
 ---

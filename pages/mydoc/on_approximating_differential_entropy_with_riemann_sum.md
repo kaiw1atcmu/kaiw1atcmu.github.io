@@ -7,7 +7,7 @@ tags: [mathematics,statistics,machine_learning]
 summary: "This post formulated a general procedural framework on approximating differential entropy with Riemann sum, a
 basic practice borrowed from mathematical analysis. The author made the loose assumption that intended readers should be
 familiar with Calculus and its formal definitions."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: on_approximating_differential_entropy_with_riemann_sum.html
 folder: mydoc
 ---

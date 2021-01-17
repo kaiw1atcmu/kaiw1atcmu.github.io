@@ -1,8 +1,8 @@
 ---
-title: "Foreign languages pages"
-tagName: foreign_languages
+title: "Software Packages pages"
+tagName: software_packages
 search: exclude
-permalink: tag_foreign_languages.html
+permalink: tag_software_packages.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

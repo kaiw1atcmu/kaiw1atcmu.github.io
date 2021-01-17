@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [machine_learning]
 summary: "A nice surprise about Mean Square Estimate and Cross Entropy Loss is that a Bayesian flavor still remains
 inside, although in a somewhat disguised form."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: mse_and_ce_estimate_posterior_class_probabilities_and_achieve_bayes_error.html
 folder: mydoc
 ---

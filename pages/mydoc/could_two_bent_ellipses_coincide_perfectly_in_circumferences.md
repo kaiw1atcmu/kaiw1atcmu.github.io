@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [mathematics]
 summary: "Could two ellipses coincide perfectly in circumferences when bent along the major axis? In this post, let us
 try to approach this problem in a step-by-step, mathematically rigid manner."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: could_two_bent_ellipses_coincide_perfectly_in_circumferences.html
 folder: mydoc
 ---

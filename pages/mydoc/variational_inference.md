@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [statistics,deep_learning]
 summary: "Variational Inference is a general Bayesian statistical procedure to learn unknown distribution with certain
 priors given. It has recently been gaining popularity in the statistics and deep learning communities."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: variational_inference.html
 folder: mydoc
 ---

@@ -7,7 +7,7 @@ tags: [deep_learning,statistics]
 summary: "The variational auto-encoders (VAEs) are frequently accredited to Diederik P. Kingma and Max Welling in their
 pioneer research paper. However, a concurrent research paper by Google DeepMind proposed an identical algorithm but
 named it otherwise."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: stochastic_backpropagation_and_approximate_inference.html
 folder: mydoc
 ---

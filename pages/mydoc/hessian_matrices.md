@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [mathematics,machine_learning]
 summary: "Today we are introducing various techniques in evaluating the Hessian of neural networks, either approximately
 or accurately."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: hessian_matrices.html
 folder: mydoc
 ---

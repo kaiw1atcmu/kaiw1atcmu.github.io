@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [machine_learning]
 summary: "Decision tree pruning is a key technique to prevent overfitting and improve generalization performance on
 unseen data. There are several approaches and their variants to tree pruning in decision tree learning."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: decision_tree_pruning.html
 folder: mydoc
 ---

@@ -8,7 +8,7 @@ summary: "Today we will discuss basic feedforward network structures and their l
 their structures seemed primitive at first glance, the philosophies behind were not. Since their initial paradigms
 obtained a lot of inspiration from advances in neuroscience, researchers then tried to mathematically simulate the
 interactions between neurons or perceptrons when networked together, and achieved amazing success."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: historical_notes_on_neuron_model_prototypes.html
 folder: mydoc
 ---

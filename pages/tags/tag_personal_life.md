@@ -1,8 +1,8 @@
 ---
-title: "Foreign languages pages"
-tagName: foreign_languages
+title: "Personal life pages"
+tagName: personal_life
 search: exclude
-permalink: tag_foreign_languages.html
+permalink: tag_personal_life.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

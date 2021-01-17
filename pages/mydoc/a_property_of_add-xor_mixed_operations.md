@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [hacker's_delight,algorithms]
 summary: "In this post, we will introduce a relatively infrequently mentioned property between the addition and
 exclusive-or operators, when they are used in a mixed manner."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: a_property_of_add-xor_mixed_operations.html
 folder: mydoc
 ---

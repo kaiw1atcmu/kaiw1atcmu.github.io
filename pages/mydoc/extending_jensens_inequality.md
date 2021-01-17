@@ -6,7 +6,7 @@ last_updated: December 26, 2020
 tags: [statistics,machine_learning]
 summary: "Jensen's Inequality is a fundamental tool frequently used in optimization problems. Let's devote this post to
 Jensen's Inequality and some variants of it."
-sidebar: mydoc_sidebar
+sidebar: none
 permalink: extending_jensens_inequality.html
 folder: mydoc
 ---
