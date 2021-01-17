@@ -3,7 +3,7 @@ title: "Welcome pages"
 tagName: welcome
 search: exclude
 permalink: tag_welcome.html
-sidebar: mydoc_sidebar
+sidebar: none
 folder: tags
 ---
 {% include taglogic.html %}

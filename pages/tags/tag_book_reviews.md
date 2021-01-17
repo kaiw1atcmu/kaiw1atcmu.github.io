@@ -3,7 +3,7 @@ title: "Book reviews pages"
 tagName: book_reviews
 search: exclude
 permalink: tag_book_reviews.html
-sidebar: mydoc_sidebar
+sidebar: none
 folder: tags
 ---
 {% include taglogic.html %}

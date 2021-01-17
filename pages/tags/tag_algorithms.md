@@ -3,7 +3,7 @@ title: "Algorithms pages"
 tagName: algorithms
 search: exclude
 permalink: tag_algorithms.html
-sidebar: mydoc_sidebar
+sidebar: none
 folder: tags
 ---
 {% include taglogic.html %}
