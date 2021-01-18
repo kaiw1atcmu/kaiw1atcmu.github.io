@@ -1,7 +1,7 @@
 ---
 title: "Brain Teaser In Coding Interview"
 keywords: brain teaser, coding interview
-tags: [algorithms,hacker's_delight]
+tags: [hacker's_delight]
 date: 2020-08-24 10:10:15 -0800
 last_updated: August 24, 2020
 summary: "This post discussed a brain teaser in a coding interview. It is worth noting that while most coding interview

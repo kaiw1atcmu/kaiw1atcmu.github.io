@@ -3,7 +3,7 @@ title: "Site Launched"
 keywords: site introduction
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
-tags: [welcome,logistics]
+tags: [welcome]
 summary: "Welcome to my personal blog! Finally I got around to setting up my personal blog."
 sidebar: none
 permalink: site_launched.html

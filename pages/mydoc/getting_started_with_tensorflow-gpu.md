@@ -14,7 +14,8 @@ folder: mydoc
 
 TensorFlow has been a powerful yet subtle deep learning framework for the research community and the industry alike.
 Today let me devote this post to getting readers started with TensorFlow's GPU packages, from essentially the very
-beginning.
+beginning. Throughout our discussion, I will showcase all installation procedures for a typical Windows 10 OS. Similar
+procedures apply to *Unix*/*Linux*-based OSes, such as *Ubuntu-18.04*.
 
 ## My Operating System And Other Settings
 My *LEGION* (a sub-brand of *LENOVO*) laptop has Windows 10 installed. The machine's important settings are found by
@@ -95,7 +96,7 @@ Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
                            Data Execution Prevention Available: Yes
 ```
 
-## Install Pycharm
+## Install Pycharm (Optional But Recommended)
 Many believe *PyCharm* is one of the best (if not the best) Integrated Development Environments (IDEs) for Python
 programming. It comes with powerful tools for code editing, navigating, refactoring, debugging, etc. The *community
 version* of this software is free and you can download it through

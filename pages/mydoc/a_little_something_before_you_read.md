@@ -3,7 +3,7 @@ title: "A Little Something Before You Read"
 keywords: homepage, self introduction
 date: 2020-12-26 19:39:02 -0800
 last_updated: December 26, 2020
-tags: [welcome,logistics]
+tags: [welcome]
 summary: "A brief introduction to myself that should help you get to know me."
 sidebar: none
 permalink: a_little_something_before_you_read.html
