@@ -32,7 +32,7 @@ positive curvature.
 
 <center>
     <img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
-    <I>Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in [Ian Goodfellow et al.](#references).</I>
+    <font face="Lora">Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in [Ian Goodfellow et al.](#references).</font>
 </center>
 
 ## Gradient Descent or Steepest Descent with Line Search

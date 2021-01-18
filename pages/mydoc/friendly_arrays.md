@@ -44,7 +44,7 @@ $n$-th friendly arrays in total is given by $f(n)$. more to come to estimate tim
 
 <center>
     <img src="{{ "images/20200122-2.png" }}" alt="Breadth-First-Search"/>
-    <I>Figure 1: Illustration Of Stack Details In Breadth-First-Search.</I>
+    <font face="Lora">Figure 1: Illustration Of Stack Details In Breadth-First-Search.</font>
 </center>
 
 ```python
@@ -96,7 +96,7 @@ estimate time and space complexity in details ...
 
 <center>
     <img src="{{ "images/20200122-3.png" }}" alt="Depth-First-Search"/>
-    <I>Figure 2: Illustration Of Stack Details In Depth-First-Search.</I>
+    <font face="Lora">Figure 2: Illustration Of Stack Details In Depth-First-Search.</font>
 </center>
 
 ```python

@@ -48,8 +48,8 @@ corresponding values of $\mathbf{x}$. Without further simplifying assumptions, t
 learning the recognition model parameters $\phi$ jointly with the generative model parameters $\theta$.
 
 <center>
-    <img src="{{ "images/20200821-2.PNG" }}" alt="the model"/>
-    <I>Figure 1: The Type Of Directed Graphical Model Under Consideration</I>
+    <img src="{{ "images/20200821-2.png" }}" alt="the model"/>
+    <font face="Lora">Figure 1: The Type Of Directed Graphical Model Under Consideration</font>
 </center>
 
 In Figure 1, solid lines denote the generative model $p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$,
@@ -154,8 +154,8 @@ Unsurprisingly, as a novel generative auto-encoder model, VAEs have interesting 
 
 ### The Impact of Latent Dimensionalities
 <center>
-    <img src="{{ "images/20200821-1.PNG" }}" alt="the impact of latent dimensionalities"/>
-    <I>Figure 2: The Impact Of Latent Dimensionalities</I>
+    <img src="{{ "images/20200821-1.png" }}" alt="the impact of latent dimensionalities"/>
+    <font face="Lora">Figure 2: The Impact Of Latent Dimensionalities</font>
 </center>
 
 Figure 2 demonstrates the impact of latent dimensionalities. Interestingly enough, more latent variables does not result

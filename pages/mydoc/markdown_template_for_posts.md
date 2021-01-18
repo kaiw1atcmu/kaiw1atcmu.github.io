@@ -3,7 +3,7 @@ title: "Markdown Template For Posts"
 keywords: template, markdown, post template, markdown template
 date: 2019-11-08 18:26:39 -0800
 last_updated: December 26, 2020
-tags: [welcome]
+tags: [miscellaneous]
 summary: "It's very easy to automate decorations with Markdown. That's why I primarily use markdown for this website."
 sidebar: none
 permalink: markdown_template_for_posts.html

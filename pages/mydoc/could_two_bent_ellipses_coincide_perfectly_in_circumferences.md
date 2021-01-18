@@ -18,7 +18,7 @@ coincide in circumference when bent along the major axis?
 
 <center>
     <img src="{{ "images/20191126-1.jpg" }}" alt="image1 simulation"/>
-    <I>Figure 1: Simulation. By courtesy of users from Zhihu (知乎).</I>
+    <font face="Lora">Figure 1: Simulation. By courtesy of users from Zhihu (知乎).</font>
 </center>
 
 ## At First Glance
@@ -29,7 +29,7 @@ only one way to bend the ellipses.
 
 <center>
     <img src="{{ "images/20191126-2.jpg" }}" alt="image2"/>
-    <I>Figure 2: Coordinates of bent ellipses re-parameterized by arc length</I> $s$.
+    <font face="Lora">Figure 2: Coordinates of bent ellipses re-parameterized by arc length</font> $s$.
 </center>
 
 ## An Assumption on $dx(s)/ds$
@@ -127,7 +127,7 @@ coincide in circumference when bent along the major axis, not along the minor ax
 
 <center>
     <img src="{{ "images/20191126-3.jpg" }}" alt="image3"/>
-    <I>Figure 3: Condition under which bending towards the origin along the opposite direction of</I> $\mathcal{Z}$ <I>is feasible.</I>
+    <font face="Lora">Figure 3: Condition under which bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <I>is feasible.</I>
 </center>
 
 ## How Do We Render It?
@@ -142,7 +142,7 @@ coincide.
 
 <center>
     <img src="{{ "images/20191126-4.jpg" }}" alt="image4"/>
-    <I>Figure 4: Illustration of how bending towards the origin along the opposite direction of</I> $\mathcal{Z}$ <I>is performed.</I>
+    <font face="Lora">Figure 4: Illustration of how bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <I>is performed.</I>
 </center>
 
 ## Without the Assumption on $dx(s)/ds$
@@ -188,7 +188,7 @@ into each other and thus can not make a solution to the problem.
 
 <center>
     <img src="{{ "images/20191126-5.jpg" }}" alt="image5"/>
-    <I>Figure 5: Illustration of</I> $x(s)$ <I>"warping around".</I>
+    <font face="Lora">Figure 5: Illustration of</font> $x(s)$ <I>"warping around".</I>
 </center>
 
 ## Concluding Remarks

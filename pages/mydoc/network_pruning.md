@@ -107,8 +107,8 @@ never learn that function correctly (i.e., achieve zero error).
 
 <center>
     <img src="{{ "images/20191112-1.png" }}" alt="OBS outperformed others"/>
-    <I>Figure 1: Comparison That Demonstrates The Superiority Of Optimal Brain Damage (OBS). By courtesy of Figure 3 in
-    [Babak Hassibi et al. (1993)](#references). Reproduced for better visualization.</I>
+    <font face="Lora">Figure 1: Comparison That Demonstrates The Superiority Of Optimal Brain Damage (OBS). By courtesy of Figure 3 in
+    [Babak Hassibi et al. (1993)](#references). Reproduced for better visualization.</font>
 </center>
 
 ## Cascade-Correlation

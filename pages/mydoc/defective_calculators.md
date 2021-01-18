@@ -22,7 +22,7 @@ approximated $\pi$ with it.)
 
 <center>
     <img src="{{ "images/20200116-1.png" }}" alt="a profile of 祖冲之"/>
-    <I>Figure 1: A profile of the famous Chinese mathematician 祖冲之 who appeared on a Chinese postal stamp.</I>
+    <font face="Lora">Figure 1: A profile of the famous Chinese mathematician 祖冲之 who appeared on a Chinese postal stamp.</font>
 </center>
 
 ## Function Compositions

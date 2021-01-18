@@ -26,7 +26,7 @@ checking every possible midway. Let us consider an example from [Tom Mitchell (1
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | target: play tennis | no | no | yes | yes | yes | no|
 
-<center><I>Table 1: Finding The Best Threshold For Learning Target From Attribute</I></center>
+<center><font face="Lora">Table 1: Finding The Best Threshold For Learning Target From Attribute</font></center>
 
 In the current example, there are two candidate thresholds (boundaries), corresponding to the values of temperature at
 which the value of play tennis changes: $(48+60)/2$, and $(80+90)/2$. Note that although a boundary is valid anywhere

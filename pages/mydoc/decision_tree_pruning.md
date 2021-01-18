@@ -16,7 +16,7 @@ There are several approaches and their variants to tree pruning in decision tree
 
 <center>
     <img src="{{ "images/20191129-1.jpeg" }}" alt="decision tree learning"/>
-    <I>Figure 1: An Illustrative Example Of General Decision Tree Learning.</I>
+    <font face="Lora">Figure 1: An Illustrative Example Of General Decision Tree Learning.</font>
 </center>
 
 Broadly speaking, these approaches can be grouped into two categories: 1) approaches that stop growing the tree earlier,

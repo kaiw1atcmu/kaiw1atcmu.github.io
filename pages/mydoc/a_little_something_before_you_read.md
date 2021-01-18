@@ -3,7 +3,7 @@ title: "A Little Something Before You Read"
 keywords: homepage, self introduction
 date: 2020-12-26 19:39:02 -0800
 last_updated: December 26, 2020
-tags: [welcome]
+tags: [miscellaneous]
 summary: "A brief introduction to myself that should help you get to know me."
 sidebar: none
 permalink: a_little_something_before_you_read.html
@@ -12,10 +12,10 @@ folder: mydoc
 
 <center>
     <img src="{{ "images/Pittsburgh_dawn_city_pano.jpg" }}" alt="Pittsburgh Dawn"/>
-    <I>
+    <font face="Lora">
         Panorama at Dawntime, City of Pittsburgh. Carnegie Mellon University and The University of Pittsburgh are
         located far from the downtown area, over the upper right horizon of the landscape. You simply can not see them.
-    </I>
+    </font>
 </center>
 
 ## About Me

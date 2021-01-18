@@ -61,12 +61,12 @@ constructed for the $i$-th integer $a_i$ in $\mathbf{a}$ and the $j$-th integer 
 
 <center>
     <img src="{{ "images/20200120-1.png" }}" alt="tree for a_i"/>
-    <I>Figure 1: tree for</I> $a_i$
+    <font face="Lora">Figure 1: tree for</font> $a_i$
 </center>
 
 <center>
     <img src="{{ "images/20200120-2.png" }}" alt="tree for b_j"/>
-    <I>Figure 2: tree for</I> $b_j$
+    <font face="Lora">Figure 2: tree for</font> $b_j$
 </center>
 
 (note that $\text{tree}\_\text{b}$ is created like $\text{tree}\_\text{a}$, plus a series of iterative and recursive
@@ -81,12 +81,12 @@ $$
 ## The Algorithm in Vector Form
 <center>
     <img src="{{ "images/20200120-3.png" }}" alt="tree for a_i vector"/>
-    <I>Figure 3: tree for</I> $\mathbf{a}$
+    <font face="Lora">Figure 3: tree for</font> $\mathbf{a}$
 </center>
 
 <center>
     <img src="{{ "images/20200120-4.png" }}" alt="tree for b_j vector"/>
-    <I>Figure 4: tree for</I> $\mathbf{b}$
+    <font face="Lora">Figure 4: tree for</font> $\mathbf{b}$
 </center>
 
 This formula extends naturally to vectors $\mathbf{a}_k\in\mathbf{R}^m$ and $\mathbf{b}_k\in\mathbf{R}^n$, denoting the

@@ -259,7 +259,7 @@ of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which 
 
 <center>
     <img src="{{ "images/20201228-1.PNG" }}" alt="Performance Tab"/>
-    <I>Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</I>
+    <font face="Lora">Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</font>
 </center>
 
 ## Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
@@ -275,7 +275,7 @@ the answers can be summarized below. Please note that running the script always 
 | gpu with cuda+cudnn installed    |    yes     |   yes           |
 | gpu without cuda+cudnn installed |    yes     |   no (~tf-like) |
 
-<center><I>Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</I></center>  
+<center><font face="Lora">Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</font></center>  
 <br/>
 Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
 library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since it is

@@ -63,7 +63,7 @@ It remains to show why the triangle inequality still does not hold for $D_{\text
 ### Choose Between $D_{\text{KL}}(p\Vert q)$ and $D_{\text{KL}}(q\Vert p)$
 <center>
     <img src="{{ "images/20191209-1.png" }}" alt="KL Divergence"/>
-    <I>Figure 1. Asymmetry in the KL-divergence by courtesy of [Kevin P. Murphy (2012)](#references) Figure 21.1.</I>
+    <font face="Lora">Figure 1. Asymmetry in the KL-divergence by courtesy of [Kevin P. Murphy (2012)](#references) Figure 21.1.</font>
 </center>
 
 Suppose we wish to approximate a multimodal Gaussian distribution $p(x)$ with a unimodal Gaussian distribution $q(x)$.
