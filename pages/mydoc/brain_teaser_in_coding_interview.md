@@ -40,42 +40,44 @@ Then A said he was able to decide the integers, which was to say situations like
 For example, if the sum of integers could be 28, then we would at least have two candidate pairs (20,8) or (18,10). In
 either case, B was not able to decide the integers, since the product of (20,8) could result from (10,16), and the
 product of (18,10) could result from (9,20). In conclusion, we have in effect reduced the problem to finding a pair of
-integers, such that given the sum, there was **exactly** one choice of sum that enabled its product to be factorized in
-at least two ways with integers ranging between 1 and 20 inclusive. It is high time that we exhaust all of them:
+integers, such that given the sum, there was <font face="Lora">exactly</font> one choice of sum that enabled its product
+to be factorized in at least two ways with integers ranging between 1 and 20 inclusive. It is high time that we exhaust
+all of them:
 
-| sum | possible pairs in A's view | sum | possible pairs in A's view |
-| :----: | :----: | :----: | :----: |
-|  $\le$3    |                       (none)                     |      4    |                  (2, 2)               |
-|     5      |                   (1, 4), (2, 3), etc.           |      6    |                  (2, 4), (3, 3), etc. |
-|     7      |                   (1, 6), (2, 5), etc.               |     8     |              (2, 6), (3, 5), etc. |
-|     9      |                   (1, 8), (2, 7), etc.               |    10    |              (1, 9), (2, 8), etc.  |
-|    11     |                  (1, 10), (3, 8), etc.              |    12    |                  (2, 10), (4, 8), etc. |
-|    13     |                  (1, 12), (3, 10), etc.            |    14    |                  (2, 12), (4, 10), etc. |
-|    15     |                  (1, 14), (3, 12), etc.            |    16    |                  (1, 15), (2, 14), etc. |
-|    17     |                  (1, 16), (2, 15), etc.            |    18    |                  (2, 16), (3, 15), etc. |
-|    19     |                  (1, 18), (3, 16), etc.            |    20    |                  (2, 18), (4, 16), etc. |
-|    21     |                  (1, 20), (3, 18), etc.            |    22    |                  (2, 20), (4, 18), etc. |
-|    23     |                  (3, 20), (5, 18), etc.            |    24    |                  (4, 20), (6, 18), etc. |
-|    25     |                  (5, 20), (9, 16), etc.            |    26    |                  (6, 20), (8, 18), etc. |
-|    27     |                  (7, 20), (12, 15), etc.          |    28    |                  (8, 20), (10, 18), etc. |
-|    29     |                       (9, 20)                          |    30    |                        (none)       |
-|    31     |                       (15, 16)                        |    32    |                       (12, 20)       |
-|  $\ge$33  |                        (none)                         |            |                                    |
-
+```
+ sum | possible pairs in A's view | sum | possible pairs in A's view |
+ <=3 |          (none)            |  4  |           (2,2)            |
+  5  |     (1, 4), (2, 3), etc.   |  6  |     (2, 4), (3, 3), etc.   |
+  7  |     (1, 6), (2, 5), etc.   |  8  |     (2, 6), (3, 5), etc.   |
+  9  |     (1, 8), (2, 7), etc.   |  10 |     (1, 9), (2, 8), etc.   |
+  11 |    (1, 10), (3, 8), etc.   |  12 |    (2, 10), (4, 8), etc.   |
+  13 |   (1, 12), (3, 10), etc.   |  14 |   (2, 12), (4, 10), etc.   |
+  15 |   (1, 14), (3, 12), etc.   |  16 |   (1, 15), (2, 14), etc.   |
+  17 |   (1, 16), (2, 15), etc.   |  18 |   (2, 16), (3, 15), etc.   |
+  19 |   (1, 18), (3, 16), etc.   |  20 |   (2, 18), (4, 16), etc.   |
+  21 |   (1, 20), (3, 18), etc.   |  22 |   (2, 20), (4, 18), etc.   |
+  23 |   (3, 20), (5, 18), etc.   |  24 |   (4, 20), (6, 18), etc.   |
+  25 |   (5, 20), (9, 16), etc.   |  26 |   (6, 20), (8, 18), etc.   |
+  27 |  (7, 20), (12, 15), etc.   |  28 |  (8, 20), (10, 18), etc.   |
+  29 |        (9, 20)             |  30 |           (none)           |
+  31 |       (15, 16)             |  32 |          (12, 20)          |
+ >=33|         (none)             |     |                            |
+```
 <center><font face="Lora">Table 1: What A In The Second Round Was Able To Infer To The Best Of Information Known</font></center>
 
 ## B In The Second Round
-From this table, when A knew "the sum was 31" and "B was not able to decide the solution with product told", A inferred
-the product had to be 240, and then the solution was (15,16). Nevertheless, B was not able to tell (15,16) from (12,20)
-when he knew "the product was 240" and "A already knew the solution", since (12,20) also served this purpose. To better
+From this table, when A knew "<font face="Lora">the sum was 31</font>" and "<font face="Lora">B was not able to decide
+the solution with product told</font>", A inferred the product had to be 240, and then the solution was (15,16).
+Nevertheless, B was not able to tell (15,16) from (12,20) when he knew "<font face="Lora">the product was 240</font>"
+and "<font face="Lora">A already knew the solution</font>", since (12,20) also served this purpose. To better
 demonstrate B's view, another table has to be constructed:
 
-| product | possible pairs in B's view |
-| :----: | :----: |
-| 4 | (2, 2) |
-| 180 | (20, 9) |
-| 240 | (15, 16), (12, 20) |
-
+```
+ product | possible pairs in B's view |
+    4    |           (2, 2)           |
+   180   |          (20, 9)           |
+   240   |      (15, 16), (12, 20)    |
+```
 <center><font face="Lora">Table 2: What B In The Second Round Was Able To Infer To The Best Of Information Known</font></center>
 
 ## The Solution

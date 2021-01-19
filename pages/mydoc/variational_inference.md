@@ -48,18 +48,13 @@ lower bound $L$ given in the second form. In the E-step, set
 $q(\mathbf{z}\vert\mathbf{x})=p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta})$, and in the M-step, update $\mathbf{\theta}$
 by standard optimization algorithms at our choice. Since the EM algorithm successively increases the evidence lower
 bound on $\log p(\mathbf{x};\mathbf{\theta})$, the same optimization objective as the VI algorithm, we end up with
-basically the same procedure that optimizes parameter $\mathbf{\theta}$ required by the VI algorithm.
+basically the same procedure that optimizes parameter $\mathbf{\theta}$ required by the VI algorithm, as long as latent
+variable $q(\mathbf{z})$ is drawn from a constant function, i.e. solving for the optimal, single solution of latent
+variable $q(\mathbf{z})$.
 
 Actually, variational inference is performed using gradient descent or its variants instead of expectation maximization,
-since no closed-form solution to $q(\mathbf{z})$ is found; otherwise, both VI and EM are in effect **identical**. We
-roughly summarize them as
-
-| ... | hidden vars incl. | no hidden vars incl. |
-| :----: | :----: | :----: |
-| closed-form | EM and VI | directly solving for roots |
-| no closed-form | VI | gradient descent |
-
-<center><font face="Lora">Table 1: Conditions Under Which EM And VI Are Feasible</font></center>
+since no closed-form, single solution of $q(\mathbf{z})$ is required; instead, an optimal probabilistic distribution of
+$q(\mathbf{z})$ is found by minimizing the variational lower bound. 
 
 ## Variational Inference as Maximum a Posteriori (MAP)
 An alternative form of inference is to compute the single most likely value of the missing variables, rather than to

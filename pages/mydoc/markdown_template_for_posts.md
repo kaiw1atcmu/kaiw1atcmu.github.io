@@ -97,7 +97,7 @@ _This is an image with a caption_
 _This is an image with a caption_
 
 ## Code and Syntax Highlighting
-Use back-ticks for `inline code`. Multi-line code snippets are supported too through Pygments.
+Use back-ticks for `inline code`. Multi-line code snippets are supported too through <font face="Lora">Pygments</font>.
 
 {% highlight js %}
 // Sample javascript code
@@ -111,7 +111,7 @@ s = "Python syntax highlighting"
 print s
 {% endhighlight %}
 
-Or use three back-ticks for *code fencing*:
+Or use three back-ticks for <font face="Lora">code fencing</font>:
 
 ```javascript
 // Sample javascript code
@@ -143,8 +143,9 @@ alert(s);
 Configure MathJax module between script tags in HTML files under `_layouts` folder, and insert `set mathjax: true` in
 `_config.yml` or in individual posts where you'd like to enable Latex functionality.
 
-MathJax supports two Latex modes. The *inline mode* embeds mathematical formulas $\lim_{n=0}^\infty x_n$ into text lines
-in paragraphs, and the *display mode* allocates dedicated text areas and centralizes full-featured Latex formulas.
+MathJax supports two Latex modes. The <font face="Lora">inline mode</font> embeds mathematical formulas
+$\lim_{n=0}^\infty x_n$ into text lines in paragraphs, and the <font face="Lora">display mode</font> allocates dedicated
+text areas and centralizes full-featured Latex formulas.
 
 $$
 \begin{array}{l}
@@ -181,7 +182,8 @@ _The End_
 A footnote starts with a caret and an identifier inside brackets[^1] which support multiple paragraphs and code by
 indentation[^bignote]. The content of the footnote also starts with a caret and its identifier inside brackets succeeded
 by a colon and text. You don’t have to put footnotes at the end of the document. However, the GitHub-flavored Markdown
-parser does *not* support footnotes and stacks them at the bottom of the file, in the order of their appearance.
+parser does <font face="Lora>not</font> support footnotes and stacks them at the bottom of the file, in the order of
+their appearance.
 
 [^1]: This is the first footnote.  
 [^bignote]: Here's one with multiple paragraphs and code.  
@@ -227,5 +229,10 @@ local machine using your local tools. When you try to push from your local, you'
 Instead, make sure you do a pull and update on your local after making any edits online." %}
 
 {% include important.html content="This is my important info." %}
+
+## References
+[The Markdown Guide](https://www.markdownguide.org/)
+
+[Markdown Guide Book](https://github.com/mattcone/markdown-guide-book)
 
 {% include links.html %}

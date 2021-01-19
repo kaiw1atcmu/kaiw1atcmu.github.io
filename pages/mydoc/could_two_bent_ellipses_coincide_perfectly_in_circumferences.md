@@ -12,9 +12,9 @@ folder: mydoc
 ---
 
 Recently [a fairly interesting mathematical problem](https://www.zhihu.com/question/333858081) concerning differential
-geometry is raised by maths geeks in *Zhihu (知乎)*, a.k.a. the Chinese *Quora*. The problem goes plainly enough to be
-accessible to the general public (i.e., people outside of the mathematical community): can two ellipses perfectly
-coincide in circumference when bent along the major axis?
+geometry is raised by maths geeks in <font face="Lora">Zhihu (知乎)</font>, a.k.a. the Chinese <font face="Lora">Quora
+</font>. The problem goes plainly enough to be accessible to the general public (i.e. people outside of the mathematical
+community): can two ellipses perfectly coincide in circumference when bent along the major axis?
 
 <center>
     <img src="{{ "images/20191126-1.jpg" }}" alt="image1 simulation"/>
@@ -39,7 +39,7 @@ $z(s)=y(l-s)$ since in the other ellipse, $P$ corresponds to arc length $l-s$ an
 Now it is clear that $y(s)$ and $z(s)$ are fixed functions of $s$ irrespective of how we choose $x(s)$. This fixedness
 does not require "symmetry" between the two ellipses, although the latter is a natural consequence of the former. And
 obviously, both $y(s)$ and $z(s)$ are monotonically increasing. We also make an assumption that $x(s)$ is either
-monotonically increasing or monotonically decreasing, i.e., precluding the scenario of "warping back and forth".
+monotonically increasing or monotonically decreasing, i.e. precluding the scenario of "warping back and forth".
 
 Recall the basic differential equality concerning arc length in the 3-dimensional space:
 
@@ -74,8 +74,8 @@ $$
   {(x(s),y(s),z(s))=(x(l)-x(l-s),z(l-s),y(l-s)),\ s\in[0,l].}
 $$
 
-That is, the circumferences of two ellipses coincide perfectly. **Therefore, the symmetry property between the two
-ellipses' positioning is automatically satisfied!**
+That is, the circumferences of two ellipses coincide perfectly. <font face="Lora">Therefore, the symmetry property
+between the two ellipses' positioning is automatically satisfied!</font>
 
 But is there something missing, since we have not so far dived into the essential property of an ellipse? Indeed, it is
 tempting to neglect the verification that the assignment of $x(s)$ is realizable. Denote the projection of arc $s_2-s_1$
@@ -122,12 +122,12 @@ $$
   {\vert\frac{dy}{dx}\vert\bigg\vert_{s=s_2}\leq\vert\frac{dx}{dy}\vert\bigg\vert_{s=s_2}.}
 $$
 
-which is exactly the desired inequality. **This is also instrumental in explaining why two ellipses can perfectly
-coincide in circumference when bent along the major axis, not along the minor axis!**
+which is exactly the desired inequality. <font face="Lora">This is also instrumental in explaining why two ellipses can
+perfectly coincide in circumference when bent along the major axis, not along the minor axis!</font>
 
 <center>
     <img src="{{ "images/20191126-3.jpg" }}" alt="image3"/>
-    <font face="Lora">Figure 3: Condition under which bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <I>is feasible.</I>
+    <font face="Lora">Figure 3: Condition under which bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <font face="Lora">is feasible.</font>
 </center>
 
 ## How Do We Render It?
@@ -142,7 +142,7 @@ coincide.
 
 <center>
     <img src="{{ "images/20191126-4.jpg" }}" alt="image4"/>
-    <font face="Lora">Figure 4: Illustration of how bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <I>is performed.</I>
+    <font face="Lora">Figure 4: Illustration of how bending towards the origin along the opposite direction of</font> $\mathcal{Z}$ <font face="Lora">is performed.</font>
 </center>
 
 ## Without the Assumption on $dx(s)/ds$
@@ -188,14 +188,14 @@ into each other and thus can not make a solution to the problem.
 
 <center>
     <img src="{{ "images/20191126-5.jpg" }}" alt="image5"/>
-    <font face="Lora">Figure 5: Illustration of</font> $x(s)$ <I>"warping around".</I>
+    <font face="Lora">Figure 5: Illustration of</font> $x(s)$ <font face="Lora">"warping around".</font>
 </center>
 
 ## Concluding Remarks
 ### The Need For Positive Derivative Assumption
 Now let us review what we have done. If the assumption specifying the positiveness of $ds(x)/ds$ is violated, then
-**virtually any circumferences** can be made for both ellipses to share it. However, if the assumption is violated, then
-such a solution is actually infeasible since the ellipses intercept into each other.
+<font face="Lora">virtually any circumferences</font> can be made for both ellipses to share it. However, if the
+assumption is violated, then such a solution is actually infeasible since the ellipses intercept into each other.
 
 ### The Reason Not To Bend Along Minor Axis
 Furthermore, the pivot of this proof is to pinpoint the condition below, and this is exactly why bending along the minor
