@@ -19,6 +19,7 @@ Davidson-Fletcher-Powell (DFP) algorithm, Broyden-Fletcher-Goldfarb-Shanno (BFGS
 limited-storage BFGS (L-BFGS) algorithm, and tons of variant algorithms based on them.
 
 ## Gradient Descent or Steepest Descent
+
 $$
   {\mathbf{x}_{k+1}=\mathbf{x}_k-\lambda\nabla f(\mathbf{x}_k).}
 $$
@@ -31,9 +32,10 @@ appropriate stepsize must be small enough to avoid overshooting the minimum and 
 positive curvature.
 
 <center>
-    <img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
-    <font face="Lora">Figure 1: Overshooting Caused By Inappropriate Hessian Matrix. By courtesy of Figure 4.6 in [Ian Goodfellow et al.](#references).</font>
+<img src="{{ "images/20200202-1.png" }}" alt="overshooting"/>
 </center>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Lora">Figure 1: Overshooting Caused By Inappropriate Hessian
+Matrix. By courtesy of Figure 4.6 in</font> [<font face="Lora">Ian Goodfellow et al.</font>](#references)
 
 ## Gradient Descent or Steepest Descent with Line Search
 Figure 1 illustrates an example of overshooting occurred while performing the gradient descent method. Another approach
@@ -195,9 +197,12 @@ from an arbitrary $\mathbf{x}_0$ and $\mathbf{B}_0=\mathbf{I}$, the BFGS algorit
 =\mathbf{B}_k+\Delta\mathbf{B}_k$ and increment $k$.
 
 <center>
-    <img src="{{ "images/20200202-2.jpg" }}" alt="BFGS Gang of Four"/>
-    <I>Figure 2: Yet Another "Gang Of Four". By courtesy of [understanding-lbfgs](#references).</I>
+<img src="{{ "images/20200202-2.jpg" }}" alt="BFGS Gang of Four"/>
 </center>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;<font face="Lora">Figure 2: Yet Another "Gang Of Four". By courtesy of</font>
+[<font face="Lora">understanding-lbfgs</font>](#references).
 
 ## Broyden's Algorithm
 Denote $\mathbf{G_k}=\mathbf{B_k}^{-1}$ and $\mathbf{G_{k+1}}=\mathbf{B}_{k+1}^{-1}$, and apply twice the
