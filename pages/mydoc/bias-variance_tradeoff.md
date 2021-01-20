@@ -24,8 +24,8 @@ $$
   {h(\mathbf{x})=\mathbb{E}[t\vert\mathbf{x}]=\int tp(t\vert\mathbf{x})dt.}
 $$
 
-Here we consider briefly one simple generalization of the squared loss, called the *Minkowski loss*, whose expectation
-is given by
+Here we consider briefly one simple generalization of the squared loss, called the <font face="Lora">Minkowski
+loss</font>, whose expectation is given by
 
 $$
   {\mathbb{E}[L_q]=\int\int\vert y(\mathbf{x})-t\vert^q p(\mathbf{x},t)d\mathbf{x}dt}
@@ -54,8 +54,8 @@ $$
 $$
 
 By basic calculus, we make it clear that this cross-term always vanishes, irrespective of whether the noise in target
-$t$ is supposed to arise from **intrinsic** or **extrinsic** sources. That is to say, we need not assume independence of
-the noise from either $\mathbf{x}$ or $t$.
+$t$ is supposed to arise from <font face="Lora">intrinsic</font> or <font face="Lora">extrinsic</font> sources. That is
+to say, we need not assume independence of the noise from either $\mathbf{x}$ or $t$.
 
 If we had an unlimited supply of data (and unlimited computational resources), we could in principle find the regression
 function $h(\mathbf{x})$ to any desired degree of accuracy, and this would represent the optimal choice for

@@ -17,16 +17,16 @@ maximizes the Information Gain.
 ## The Property
 The point we make is that we don't need to check the midway value between every pair of adjacent attribute values in the
 training samples. [Fayyad (1991)](#references) showed that the value of $a_i$ that maximizes Information Gain must
-always lie at a "boundary", which means any value (**not necessarily the midway value**) between the attribute values of
-two adjacent samples that differ in their targets. Note that even some textbooks (such as
+always lie at a "boundary", which means any value (<font face="Lora">not necessarily the midway value</font>) between
+the attribute values of two adjacent samples that differ in their targets. Note that even some textbooks (such as
 [Zhihua Zhou (2016)](#references)) didn't recognize this property, and went through the procedure by iteratively
 checking every possible midway. Let us consider an example from [Tom Mitchell (1997)](#references) for clarification.
 
-| attribute: temperature | 40 | 48 | 60 | 72 | 80 | 90 |
-| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| target: play tennis | no | no | yes | yes | yes | no|
-
-<center><font face="Lora">Table 1: Finding The Best Threshold For Learning Target From Attribute</font></center>
+```
+ attribute: temperature | 40 | 48 | 60  | 72  | 80  | 90 |
+ target: play tennis    | no | no | yes | yes | yes | no |
+```
+<center><font face="Lora">Table 1: Finding The Best Threshold For Learning Target From Attribute</font></center><br/>
 
 In the current example, there are two candidate thresholds (boundaries), corresponding to the values of temperature at
 which the value of play tennis changes: $(48+60)/2$, and $(80+90)/2$. Note that although a boundary is valid anywhere
@@ -79,8 +79,8 @@ Note that $x$ may be non-integer or even negative. But wherever $x$ occurs, it's
 graph that $f(x)$ can only attain its minimum at boundaries of this $m$-sample interval $x\in[0,m]$, which completes the
 proof.
 
-Remember something special about continuous attributes. Being different from discrete attributes, the continuous
-attributes can be reused for subsequent splittings in its descendant nodes.
+{% include note.html content="Remember something special about continuous attributes. Being different from discrete
+attributes, the continuous attributes can be reused for subsequent splittings in its descendant nodes." %}
 
 ## References
 Ross Quinlan. 1993. C4.5: programs for machine learning.

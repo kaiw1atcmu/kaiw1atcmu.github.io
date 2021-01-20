@@ -136,7 +136,7 @@ $$
 This algorithm demands a time complexity $O(2^d(m+n))$ and a space complexity $O(2^d(m+n))$. To make a fair comparison
 at the bit level, the brute-force for-loop algorithm demands a time complexity of $O(dmn)$ and a space complexity of
 $O(d)$. We can make a bold assumption that $d$ is constant, and then the algorithmic gain is roughly between
-$O(\min(m,n))$ and $O(\max(m,n))$, i.e., an improvement by the magnitude of the array lengths. This is indeed a
+$O(\min(m,n))$ and $O(\max(m,n))$, i.e. an improvement by the magnitude of the array lengths. This is indeed a
 significant improvement over the naive, straight-forward solution.
 
 ## Simulation with Python

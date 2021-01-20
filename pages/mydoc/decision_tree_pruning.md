@@ -92,7 +92,7 @@ $$
   {C_\alpha(T)=C(T)+\alpha\vert T\vert,\ \alpha\geq0.}
 $$
 
-Breiman et al. proposed an iterative and greedy (i.e., without backtracking) pruning algorithm that efficiently solves
+Breiman et al. proposed an iterative and greedy (i.e. without backtracking) pruning algorithm that efficiently solves
 the optimal tree pruning problem. They also showed that given a preselected $\alpha\geq0$, the optimally pruned tree is
 unique in the sense that a decision tree of smaller size $\vert T\vert$ is preferable to one of larger size, when both
 trees have equivalent cost function values. To be specific, the algorithm involves defining a quantity $g(t)$ associated

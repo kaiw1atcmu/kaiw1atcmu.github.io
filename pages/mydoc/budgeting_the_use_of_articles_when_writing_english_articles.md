@@ -4,7 +4,7 @@ keywords: use of article, writing english article
 date: 2020-08-16 14:23:25 -0800
 last_updated: December 26, 2020
 tags: [foreign_languages]
-summary: "Today we are discussing a little bit of grammar on the elegant use of articles (i.e., the indefinite articles
+summary: "Today we are discussing a little bit of grammar on the elegant use of articles (i.e. the indefinite articles
 a/an and the definite article the). In my view, excessive use of articles generally distracts readers from the major
 train of thought, with a cluttered and fragmented writing style. In my view, we should care about readers' feelings by
 moderating our use of articles when writing in English."
@@ -13,10 +13,11 @@ permalink: budgeting_the_use_of_articles_when_writing_english_articles.html
 folder: mydoc
 ---
 
-Today we are discussing a little bit of grammar on the elegant use of articles (i.e., the indefinite articles **a**/
-**an** and the definite article **the**). In my view, excessive use of articles generally distracts readers from the
-major train of thought, with a cluttered and fragmented writing style. In my view, we should care about readers'
-feelings by moderating our use of articles when writing in English.
+Today we are discussing a little bit of grammar on the elegant use of articles (i.e. the indefinite
+articles <font face="Lora">a</font>/<font face="Lora">an</font> and the definite article <font face="Lora">the</font>).
+In my view, excessive use of articles generally distracts readers from the major train of thought, with a cluttered and
+fragmented writing style. In my view, we should care about readers' feelings by moderating our use of articles when
+writing in English.
 
 ## General Rules
 - We do not use articles before uncountable and abstract nouns used in a general sense.

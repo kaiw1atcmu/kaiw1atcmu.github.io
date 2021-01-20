@@ -10,7 +10,7 @@ permalink: a_view_on_entropy_with_applications.html
 folder: mydoc
 ---
 
-According to *Wikipedia*, a general view on entropy is formulated as follows:
+According to <font face="Lora">Wikipedia</font>, a general view on entropy is formulated as follows:
 
 > In information theory, the entropy of a random variable is the average level of "information", "surprise", or
 > "uncertainty" inherent in the variable's possible outcomes.
@@ -75,10 +75,10 @@ log-likelihood of an observation of $\mathcal{X}$.
 
 * (A first alternative interpretation) The entropy $H(\mathcal{X})$ is related by Equation 1 to the sequence
 $\mathcal{S}$ that induces the maximum joint probability of ordered observations of $\mathcal{X}$. The sample space
-ranges over all **ordered** sequences.
+ranges over all <font face="Lora">ordered</font> sequences.
 
 * (A second alternative interpretation) The entropy $H(\mathcal{X})$ is related by Equation 2 to the ensemble
 $\mathcal{E}$ that induces the maximized joint probability of unordered observations of $\mathcal{X}$. The sample space
-ranges over all **unordered** ensembles.
+ranges over all <font face="Lora">unordered</font> ensembles.
 
 {% include links.html %}

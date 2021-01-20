@@ -11,22 +11,23 @@ permalink: expectation_maximization_and_beyond.html
 folder: mydoc
 ---
 
-Suppose we encounter cases in which the available data set is incomplete, i.e., with missing attributes $\mathcal{Z}$
+Suppose we encounter cases in which the available data set is incomplete, i.e. with missing attributes $\mathcal{Z}$
 or missing label $\mathcal{Y}$ besides observed attributes $\mathcal{X}$. Bearing the maximum likelihood principle
-in mind, we seek to have the log-likelihood function $\log\ p(\mathbf{x}\vert\mathbf{\theta})$, or the **evidence
-function**, maximized over $\mathbf{\theta}$, a problem that often proves difficult to approach directly.
+in mind, we seek to have the log-likelihood function $\log\ p(\mathbf{x}\vert\mathbf{\theta})$, or
+the <font face="Lora">evidence function</font>, maximized over $\mathbf{\theta}$, a problem that often proves difficult
+to approach directly.
 
-However, we could bypass direct optimization efforts and consider the **expectation maximization (EM)** algorithm. In
-general, the EM algorithm maximizes the expectation of the log-likelihood function, conditioned on the observed samples
-and $\mathbf{\theta}(t)$, the current iterative estimate of $\mathbf{\theta}$. It can be shown that the successive
-estimates $\mathbf{\theta}(t)$ never decrease the likelihood function (of observed data given $\mathbf{\theta}(t)$). The
-likelihood function (of observed data given $\mathbf{\theta}(t)$) keeps non-decreasing until a maximum (local or global)
-is reached and the EM algorithm converges.
+However, we could bypass direct optimization efforts and consider the <font face="Lora">expectation maximization
+(EM)</font> algorithm. In general, the EM algorithm maximizes the expectation of the log-likelihood function,
+conditioned on the observed samples and $\mathbf{\theta}(t)$, the current iterative estimate of $\mathbf{\theta}$. It
+can be shown that the successive estimates $\mathbf{\theta}(t)$ never decrease the likelihood function (of observed data
+given $\mathbf{\theta}(t)$). The likelihood function (of observed data given $\mathbf{\theta}(t)$) keeps non-decreasing
+until a maximum (local or global) is reached and the EM algorithm converges.
 
 ## The Expectation Maximization (EM) Algorithm
-Let us first state the situation in more general terms. For the **maximum likelihood estimate (MLE)**, we are trying to
-find the optimal parameter vector $\mathbf{\theta}$ which maximizes the likelihood function
-$\log p(\mathbf{x}\vert\mathbf{\theta})$. However, in the scenario where observed data are incomplete, we have
+Let us first state the situation in more general terms. For the <font face="Lora">maximum likelihood estimate
+(MLE)</font>, we are trying to find the optimal parameter vector $\mathbf{\theta}$ which maximizes the likelihood
+function $\log p(\mathbf{x}\vert\mathbf{\theta})$. However, in the scenario where observed data are incomplete, we have
 unobserved data $\mathcal{Z}$ in addition to observed ones $\mathcal{X}$. Instead of directly maximizing
 $\log p(\mathbf{x}\vert\mathbf{\theta})$, we could try to maximize the expected likelihood function given by,
 
@@ -87,7 +88,7 @@ $$
   {Q(\mathbf{\theta}(t+1);\mathbf{\theta}(t))\geq Q(\mathbf{\theta}(t);\mathbf{\theta}(t)).}
 $$
 
-By a variant of **Jensen's inequality**,
+By a variant of <font face="Lora">Jensen's inequality</font>,
     
 $$
   {\int_{\mathbf{z}}\log\frac{p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta}(t+1))}{p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta}(t))}p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta}(t))d\mathbf{z}\leq 0,}
@@ -99,10 +100,10 @@ $$
   {\log p(\mathbf{x};\mathbf{\theta}(t+1))\geq\log p(\mathbf{x};\mathbf{\theta}(t)),}
 $$
 
-which means $\log p(\mathbf{x};\mathbf{\theta}(t))$, the log probability of the observed data, or the **evidence
-function**, never decreases with index $t$. Under some mild conditions, such as $p(\mathbf{x};\mathbf{\theta}(t))$ is
-upper bounded by a positive value, $p(\mathbf{x};\mathbf{\theta}(t))$ is guaranteed to converge, but not necessarily to
-its global maximum.
+which means $\log p(\mathbf{x};\mathbf{\theta}(t))$, the log probability of the observed data, or the <font face="Lora">
+evidence function</font>, never decreases with index $t$. Under some mild conditions, such as
+$p(\mathbf{x};\mathbf{\theta}(t))$ is upper bounded by a positive value, $p(\mathbf{x};\mathbf{\theta}(t))$ is
+guaranteed to converge, but not necessarily to its global maximum.
 
 ## Relation to the $F$ Function
 [Neal and Hinton (1999)](#references) introduced the $F$ function and established its relation to the EM algorithm in a
@@ -137,10 +138,10 @@ Given an initial $\mathbf{\theta}=\mathbf{\theta}^{(0)}$, this procedure is show
 $\mathbf{\theta}^{(i)}$ to that resulted from the EM algorithm.
 
 ## The Generalized Expectation Maximization (GEM) Algorithm
-The **generalized expectation maximization (GEM)** algorithm is a bit more lax than the EM algorithm, and require merely
-that an improved $\mathbf{\theta}^{(t+1)}$ be set in the M-step of the algorithm, not necessarily the optimal.
-Naturally, convergence will not be as rapid as for a proper EM algorithm, but GEM algorithms afford greater freedom to
-choose computationally simpler steps.
+The <font face="Lora">generalized expectation maximization (GEM)</font> algorithm is a bit more lax than the EM
+algorithm, and require merely that an improved $\mathbf{\theta}^{(t+1)}$ be set in the M-step of the algorithm, not
+necessarily the optimal. Naturally, convergence will not be as rapid as for a proper EM algorithm, but GEM algorithms
+afford greater freedom to choose computationally simpler steps.
 
 ## Remarks on the EM Algorithm
 In contrast with other optimization procedures, the expectation-maximization algorithm has properties including:

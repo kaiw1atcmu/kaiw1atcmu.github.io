@@ -17,7 +17,7 @@ calculator is powered on. The question is: starting with the initial $0$, how ca
 any positive rational number) with a finite sequence of operations allowed on this calculator? The situation here is not
 ungrounded. As heavy calculator users (accountants, stockbrokers, cashiers, etc.) use the trigonometric function keys
 relatively infrequently, so their mean time to failure should be longer in response. (An interesting history of the
-fractional number $\frac{355}{113}$ dates back to the 5th century A.D. when the famous Chinese mathematician 祖冲之
+fractional number $\frac{355}{113}$ dates back to the $5$-th century A.D. when the famous Chinese mathematician 祖冲之
 approximated $\pi$ with it.)
 
 <center>
@@ -48,8 +48,8 @@ $$
 \end{array}
 $$
 
-where $f_k$ denotes the $k$-th **Fibonacci number** starting from $f_0=0$. Make use of these identities to compute
-$\frac{1}{x}$, the reciprocal of $x$, for $x\in(0,\infty)$:
+where $f_k$ denotes the $k$-th <font face="Lora">Fibonacci number</font> starting from $f_0=0$. Make use of these
+identities to compute $\frac{1}{x}$, the reciprocal of $x$, for $x\in(0,\infty)$:
 
 $$
 \begin{array}{l}
@@ -114,8 +114,8 @@ $$
 $$
 
 In this way, we can reduce the problem to generating $\text{sqrt}\left(\frac{n}{m\text{ mod }n}\right)$ and decrease the
-denominator from $m$ to $n$, just like the **Euclidean algorithm**. Iteratively run this procedure until
-$m\text{ mod }n=0$ (which would occur in no more than $n$ steps), a problem we have already solved.
+denominator from $m$ to $n$, just like the <font face="Lora">Euclidean algorithm</font>. Iteratively run this procedure
+until $m\text{ mod }n=0$ (which would occur in no more than $n$ steps), a problem we have already solved.
 
 ### The Case When $m<n$
 Consider the case $m<n$. We should solve for $\text{sqrt}(\frac{m}{n})$ first and then apply the identity for

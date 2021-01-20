@@ -153,7 +153,7 @@ $$
   {y(s_2)-y(s_1)\leq \text{projection of arc $s_2-s_1$ onto plane $\mathcal{XOY}$},\ 0\leq s_1\lt s_2 \leq l}
 $$
 
-holds true, i.e., bending the other ellipse is always feasible. Thus, we have arrived at two procedures which dictates
+holds true, i.e. bending the other ellipse is always feasible. Thus, we have arrived at two procedures which dictates
 how the bending of both ellipses are rendered. But we need to show the two bent ellipses can be joined on the shared
 circumferences. Unfortunately, this is impossible if the assumption on $x(s)$ is violated. That is to show the ellipses
 intercept each other, or equivalently, besides the circumferences they shared at least on point in common.
@@ -181,7 +181,7 @@ $$
 $y(s)\cdot\alpha=y(s'),\ \alpha\in[0,1]$ is equivalent to $y(s)\geq y(s')$, and
 $y(l-s)=y(l-s')\cdot\beta,\ \beta\in[0,1]$ is equivalent to $y(l-s)\leq y(l-s')$. Recall $y(s)$ is fixed and
 monotonically increasing, then the condition $\alpha<1\text{ or }\beta<1$ is equivalent to saying that $s>s'$ or
-$l-s<l-s'$, i.e., $s>s'$. Then the ellipses intercept if in addition, there exist $s,s'$ such that $x(s)=x(s'),\ s>s'$.
+$l-s<l-s'$, i.e. $s>s'$. Then the ellipses intercept if in addition, there exist $s,s'$ such that $x(s)=x(s'),\ s>s'$.
 It happens if and only if the foregoing assumption on $x(s)$, that $x(s)$ is either monotonically increasing or
 monotonically decreasing, is violated. Whenever it happens, although the ellipses share circumferences, they intercept
 into each other and thus can not make a solution to the problem.
