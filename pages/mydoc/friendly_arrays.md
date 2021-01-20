@@ -17,30 +17,31 @@ Informally, we define the $k$-th friendly array to be one integer array of lengt
 the range $[1,k]$ and appears exactly twice, in an manner that each pair of $i$'s are spaced by $i$ integers,
 $i\in[1,k]$. Let us enumerate the first few friendly arrays, for example:
 
-| the $n$-th ordinal | the $n$-th friendly arrays |
-| :----: | :----: |
-| the 1-st | (none) |
-| the 2-nd | (none) |
-| the 3-rd | (3, 1, 2, 1, 3, 2), (2, 3, 1, 2, 1, 3) |
-| the 4-th | (2, 3, 4, 2, 1, 3, 1, 4), (4, 1, 3, 1, 2, 4, 3, 2) |
-| the 5-th | (none) |
-| the 6-th | (none) |
-| the 7-th | (4, 6, 1, 7, 1, 4, 3, 5, 6, 2, 3, 7, 2, 5), and 51 more... |
-| the 8-th | (6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3, 1, 7, 1), and 299 more... |
-
-<center><I>Table 1: The Friendly Arrays For The First Few Ordinals</I></center>
-<br/>
+```
+ the $n$-th ordinal | the $n$-th friendly arrays                                        |
+ the 1-st           | (none)                                                            |
+ the 2-nd           | (none)                                                            |
+ the 3-rd           | (3, 1, 2, 1, 3, 2), (2, 3, 1, 2, 1, 3)                            |
+ the 4-th           | (2, 3, 4, 2, 1, 3, 1, 4), (4, 1, 3, 1, 2, 4, 3, 2)                |
+ the 5-th           | (none)                                                            |
+ the 6-th           | (none)                                                            |
+ the 7-th           | (4, 6, 1, 7, 1, 4, 3, 5, 6, 2, 3, 7, 2, 5), and 51 more...        |
+ the 8-th           | (6, 2, 8, 5, 2, 4, 7, 6, 3, 5, 4, 8, 3, 1, 7, 1), and 299 more... |
+```
+<center><font face="Lora">Table 1: The Friendly Arrays For The First Few Ordinals</font></center>
 
 Then what is the systematic procedure to generate (preferably in an exhaustive manner) such $k$-th friendly arrays? In
 the very beginning, I was tempted to crack this problem by following the tricks applied to the
-[*Josephus Problem*](#references). However, due to subtle differences, all efforts were in vain. Vicariously, it
-suddenly dawned on me that the friendly arrays might be approached from a pure programming perspective with stacks, and
-this opinion indeed worked out. In the rest of the post, let us illustrate this approach for the $8$-th ordinal.
+[<font face="Lora">Josephus Problem</font>](#references). However, due to subtle differences, all efforts were in vain.
+Vicariously, it suddenly dawned on me that the friendly arrays might be approached from a pure programming perspective
+with stacks, and this opinion indeed worked out. In the rest of the post, let us illustrate this approach for the
+$8$-th ordinal.
 
 ## Stack Version One
-Without considerations for memory efficiency, this straight-forward Stack Version One implements a *breadth-first-search
-(BFS)* approach using a stack, which consumes the most memory space. Supposing for the $n$-th ordinal, the number of the
-$n$-th friendly arrays in total is given by $f(n)$. more to come to estimate time and space complexity in details ...
+Without considerations for memory efficiency, this straight-forward Stack Version One implements a
+<font face="Lora">breadth-first-search (BFS)</font> approach using a stack, which consumes the most memory space.
+Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by $f(n)$. More to come to
+estimate time and space complexity in details ...
 
 <center>
     <img src="{{ "images/20200122-2.png" }}" alt="Breadth-First-Search"/>
@@ -77,22 +78,19 @@ print('There are in total {} friendly arrays corresponding to the {}-th ordinal.
 
 The complete friendly arrays are:
 ```
-C:\ProgramData\Anaconda3\envs\mldl\python.exe C:/Users/lx/PycharmProjects/mldl/friendly_arrays.py
 The 1-th friendly array is [1, 5, 1, 4, 6, 7, 8, 5, 4, 2, 3, 6, 2, 7, 3, 8]
 The 2-th friendly array is [1, 5, 1, 6, 4, 7, 8, 5, 3, 4, 6, 2, 3, 7, 2, 8]
 The 3-th friendly array is [3, 5, 6, 4, 3, 7, 8, 5, 4, 6, 1, 2, 1, 7, 2, 8]
 ...
 There are in total 300 friendly arrays corresponding to the 8-th ordinal.
-
-Process finished with exit code 0
 ```
 
 ## Stack Version Two
 With considerations for memory efficiency, this slightly improved Stack Version Two approach implements a
-*Depth-First-Search (DFS)* still using a stack, which consumes much less memory space. At any time, the stack at most
-unfolds one status for each level down through the hierarchy, essentially trading time complexity for space complexity.
-Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by $f(n)$. more to come to
-estimate time and space complexity in details ...
+<font face="Lora">Depth-First-Search (DFS)</font> still using a stack, which consumes much less memory space. At any
+time, the stack at most unfolds one status for each level down through the hierarchy, essentially trading time
+complexity for space complexity. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is
+given by $f(n)$. More to come to estimate time and space complexity in details ...
 
 <center>
     <img src="{{ "images/20200122-3.png" }}" alt="Depth-First-Search"/>
@@ -146,21 +144,18 @@ print('There are in total {} friendly arrays corresponding to the {}-th ordinal.
 The complete friendly arrays are:
 
 ```
-C:\ProgramData\Anaconda3\envs\mldl\python.exe C:/Users/lx/PycharmProjects/mldl/friendly_array_2.py
 The 1-th friendly array is [8, 3, 7, 2, 6, 3, 2, 4, 5, 8, 7, 6, 4, 1, 5, 1]
 The 2-th friendly array is [8, 2, 7, 3, 2, 6, 4, 3, 5, 8, 7, 4, 6, 1, 5, 1]
 The 3-th friendly array is [8, 2, 7, 1, 2, 1, 6, 4, 5, 8, 7, 3, 4, 6, 5, 3]
 ...
 There are in total 300 friendly arrays corresponding to the 8-th ordinal.
-
-Process finished with exit code 0
 ```
 
 ## Iterative Version
 With more concern for memory efficiency, this largely improved Iterative Version approach (using no stack) consumes only
-constant O(1) memory space, i.e. an in-place algorithm. At any time, only the current status is maintained. It uses as
+constant $O(1)$ memory space, i.e. an in-place algorithm. At any time, only the current status is maintained. It uses as
 low a space complexity as possible. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total
-is given by $f(n)$. more to come to estimate time and space complexity in details ...
+is given by $f(n)$. More to come to estimate time and space complexity in details ...
 
 ```python
 # Friendly Arrays Iterative Version
@@ -208,14 +203,11 @@ print('There are in total {} friendly arrays corresponding to the {}-th ordinal.
 The complete friendly arrays are:
 
 ```
-C:\ProgramData\Anaconda3\envs\mldl\python.exe C:/Users/lx/PycharmProjects/mldl/friendly_arrays_3.py
 The 1-th friendly array is [8, 3, 7, 2, 6, 3, 2, 4, 5, 8, 7, 6, 4, 1, 5, 1]
 The 2-th friendly array is [8, 2, 7, 3, 2, 6, 4, 3, 5, 8, 7, 4, 6, 1, 5, 1]
 The 3-th friendly array is [8, 2, 7, 1, 2, 1, 6, 4, 5, 8, 7, 3, 4, 6, 5, 3]
 ...
 There are in total 300 friendly arrays corresponding to the 8-th ordinal.
-
-Process finished with exit code 0
 ```
 
 ## References
