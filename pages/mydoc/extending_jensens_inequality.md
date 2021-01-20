@@ -14,7 +14,7 @@ folder: mydoc
 Jensen's Inequality is a fundamental tool frequently used in optimization problems. Let's devote this post to Jensen's
 Inequality and some variants of it.
 
-## Vanilla Jensen's Inequality
+## (Vanilla) Jensen's Inequality
 For a convex function $f$ and a discrete variable $\mathbf{x}$, Jensen's Inequality takes the form
 
 $$
