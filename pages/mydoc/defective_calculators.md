@@ -3,7 +3,7 @@ title: "Defective Calculators"
 keywords: defective calculator, broken calculator
 date: 2020-01-06 04:04:23 -0800
 last_updated: December 26, 2020
-tags: [algorithm]
+tags: [algorithms]
 summary: "Suppose you are provided with a defective calculator, whose numerical and functional keys are all out of order
 except. Then what should you do if you get asked to produce a certain result with this calculator?"
 sidebar: none
