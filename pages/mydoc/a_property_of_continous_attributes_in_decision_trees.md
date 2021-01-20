@@ -10,17 +10,18 @@ permalink: a_property_of_continuous_attributes_in_decision_trees.html
 folder: mydoc
 ---
 
-A variant of basic decision tree algorithms, C4.5 by [Quinlan (1993)](#references), incorporates the ability to deal
-with continuous attribute values. For continuous attributes values, we would like to pick a threshold $a_i$ that
-maximizes the Information Gain.
+A variant of basic decision tree algorithms, <font face="Lora">C4.5</font> by [Quinlan (1993)](#references),
+incorporates the ability to deal with continuous attribute values. For continuous attributes values, we would like to
+pick a threshold $a_i$ that maximizes the Information Gain.
 
 ## The Property
 The point we make is that we don't need to check the midway value between every pair of adjacent attribute values in the
-training samples. [Fayyad (1991)](#references) showed that the value of $a_i$ that maximizes Information Gain must
-always lie at a "boundary", which means any value (<font face="Lora">not necessarily the midway value</font>) between
-the attribute values of two adjacent samples that differ in their targets. Note that even some textbooks (such as
-[Zhihua Zhou (2016)](#references)) didn't recognize this property, and went through the procedure by iteratively
-checking every possible midway. Let us consider an example from [Tom Mitchell (1997)](#references) for clarification.
+training samples. [Fayyad (1991)](#references) showed that the value of $a_i$ that maximizes <font face="Lora">
+Information Gain</font> must always lie at a "boundary", which means any value (<font face="Lora">not necessarily the
+midway value</font>) between the attribute values of two adjacent samples that differ in their targets. Note that even
+some textbooks (such as [Zhihua Zhou (2016)](#references)) didn't recognize this property, and went through the
+procedure by iteratively checking every possible midway. Let us consider an example from
+[Tom Mitchell (1997)](#references) for clarification.
 
 ```
  attribute: temperature | 40 | 48 | 60  | 72  | 80  | 90 |
