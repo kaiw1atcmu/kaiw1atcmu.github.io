@@ -19,16 +19,16 @@ go through a couple of typical applications of it.
 The auto-encoding variational Bayes does not make the common simplifying about the marginal or posterior probabilities.
 Conversely, this algorithm makes it more generally applicable to such problem scenarios including:
 
-* <font face="Lora">Intractability</font>. 1) The integral of the evidence function
+* &nbsp;<font face="Lora">Intractability</font>. 1) The integral of the evidence function
 $p_{\theta}(\mathbf{x})=\int p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$ is intractable, or else we
 will be able to differential $p_{\theta}(\mathbf{x})$ w.r.t. $\theta$ directly. Or, 2) the exact posterior density
 $p_{\theta}(\mathbf{z}\vert\mathbf{x})$ is intractable, so the EM algorithm cannot be used. Or, 3) the required
 integrals for any reasonable mean-field VB algorithm are also intractable, so the mean-field approach is not possible.
 All these cases appear in the common case of moderately complicated likelihood functions
 $p_{\theta}(\mathbf{x}\vert\mathbf{z})$, e.g. a neural network with a nonlinear hidden layer.
-* <font face="Lora">A large dataset</font>. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM, would in
-general be too slow. In addition, the SGVB algorithm naturally enables the online learning procedure, an advantage not
-found in most similar algorithms.
+* &nbsp;<font face="Lora">A large dataset</font>. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM,
+would in general be too slow. In addition, the SGVB algorithm naturally enables the online learning procedure, an
+advantage not found in most similar algorithms.
 
 The authors therefore proposed a solution to three related problems in the above scenario:
 
@@ -137,18 +137,18 @@ where $\epsilon$ is an auxiliary noise variable $\epsilon\sim\mathcal{N}(0,1)$. 
 noise $\epsilon$ is randomly sampled entirely independent of the datasets and models. The authors formulated general
 guidelines to generate $\mathbf{z}$ by change of variables:
 
-* <font face="Lora">Tractable inverse CDF</font>. Recall the basic result in probability theory that the value of the
-cumulative distribution function (CDF) is always $\mathcal{U}(0,1)$ for a variable with any arbitrary probability
+* &nbsp;<font face="Lora">Tractable inverse CDF</font>. Recall the basic result in probability theory that the value of
+the cumulative distribution function (CDF) is always $\mathcal{U}(0,1)$ for a variable with any arbitrary probability
 density functions (PDFs). Then it is straight-forward to sample from $\mathcal{U}(0,1)$ (i.e. $p(F(\mathbf{z}))$) and
 reversely map it to $\mathbf{z}$, as long as the inverse CDF is tractable. Examples: Exponential, Cauchy, Logistic,
 Rayleigh, Pareto, Weibull, Reciprocal, Gompertz, Gumbel and Erlang distributions.
-* <font face="Lora">Location-scale families</font>. For these distributions, we can choose the standard distribution
-(with $\text{location}=0$ and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let
+* &nbsp;<font face="Lora">Location-scale families</font>. For these distributions, we can choose the standard
+distribution (with $\text{location}=0$ and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let
 $g(\cdot)=\text{location}+\text{scale}\ \epsilon$. Examples: Laplace, Elliptical, Student's t, Logistic, Uniform,
 Triangular and Gaussian distributions.
-* <font face="Lora">Composition</font>. It is often possible to express random variables as different transformations of
-auxiliary variables. Examples: Log-Normal (exponentiation of normally distributed variable), Gamma (a sum over
-exponentially distributed variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $F$
+* &nbsp;<font face="Lora">Composition</font>. It is often possible to express random variables as different
+transformations of auxiliary variables. Examples: Log-Normal (exponentiation of normally distributed variable), Gamma
+(a sum over exponentially distributed variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $F$
 distributions.
 
 ## Discussions
