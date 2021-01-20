@@ -38,9 +38,8 @@ with stacks, and this opinion indeed worked out. In the rest of the post, let us
 $8$-th ordinal.
 
 ## Stack Version One
-
-Without considerations for memory efficiency, this straight-forward Stack Version One implements a
-<font face="Lora">breadth-first-search (BFS)</font> approach using a stack, which consumes the most memory space.
+Without considerations for memory efficiency, this straight-forward Stack Version One implements
+a <font face="Lora">breadth-first-search (BFS)</font> approach using a stack, which consumes the most memory space.
 Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is given by $f(n)$. More to come to
 estimate time and space complexity in details ...
 
@@ -87,9 +86,8 @@ There are in total 300 friendly arrays corresponding to the 8-th ordinal.
 ```
 
 ## Stack Version Two
-
-With considerations for memory efficiency, this slightly improved Stack Version Two approach implements a
-<font face="Lora">Depth-First-Search (DFS)</font> still using a stack, which consumes much less memory space. At any
+With considerations for memory efficiency, this slightly improved Stack Version Two approach implements
+a <font face="Lora">Depth-First-Search (DFS)</font> still using a stack, which consumes much less memory space. At any
 time, the stack at most unfolds one status for each level down through the hierarchy, essentially trading time
 complexity for space complexity. Supposing for the $n$-th ordinal, the number of the $n$-th friendly arrays in total is
 given by $f(n)$. More to come to estimate time and space complexity in details ...
