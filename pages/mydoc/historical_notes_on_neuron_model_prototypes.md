@@ -28,7 +28,7 @@ neuron.
 ## The Adaptive Linear Element (ADALINE)
 The adaptive linear element (ADALINE) and its training algorithm known as the least mean squares (LMS) or **Widrow–Hoff
 algorithm**, named after those who suggested it, was proposed in the early 1960s. Given a vector $\mathbf{x}$, the
-output of the classifier will be $\mathbf{w}^t\mathbf{x}$ using offset feature vectors, i.e., feature vectors
+output of the classifier will be $\mathbf{w}^t\mathbf{x}$ using offset feature vectors, i.e. feature vectors
 $\mathbf{x}$ padded with a trailing $1$ corresponding to the bias in $\mathbf{w}$. The desired output will be denoted as
 $y(\mathbf{x})=\pm1$. The weight vector will be computed so as to minimize the mean square error (MSE) between the
 desired and true outputs, that is,
@@ -46,7 +46,7 @@ $$
     
 Without presupposing knowledge of the underlying distributions, the answer has been provided by 
 [Robbins and Monro (1951)](#references) in the more general context of stochastic approximation theory. Applying the
-**Robbins-Monro iteration**, it becomes
+<font face="Lora">Robbins-Monro iteration</font>, it becomes
 
 $$
   {\hat{\mathbf{w}}(k)=\hat{\mathbf{w}}(k-1)+\rho_k\mathbf{x}_k(y_k-\hat{\mathbf{w}}(k-1)^t\mathbf{x}_k)}
@@ -123,9 +123,9 @@ for the iterative minimization of the cost function.
 > **return** $\alpha_i,i=1,\ldots,M$ and $b$  
 
 For the dual form, inner products $\mathbf{x_i}^t\mathbf{x}$ could be computed and stored in a lookup table prior to
-running the algorithm, <I>i.e</I>, trading space complexity for computational complexity. Note that in order for the
-algorithms to terminate and achieve this optimal vector weight $\mathbf{w}$ and scalar bias $b$, it may take more than
-one iteration step, partly depending on the values of learning rate. It is easy to show that the perceptron algorithm
+running the algorithm, i.e. trading space complexity for computational complexity. Note that in order for the algorithms
+to terminate and achieve this optimal vector weight $\mathbf{w}$ and scalar bias $b$, it may take more than one
+iteration step, partly depending on the values of learning rate. It is easy to show that the perceptron algorithm
 converges to a solution in a finite number of iteration steps with non-negative and varying $\eta_t$, provided that the
 sequence of $\eta_t$ satisfies $\sum_{t=1}^{\infty}\eta_t=\infty$ and $\sum_{t=1}^{\infty}\eta_t^2<\infty$. Following
 similar arguments, it is easy to show that the algorithm also converges in a finite number of iteration steps, for
@@ -135,9 +135,9 @@ $\eta$. Interested readers may refer to this [Hang Li (2011)](#references) for d
 
 ### Two Classes and Not Linearly Separable
 If the basic requirement of linear separability in the training data is not satisfied, as is usually the case in
-practice, the perceptron algorithm does not converge. In this case, a variant of the perceptron algorithm called the
-**pocket algorithm** ensures convergence to an optimal solution with probability one. The pocket algorithm consists of
-the following two steps:
+practice, the perceptron algorithm does not converge. In this case, a variant of the perceptron algorithm called
+the <font face="Lora">pocket algorithm</font> ensures convergence to an optimal solution with probability one. The
+pocket algorithm consists of the following two steps:
 
 > Initialize the weight vector $\mathbf{w}$ randomly. Define a stored (in the pocket!) vector $\mathbf{w}_s$.
 >
@@ -151,10 +151,10 @@ It can be shown that this algorithm converges with probability one to the optima
 produces the minimum number of misclassifications.
 
 ### Multi-Class and Linearly Separable
-The **Kesler's construction** is a straightforward generalization from two-class perceptrons to multi-class case. As was
-mentioned a couple of paragraphs above, an $l+1$ dimensional offset feature vector $\mathbf{x}$ is obtained by padding
-the feature vector with a trailing $1$ which corresponds to the scalar bias $b$. Then this $\mathbf{x}$ is classified in
-class $w_i$ using offset features and offset linear discriminants $\mathbf{w}$, if
+The <font face="Lora">Kesler's construction</font> is a straightforward generalization from two-class perceptrons to
+multi-class case. As was mentioned a couple of paragraphs above, an $l+1$ dimensional offset feature vector $\mathbf{x}$
+is obtained by padding the feature vector with a trailing $1$ which corresponds to the scalar bias $b$. Then this
+$\mathbf{x}$ is classified in class $w_i$ using offset features and offset linear discriminants $\mathbf{w}$, if
 $\mathbf{w}_i^t\mathbf{x}>\mathbf{w}_j^t\mathbf{x},\forall j\not=i$, leading to the so-called Kesler's construction:
 
 $$

@@ -140,7 +140,7 @@ drivers, rather than test your Google-Fu by making a random search.
 
 If you want to use the GPU version of TensorFlow you must have a CUDA-enabled GPU. (My <font face="Lora">LEGION</font>
 laptop has an <font face="Lora">NVIDIA GeForce GTX 1060 Graphic Card</font>, which is a CUDA-enabled GPU.) Then you need
-to install <font fade="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
+to install <font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
 
 ### Choose Appropriate CUDA Version
 The version numbers should be determined by the TensorFlow version you have installed. For example, after running a
@@ -153,10 +153,10 @@ required .dll version was `cudart64_101.dll`, and hence the required CUDA versio
 2020-12-27 08:24:01.625448: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 ```
 
-Next, you should find CUDA 10.1 in its appropriate format, depending on your machine's operating system
-(Windows/Ubuntu/...), architecture (x86_64/ppc/...), OS version (Windows 10/Windows Server 2019/...), etc. You might
-choose installer types between "network" (recommended when your Internet connection is unstable) and "local"
-(recommended when your Internet connection is stable).
+Next, find CUDA 10.1 in its appropriate format, depending on your machine's operating system (Windows/Ubuntu/...),
+architecture (x86_64/ppc/...), OS version (Windows 10/Windows Server 2019/...), etc. You might choose installer types
+between "network" (recommended when your Internet connection is unstable) and "local" (recommended when your Internet
+connection is stable).
 
 ### Choose Appropriate cuDNN Version
 Next, you should find the appropriate cuDNN version depending on your CUDA version, and find the appropriate choice of
@@ -275,10 +275,10 @@ the <font face="Lora">yes</font>/<font face="Lora">no</font> in the table means 
 when executing `import tensorflow as tf`":
 
 ```
-| Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
-| cpu-only                                           |       yes     |   no (~tf-like)       |
-| gpu with cuda+cudnn installed                      |       yes     |   yes                 |
-| gpu without cuda+cudnn installed                   |       yes     |   no (~tf-like)       |
+ Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
+ cpu-only                                           |       yes     |   no (~tf-like)       |
+ gpu with cuda+cudnn installed                      |       yes     |   yes                 |
+ gpu without cuda+cudnn installed                   |       yes     |   no (~tf-like)       |
 ```
 <center><font face="Lora">Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</font></center><br/>
 

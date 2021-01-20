@@ -12,22 +12,22 @@ folder: mydoc
 ---
 
 In the same context as the expectation maximization algorithm, we usually have a set of observed variables $\mathcal{X}$
-and a set of latent (i.e., unobserved) variables $\mathcal{Z}$. The challenge of inference usually refers to the
+and a set of latent (i.e. unobserved) variables $\mathcal{Z}$. The challenge of inference usually refers to the
 difficult problem of computing $p(\mathbf{z}\vert\mathbf{x})$ or taking expectations with respect to it. Unfortunately, we
 are more frequently confronted with intractable posterior distributions $p(\mathbf{z}\vert\mathbf{x})$, especially in
 graphical modeling.
 
 ## The Definition of Variational Inference (VI)
-Like in the **expectation maximization (EM)**, we are concerned in computing the log probability of the observed data,
-or the **evidence function**, $\log p(\mathbf{x};\mathbf{\theta})$, or its lower bound when this value is intractable or
-costly to compute. This numeric value is called the **evidence lower bound (ELBO)**, or the negative **variational free
-energy**,
+Like in the <font face="Lora">expectation maximization (EM)</font>, we are concerned in computing the log probability of
+the observed data, or the <font face="Lora">evidence function</font>, $\log p(\mathbf{x};\mathbf{\theta})$, or its lower
+bound when this value is intractable or costly to compute. This numeric value is called the <font face="Lora">evidence
+lower bound (ELBO)</font>, or the negative <font face="Lora">variational free energy</font>,
 
 $$
   {L(\mathbf{z},\mathbf{\theta},q)=\log p(\mathbf{x};\mathbf{\theta})-D_{KL}(q(\mathbf{z}\vert\mathbf{x})\Vert p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta})).}
 $$
 
-Since the **Kullback-Leibler (KL) divergence** is always non-negative, it follows
+Since the <font face="Lora">Kullback-Leibler (KL) divergence</font> is always non-negative, it follows
 $L\leq\log p(\mathbf{x};\mathbf{\theta})$ always provides a lower bound on $\log p(\mathbf{x};\mathbf{\theta})$.
 Interestingly, $L$ is easier to optimize for some pre-selected distribution families of $q$. Straight-forward algebra
 gives us another variant expression of $L$,
@@ -39,8 +39,8 @@ $$
 As the optimization proceeds, the lower bound $L$ approaches closer to $\log p(\mathbf{x})$, until the lower bound is
 tight if and only if $q(\mathbf{z}\vert\mathbf{x};\mathbf{\theta})=p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta})$. At the
 same time, we arrived at a parametrized functional form of $q$ (by way of calculus of variation), an approximation of
-the intractable or costly true posterior $p$. The entire set of techniques is called **variational inference (VI)** in
-that it enables us to solve for the explicit functional form of $q$ with calculus of variation.
+the intractable or costly true posterior $p$. The entire set of techniques is called <font face="Lora">variational
+inference (VI)</font> in that it enables us to solve for the explicit functional form of $q$ with calculus of variation.
 
 ## Variational Inference as Expectation Maximization (EM)
 Recall the $F$ function discussed in our previous post, which has essentially the same functional form as the evidence
@@ -77,8 +77,8 @@ we choose the distribution families of $q$. The core idea behind variational lea
 restricted family of distributions $q$. This family should be chosen so that it is easy to compute
 $\mathbb{E}_{\mathbf{z}\sim q}[\log p(\mathbf{z}\vert\mathbf{x};\mathbf{\theta})]$.
 
-A common approach to variational learning called the **mean field** approach is to impose the restriction that $q$
-factorizes into products of individual components given the observed data $\mathbf{x}$,
+A common approach to variational learning called the <font face="Lora">mean field</font> approach is to impose the
+restriction that $q$ factorizes into products of individual components given the observed data $\mathbf{x}$,
 
 $$
   {p(\mathbf{z}\vert\mathbf{x})=\Pi_i p(z_i\vert\mathbf{x}).}

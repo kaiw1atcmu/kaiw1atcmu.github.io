@@ -223,7 +223,7 @@ $$
 $$
 
 Apparently, any convex combination of $\mathbf{G}_k^{DFP}$ and $\mathbf{G}_k^{DFGS}$ is a valid choice of $\mathbf{G}_k$
-that is consistent with the quasi Newton condition or the secant condition, i.e.,
+that is consistent with the quasi Newton condition or the secant condition, i.e.
 
 $$
   {\mathbf{G}_k=\alpha\mathbf{G}_k^{DFP}+(1-\alpha)\mathbf{G}_k^{DFGS},\ 0\leq\alpha\leq1.}

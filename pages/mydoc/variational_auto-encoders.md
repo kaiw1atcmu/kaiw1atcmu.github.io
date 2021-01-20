@@ -19,16 +19,16 @@ go through a couple of typical applications of it.
 The auto-encoding variational Bayes does not make the common simplifying about the marginal or posterior probabilities.
 Conversely, this algorithm makes it more generally applicable to such problem scenarios including:
 
-* **Intractability**. 1) The integral of the evidence function
+* <font face="Lora">Intractability</font>. 1) The integral of the evidence function
 $p_{\theta}(\mathbf{x})=\int p_{\theta}(\mathbf{z})p_{\theta}(\mathbf{x}\vert\mathbf{z})$ is intractable, or else we
 will be able to differential $p_{\theta}(\mathbf{x})$ w.r.t. $\theta$ directly. Or, 2) the exact posterior density
 $p_{\theta}(\mathbf{z}\vert\mathbf{x})$ is intractable, so the EM algorithm cannot be used. Or, 3) the required
 integrals for any reasonable mean-field VB algorithm are also intractable, so the mean-field approach is not possible.
 All these cases appear in the common case of moderately complicated likelihood functions
 $p_{\theta}(\mathbf{x}\vert\mathbf{z})$, e.g. a neural network with a nonlinear hidden layer.
-* **A large dataset**. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM, would in general be too slow.
-In addition, the SGVB algorithm naturally enables the online learning procedure, an advantage not found in most similar
-algorithms.
+* <font face="Lora">A large dataset</font>. For larger datasets, sampling-based solutions, e.g. Monte Carlo EM, would in
+general be too slow. In addition, the SGVB algorithm naturally enables the online learning procedure, an advantage not
+found in most similar algorithms.
 
 The authors therefore proposed a solution to three related problems in the above scenario:
 
@@ -40,12 +40,12 @@ inference tasks where a prior over $\mathbf{x}$ is required.
 
 ## The Model
 The authors made some conventions for notational simplicity in variational inference. Given variational parameters
-$\phi$ and generative parameters $\theta$, they introduced a **recognition model** or **encoder**
-$q_{\phi}(\mathbf{z}\vert\mathbf{x})$, an approximation to the intractable true posterior
-$p_{\theta}(\mathbf{z}\vert\mathbf{x})$, and a **generative model** or **decoder**
-$p_{\theta}(\mathbf{x}\vert\mathbf{z})$, since given a code $\mathbf{z}$ it produces a distribution over the possible
-corresponding values of $\mathbf{x}$. Without further simplifying assumptions, the authors introduced a method for
-learning the recognition model parameters $\phi$ jointly with the generative model parameters $\theta$.
+$\phi$ and generative parameters $\theta$, they introduced a <font face="Lora">recognition model</font>
+or <font face="Lora">encoder</font> $q_{\phi}(\mathbf{z}\vert\mathbf{x})$, an approximation to the intractable true
+posterior $p_{\theta}(\mathbf{z}\vert\mathbf{x})$, and a <font face="Lora">generative model</font> or <font face="Lora">
+decoder</font> $p_{\theta}(\mathbf{x}\vert\mathbf{z})$, since given a code $\mathbf{z}$ it produces a distribution over
+the possible corresponding values of $\mathbf{x}$. Without further simplifying assumptions, the authors introduced a
+method for learning the recognition model parameters $\phi$ jointly with the generative model parameters $\theta$.
 
 <center>
     <img src="{{ "images/20200821-2.png" }}" alt="the model"/>
@@ -57,9 +57,10 @@ dashed lines denote the variational approximation $q_{\phi}(\mathbf{z}\vert\math
 $p_{\phi}(\mathbf{z}\vert\mathbf{x})$. The variational parameters $\phi$ are learned jointly with the generative model
 parameters $\theta$.
 
-Notice that in the variational inference literature, an **approximate** probability $q$ is used to emphasize the true
-probability $p$ is intractable. In the above settings, since we normally assume that $\mathbf{x}$ given $\theta$ and
-$\mathbf{z}$ are drawn from a predefined distribution, then its probability is **exact**, denoted by $p$.
+Notice that in the variational inference literature, an <font face="Lora">approximate</font> probability $q$ is used to
+emphasize the true probability $p$ is intractable. In the above settings, since we normally assume that $\mathbf{x}$
+given $\theta$ and $\mathbf{z}$ are drawn from a predefined distribution, then its probability is <font face="Lora">
+exact</font>, denoted by $p$.
 
 ## The Variational Bound
 The marginal likelihood is composed of a sum over the marginal likelihoods of individual datapoints
@@ -76,8 +77,8 @@ $$
 $$
 
 Since the Kullback-Leibler divergence is non-negative, the $\mathcal{L}(\theta,\phi;\mathbf{x}^i)$ term is called the
-(variational) lower bound or the more frequently referenced **evidence lower bound (ELBO)** on the marginal likelihood
-of datapoint $\mathbf{x}^i$, and can be written as:
+(variational) lower bound or the more frequently referenced <font face="Lora">evidence lower bound (ELBO)</font> on the
+marginal likelihood of datapoint $\mathbf{x}^i$, and can be written as:
 
 $$
 {\log p_{\theta}(\mathbf{x}^i)\ge\mathcal{L}(\theta,\phi;\mathbf{x}^i)
@@ -136,18 +137,19 @@ where $\epsilon$ is an auxiliary noise variable $\epsilon\sim\mathcal{N}(0,1)$. 
 noise $\epsilon$ is randomly sampled entirely independent of the datasets and models. The authors formulated general
 guidelines to generate $\mathbf{z}$ by change of variables:
 
-* **Tractable inverse CDF**. Recall the basic result in probability theory that the value of the cumulative distribution
-function (CDF) is always $\mathcal{U}(0,1)$ for a variable with any arbitrary probability density functions (PDFs). Then
-it is straight-forward to sample from $\mathcal{U}(0,1)$ (i.e. $p(F(\mathbf{z}))$) and reversely map it to $\mathbf{z}$,
-as long as the inverse CDF is tractable. Examples: Exponential, Cauchy, Logistic, Rayleigh, Pareto, Weibull, Reciprocal,
-Gompertz, Gumbel and Erlang distributions.
-* **Location-scale families**. For these distributions, we can choose the standard distribution (with
-$\text{location}=0$ and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let
+* <font face="Lora">Tractable inverse CDF</font>. Recall the basic result in probability theory that the value of the
+cumulative distribution function (CDF) is always $\mathcal{U}(0,1)$ for a variable with any arbitrary probability
+density functions (PDFs). Then it is straight-forward to sample from $\mathcal{U}(0,1)$ (i.e. $p(F(\mathbf{z}))$) and
+reversely map it to $\mathbf{z}$, as long as the inverse CDF is tractable. Examples: Exponential, Cauchy, Logistic,
+Rayleigh, Pareto, Weibull, Reciprocal, Gompertz, Gumbel and Erlang distributions.
+* <font face="Lora">Location-scale families</font>. For these distributions, we can choose the standard distribution
+(with $\text{location}=0$ and $\text{scale}=1$) as the auxiliary variable $\epsilon$, and let
 $g(\cdot)=\text{location}+\text{scale}\ \epsilon$. Examples: Laplace, Elliptical, Student's t, Logistic, Uniform,
 Triangular and Gaussian distributions.
-* **Composition**. It is often possible to express random variables as different transformations of auxiliary variables.
-Examples: Log-Normal (exponentiation of normally distributed variable), Gamma (a sum over exponentially distributed
-variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $F$ distributions.
+* <font face="Lora">Composition</font>. It is often possible to express random variables as different transformations of
+auxiliary variables. Examples: Log-Normal (exponentiation of normally distributed variable), Gamma (a sum over
+exponentially distributed variables), Dirichlet (weighted sum of Gamma variates), Beta, Chi-Squared, and $F$
+distributions.
 
 ## Discussions
 Unsurprisingly, as a novel generative auto-encoder model, VAEs have interesting details for researchers to delve into.

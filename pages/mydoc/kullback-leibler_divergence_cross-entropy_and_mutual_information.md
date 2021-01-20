@@ -11,14 +11,15 @@ permalink: kullback-leibler_divergence_cross-entropy_and_mutual_information.html
 folder: mydoc
 ---
 
-The concepts of **Kullback-Leibler (KL) divergence**, **cross-entropy (CE)**, and **mutual information (MI)** lie in the
-core of many machine learning optimization tasks. According to <a href="#references">Ian Goodfellow et al. (2016) </a>,
-the use of cross-entropy losses greatly improved the performance of models with sigmoid and softmax outputs, which
-had previously suffered from saturation and slow learning when using the mean squared error loss.
+The concepts of <font face="Lora">Kullback-Leibler (KL) divergence</font>, <font face="Lora">cross-entropy (CE)</font>,
+and <font face="Lora">mutual information (MI)</font> lie in the core of many machine learning optimization tasks.
+According to [Ian Goodfellow et al. (2016)](#references), the use of cross-entropy losses greatly improved the
+performance of models with sigmoid and softmax outputs, which had previously suffered from saturation and slow learning
+when using the mean squared error loss.
 
 ## The Kullback-Leibler (KL) Divergence
-The Kullback-Leibler (KL) divergence, a.k.a. **relative entropy**, measures the extent to which two separate probability
-distributions $p(x)$ and $q(x)$ over the same random variable $x\in\mathcal{X}$ differ:
+The Kullback-Leibler (KL) divergence, a.k.a. <font face="Lora">relative entropy</font>, measures the extent to which two
+separate probability distributions $p(x)$ and $q(x)$ over the same random variable $x\in\mathcal{X}$ differ:
 
 $$ 
   {D_{\text{KL}}(p\Vert q)=\mathbb{E}_{\mathbf{x}\sim p}\left[\log\frac{p(x)}{q(x)}\right]=\mathbb{E}_{\mathbf{x}\sim p}[\log p(x)-\log q(x)].}
@@ -51,8 +52,8 @@ regions where $\log q(x)/r(x)>0$, and lower probabilities than $q$ elsewhere, as
 $p(x)\geq0$ and $\int p(x)dx=1$ hold true. Put together, these two reasons may in part explain why the KL divergence is
 called a "divergence", not a "distance".
 
-Intuitively, a symmetric version of the KL divergence, called the **Jensen-Shannon divergence**, more resembles a true
-distance measure, except for the triangle inequality. That is defined to be
+Intuitively, a symmetric version of the KL divergence, called the <font face="Lora">Jensen-Shannon divergence</font>,
+more resembles a true distance measure, except for the triangle inequality. That is defined to be
 
 $$
   {D_{\text{JS}}(p\Vert q)=\frac{1}{2}D_{\text{KL}}(p\Vert\frac{p+q}{2})+\frac{1}{2}D_{\text{KL}}(q\Vert\frac{p+q}{2}).}
@@ -71,21 +72,26 @@ The blue curves are the contours of the true distribution $p$. The red curves ar
 approximation $q$. (a) minimizes $D_{\text{KL}}(p\Vert q)$ and $q$ tends to cover $p$, whereas (b) and (c) minimize
 $D_{\text{KL}}(q\Vert p)$ and $q$ locks on to one of the two modes.
 
-* $D_{\text{KL}}(p\Vert q)$ is called the **forward KL divergence**, the **moment projection**, or simply the
-**M-projection**. This is infinite if $q(x)=0$ and $p(x)>0$. Thus if $p(x)>0$ we must ensure $q(x)>0$. This
-**zero-avoiding** property for $q$ will typically overestimate the support of $p$.
+* $D_{\text{KL}}(p\Vert q)$ is called the <font face="Lora">forward KL divergence</font>, the <font face="Lora">moment
+projection</font>, or simply the <font face="Lora">M-projection</font>. This is infinite if $q(x)=0$ and $p(x)>0$. Thus
+if $p(x)>0$ we must ensure $q(x)>0$. This <font face="Lora">zero-avoiding</font> property for $q$ will typically
+overestimate the support of $p$.
 
-* $D_{\text{KL}}(q\Vert p)$ is called the **reverse KL divergence**, the **information projection**, or simply the
-**I-projection**. This is infinite if $p(x)=0$ and $q(x)>0$. Thus if $p(x)=0$ we must ensure $q(x)=0$. This
-**zero-forcing** property for $q$ will typically underestimate the support of $p$.
+* $D_{\text{KL}}(q\Vert p)$ is called the <font face="Lora">reverse KL divergence</font>,
+the <font face="Lora">information projection</font>, or simply the <font face="Lora">I-projection</font>. This is
+infinite if $p(x)=0$ and $q(x)>0$. Thus if $p(x)=0$ we must ensure $q(x)=0$. This <font face="Lora">zero-forcing</font>
+property for $q$ will typically underestimate the support of $p$.
 
 As [Ian Goodfellow et al. (2016)](#references) pointed out, the choice of which direction of the KL divergence to use is
 problem-dependent. Some applications require an approximation that usually places high probability anywhere that the
 true distribution places high probability (e.g., in variational inference the solution of $q$ which merely tries to
 capture one mode of $p$ is considered more appropriate than one that blurs multiple modes together), while other
 applications require an approximation that rarely places high probability anywhere that the true distribution places low
-probability (e.g., **Can you come up with an example?**). The choice of the direction of the KL divergence reflects
+probability (e.g. Can you come up with an example?). The choice of the direction of the KL divergence reflects
 which of these considerations takes priority for each application.
+
+{% include note.html content="Can you come up with an use case that requires an approximation that rarely places high
+probability anywhere that the true distribution places low probability?" %}
 
 Sometimes we have to take into account computational issues. For example, in multi-class classifiers,
 $D_{\text{KL}}(p\Vert q)$ should be preferred over $D_{\text{KL}}(q\Vert p)$, because the true targets $p$ can only
@@ -93,9 +99,9 @@ take on values $0$ or $1$, and thus $\log p$ will either take on values $-\infty
 concerning cost function $D_{\text{KL}}(p\Vert q)$ rather inconvenient.
 
 ### An Interesting Correspondence between KL divergence and EM algorithm
-Interestingly, the **expectations maximization (EM)** algorithm bears a great resemblance to the KL divergence, in that
-the EM algorithm is reformulated as a procedure that alternatingly optimizes $D_{\text{KL}}(p\Vert q)$ and
-$D_{\text{KL}}(q\Vert p)$.
+Interestingly, the <font face="Lora">expectations maximization (EM)</font> algorithm bears a great resemblance to the KL
+divergence, in that the EM algorithm is reformulated as a procedure that alternatingly optimizes
+$D_{\text{KL}}(p\Vert q)$ and $D_{\text{KL}}(q\Vert p)$.
 
 Suppose $p$ is not fixed and parametrized by $\theta$, and we are tasked with approximating $p$ with $q$. Recall the EM
 algorithm is equivalent to the maximization maximization algorithm on the induced $F$ function w.r.t. $\theta$ and $q$
@@ -109,13 +115,13 @@ Bearing in mind that optimal $q(z)$ and $\theta$ which maximize the $F$ function
 can write $p(z,x\vert\theta^{(i)})$ as $p(z\vert\theta^{(i)})$ and $q(z\vert x,\theta^{(i)})$ as $q(z)^{(i)}$ for
 notational simplicity.
 
-* The E-step corresponds to maximizing $F(q(z),\theta^{(i)})$ w.r.t. $q(z)$, i.e.,
+* The E-step corresponds to maximizing $F(q(z),\theta^{(i)})$ w.r.t. $q(z)$, i.e.
 
 $$
   {q(z)^{(i+1)}=\max_{q(z)}D_{\text{KL}}(q(z)\Vert p(z\vert\theta^{(i)})),}
 $$ 
 
-* The M-step corresponds to maximizing $F(q(z)^{(i)},\theta)$ w.r.t. $\theta$, i.e.,
+* The M-step corresponds to maximizing $F(q(z)^{(i)},\theta)$ w.r.t. $\theta$, i.e.
 
 $$
   {\theta^{(i+1)}=\max_{\theta}D_{\text{KL}}(q(z)^{(i+1)}\Vert p(z\vert\theta)).}
@@ -146,7 +152,7 @@ $$
   {I(\mathcal{X},\mathcal{Y})=H(\mathcal{X},\mathcal{Y})-H(\mathcal{Y})=H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y}).}
 $$
 
-The mutual information has a desirable property of symmetry, i.e.,
+The mutual information has a desirable property of symmetry, i.e.
 $I(\mathcal{X},\mathcal{Y})=I(\mathcal{Y},\mathcal{X})$. In addition, an interesting identity exists that relates KL
 divergence to mutual information and demonstrates this symmetry,
 

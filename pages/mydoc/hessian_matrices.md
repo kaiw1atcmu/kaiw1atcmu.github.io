@@ -60,8 +60,8 @@ $$
   \approx\sum_{i}\frac{\partial \hat{y}_i}{\partial w_{kj}^r}\frac{\partial \hat{y}_i}{\partial w_{k'j'}^{r'}}.}
 $$
 
-By neglecting the second term, we arrive at the **Levenberg–Marquardt approximation** or the **outer product
-approximation**, given by
+By neglecting the second term, we arrive at the <font face="Lora">Levenberg–Marquardt approximation</font> or
+the <font face="Lora">outer product approximation</font>, given by
 
 $$
   {\mathbf{H}\simeq\sum_{i}\frac{\partial\hat{y}_i}{\partial vec(\mathbf{W})}\otimes\frac{\partial\hat{y}_i}{\partial vec(\mathbf{W})}.}
@@ -77,10 +77,10 @@ The elements of the matrix can then be found in $O(W^2)$ steps by simple multipl
 
 ## Fast Exact Multiplication by the Hessian
 The fast and exact multiplication of vector $\mathbf{v}$ by the Hessian $\mathbf{H}$ is proposed in
-[Barak A. Pearlmutter (1993)](#references), which Ian Goodfellow referred to as **the Krylov methods**. Actually, the
-Krylov methods are defined to be a much broader set of iterative techniques for performing various operations like
-approximately inverting a matrix or finding approximations to its eigenvectors or eigenvalues, without using any
-operation other than matrix-vector products.
+[Barak A. Pearlmutter (1993)](#references), which Ian Goodfellow referred to as the <font face="Lora">Krylov
+methods</font>. Actually, the Krylov methods are defined to be a much broader set of iterative techniques for performing
+various operations like approximately inverting a matrix or finding approximations to its eigenvectors or eigenvalues,
+without using any operation other than matrix-vector products.
 
 For our purpose of using the Krylov methods on the Hessian matrix, we only need to be able to compute $\mathbf{Hv}$, the
 product between the Hessian matrix $\mathbf{H}$ and an arbitrary vector $\mathbf{v}$. We can in turn compute

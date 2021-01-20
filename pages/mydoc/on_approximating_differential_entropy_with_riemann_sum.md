@@ -12,7 +12,7 @@ permalink: on_approximating_differential_entropy_with_riemann_sum.html
 folder: mydoc
 ---
 
-It seems obvious to approximate differential entropy (i.e., the entropy of continuous variables) with Riemann sum. But
+It seems obvious to approximate differential entropy (i.e. the entropy of continuous variables) with Riemann sum. But
 unfortunately, there are lots of intricacies involved in doing so. It deserves an entire blog post to disentangle the
 nuances and sort all tricky things out.
 
@@ -88,16 +88,17 @@ $$
 
 ## Mutual Information Remains Unaffected for Most Discrete Conditioning Variables
 Apparently, we have to exclude the term $\log\frac{n}{b-a}$ to account for the difference in partition granularity.
-Because in many algorithms such as Chow-Liu tree or ID3 decision tree, we are more frequently concerned with estimating
-the *mutual information (MI)*, $I(\mathcal{X},\mathcal{Y})=H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y})$, we wonder if
-it's still valid without taking into account that term. Fortunately, the answer is yes for a discrete conditioning
-variable $\mathcal{Y}$. To see this, for conditional differential entropy $H(\mathcal{X}\vert\mathcal{Y})$, if the
-bivariate function $F(n,y)=H(\mathcal{X},\Delta_n\vert y)-\log\frac{n}{b-a}-H(\mathcal{X}\vert y)$ uniformly converges
-in $y\in\mathcal{Y}$ to $0$ as $n\to\infty$, then infinitesimal terms cancel out exactly. That is,
+Because in many algorithms such as <font face="Lora">Chow-Liu tree</font> or <font face="Lora">ID3 decision tree</font>,
+we are more frequently concerned with estimating the <font face="Lora">mutual information (MI)</font>,
+$I(\mathcal{X},\mathcal{Y})=H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y})$, we wonder if it's still valid without taking
+into account that term. Fortunately, the answer is yes for a discrete conditioning variable $\mathcal{Y}$. To see this,
+for conditional differential entropy $H(\mathcal{X}\vert\mathcal{Y})$, if the bivariate function
+$F(n,y)=H(\mathcal{X},\Delta_n\vert y)-\log\frac{n}{b-a}-H(\mathcal{X}\vert y)$ uniformly converges in
+$y\in\mathcal{Y}$ to $0$ as $n\to\infty$, then infinitesimal terms cancel out exactly. That is,
 
 $$
   {\lim_{n\to\infty}\left\{(H(\mathcal{X})-H(\mathcal{X},\Delta_n))-(H(\mathcal{X}\vert\mathcal{Y})-H(\mathcal{X},\Delta_n\vert\mathcal{Y}))\right\}=0,}\\
-  {i.e.,\lim_{n\to\infty}\left\{H(\mathcal{X},\Delta_n)-H(\mathcal{X},\Delta_n\vert\mathcal{Y})\right\}
+  {\text{i.e.}\lim_{n\to\infty}\left\{H(\mathcal{X},\Delta_n)-H(\mathcal{X},\Delta_n\vert\mathcal{Y})\right\}
   =H(\mathcal{X})-H(\mathcal{X}\vert\mathcal{Y}).}
 $$
 

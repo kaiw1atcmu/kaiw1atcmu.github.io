@@ -18,9 +18,10 @@ reminiscence of the pioneers of network pruning techniques.
 
 ## Optimal Brain Damage
 In [Yann Le Cun et al. (1989)](#references), the authors devised a class of practical and nearly optimal schemes called
-**Optimal Brain Damage** for adapting the size for adapting the size of a neural network, by removing unimportant
-weights of it. The paper firstly introduced a per-parameter measure called **saliency**, i.e., the change in the
-objective function caused by deleting that parameter, using analytical tools for the Hessian:
+<font face="Lora">Optimal Brain Damage</font> for adapting the size for adapting the size of a neural network, by
+removing unimportant weights of it. The paper firstly introduced a per-parameter measure called
+<font face="Lora">saliency</font>, i.e. the change in the objective function caused by deleting that parameter, using
+analytical tools for the Hessian:
 
 $$
   {\delta L=\sum_i \frac{\partial L}{\partial u_i}+\frac{1}{2}\sum_i\frac{\partial^2 L}{\partial u_i^2}(\delta u_i)^2+
@@ -46,19 +47,20 @@ $$
 
 the increase in the objective function caused by simply deleting that parameter. Using an empirical complexity measure
 of the number of nonzero free parameters, it makes sense to delete parameters with smallest "saliency". Deleting a
-parameter means setting it to $0$ and freezing it. Several variant can be defined, e.g., decreasing the weights
+parameter means setting it to $0$ and freezing it. Several variant can be defined, e.g. decreasing the weights
 instead of simply setting them to $0$, or allowing deleted weights to adapt again. The downside is after pruning, we
 need to retrain the network until convergence. This pruning-retraining procedure can continue multiple times, until some
 reasonable complexity-performance trade-off is achieved.
 
 ## Optimal Brain Surgeon
-Published after its predecessor, the **Optimal Brain Surgeon** algorithm in [Babak Hassibi et al. (1993)](#references)
-took its title, seemingly to intimate that Optimal Brain Damage did not really achieve optimal performance, and we need
-a brain surgeon to have the damage rectified. In spite of the joking title, it indeed resulted in better performance and
-most importantly, a retraining-free scheme to update all the weights.
+Published after its predecessor, the <font face="Lora">Optimal Brain Surgeon</font> algorithm in
+[Babak Hassibi et al. (1993)](#references) took its title, seemingly to intimate that Optimal Brain Damage did not
+really achieve optimal performance, and we need a brain surgeon to have the damage rectified. In spite of the joking
+title, it indeed resulted in better performance and most importantly, a retraining-free scheme to update all the
+weights.
 
 The paper advocated that Optimal Brain Damage made an assumption about the Hessian begin diagonal. In fact, however, the
-Hessians are strongly non-diagonal, i.e., with nonzero off-diagonal entries. Consequently, the Optimal Brain Damage
+Hessians are strongly non-diagonal, i.e. with nonzero off-diagonal entries. Consequently, the Optimal Brain Damage
 often deleted the wrong weights. Moreover, unlike other methods, the Optimal Brain Surgeon did not demand retraining
 after pruning. That was indeed a huge improvement. Still, consider the change in the objective function in the form of
 functional Taylor series:
@@ -103,7 +105,7 @@ burden not to be underestimated, though.
 
 As pointed out by the authors, in some rare cases such as two-layer xor, both Magnitude method and Optimal Brain Damage
 might delete an incorrect weight, and this mistake could not be overcome by further network training, so that they could
-never learn that function correctly (i.e., achieve zero error).
+never learn that function correctly (i.e. achieve zero error).
 
 <center>
     <img src="{{ "images/20191112-1.png" }}" alt="OBS outperformed others"/>
@@ -124,7 +126,7 @@ constantly achieved state-of-the-art performance for general neural network prun
 not limited to feed-forward neural nets. Its use extends naturally to a wider variety of machine learning models beyond
 neural networks, such as graphical models and Boltzmann Machines.
 
-More to come...
+More to come in a dedicated post on the technique of Dropout...
 
 ## References
 Yann Le Cun, John S. Denker and Sara A. Solla. 1989. Optimal Brain Damage. Advances in NIPS.
