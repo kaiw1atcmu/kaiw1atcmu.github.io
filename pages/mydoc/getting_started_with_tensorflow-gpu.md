@@ -20,20 +20,17 @@ Ubuntu-18.04</font>.
 
 ## My Operating System And Other Settings
 My <font face="Lora">LEGION</font> (a sub-brand of <font face="Lora">LENOVO</font>) laptop has Windows 10 installed. The
-machine's important settings are found by running command `systeminfo` in Windows 10's `CMD` terminal:
+machine's important specs are found by running command `systeminfo` in Windows 10's `CMD` terminal (immaterial specs are
+omitted as `...` for simplicity):
 
 ```
-Host Name:                 LAPTOP-BFD2CE3C
+...
 OS Name:                   Microsoft Windows 10 Home China
 OS Version:                10.0.18363 N/A Build 18363
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
-Registered Owner:          lx
-Registered Organization:
-Product ID:                00342-30262-00002-AAOEM
-Original Install Date:     9/11/2019, 23:12:21
-System Boot Time:          1/13/2021, 13:51:46
+...
 System Manufacturer:       LENOVO
 System Model:              81LC
 System Type:               x64-based PC
@@ -43,9 +40,7 @@ BIOS Version:              LENOVO 9VCN12WW, 8/6/2018
 Windows Directory:         C:\WINDOWS
 System Directory:          C:\WINDOWS\system32
 Boot Device:               \Device\HarddiskVolume1
-System Locale:             en-us;English (United States)
-Input Locale:              zh-cn;Chinese (China)
-Time Zone:                 (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+...
 Total Physical Memory:     8,065 MB
 Available Physical Memory: 1,832 MB
 Virtual Memory: Max Size:  21,889 MB
@@ -55,28 +50,7 @@ Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\LAPTOP-BFD2CE3C
 Hotfix(s):                 22 Hotfix(s) Installed.
-                           [01]: KB4586878
-                           [02]: KB4515383
-                           [03]: KB4516115
-                           [04]: KB4517245
-                           [05]: KB4521863
-                           [06]: KB4524569
-                           [07]: KB4528759
-                           [08]: KB4535680
-                           [09]: KB4537759
-                           [10]: KB4541338
-                           [11]: KB4552152
-                           [12]: KB4560959
-                           [13]: KB4561600
-                           [14]: KB4565554
-                           [15]: KB4569073
-                           [16]: KB4576751
-                           [17]: KB4577670
-                           [18]: KB4580325
-                           [19]: KB4584229
-                           [20]: KB4586863
-                           [21]: KB4598479
-                           [22]: KB4598229
+...
 Network Card(s):           3 NIC(s) Installed.
                            [01]: Realtek PCIe GbE Family Controller
                                  Connection Name: 以太网
@@ -122,16 +96,20 @@ Conda, for Python IDEs like PyCharm. The bad news is, however, not all Python pa
 within Anaconda, such as <font face="Lora">jieba</font>, a frequently used natural language processing package for
 Chinese mandarin.
 
-## Install TensorFlow
+For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`.
+
+## Option One: Install TensorFlow And Required Packages Using pip 
+
+### Install TensorFlow
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
 environment from the installed Anaconda Navigator and have almost all the required packages there. Although searching
 plainly for "tensorflow" will prompt you to install TensorFlow, it might not be the specific version that serves your
 purpose. To resolve this, you probably have to download the specific version from TensorFlow's official website (e.g.
-`tensorflow-2.3.0`). If downloading with the web browser
-(e.g. <font face="Lora">Chrome</font>, <font face="Lora">Internet Explorer</font>) is unsuccessful due to poor Internet
-connections, you are encouraged to try an alternative software, such as <font face="Lora">BitTorrent</font>.
+`tensorflow-2.3.0`). If downloading with the web browser (e.g. <font face="Lora">Chrome</font>,
+<font face="Lora">Internet Explorer</font>) is unsuccessful due to poor Internet connections, you are encouraged to try
+an alternative software, such as <font face="Lora">BitTorrent</font>.
 
-## Install CUDA & cuDNN
+### Install CUDA & cuDNN
 Before you start, check that your machine should have GPUs, and should have their drivers correctly installed. Normally,
 you don't need to worry about this if your machine is pre-installed with Windows 10 and its corresponding hardware
 drivers, for example. Otherwise, you'll probably have to download and install the appropriate GPU drivers. I recommend
@@ -218,6 +196,23 @@ coreClock: 1.6705GHz coreCount: 10 deviceMemorySize: 6.00GiB deviceMemoryBandwid
 2020-12-30 19:10:58.237211: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1060, Compute Capability 6.1
 ```
 
+## Option Two: Install TensorFlow And Required Packages Using conda
+After creating the environment using Conda to accommodate TensorFlow, searching plainly for "tensorflow-gpu" in
+[<font face="Lora">Anaconda Cloud</font>](#https://anaconda.org) will show you available TensorFlow channels/packages,
+and machine's platform types (i.e. machine's hardware architecture and operating system) that it supports. However, it
+might not be the specific TensorFlow version that serves your purpose. When revising this post (as of January 2021),
+tensorflow-gpu 2.4.0 is not yet available on Anaconda Cloud. You'd better install tensorflow-gpu 2.3.0 from a popular
+channel with the top number of downloads (e.g. channel <font face="Lora">anaconda</font>), and you simply need to key in
+```
+conda install -c anaconda tensorflow-gpu==2.3.0
+```
+or
+```
+conda install -c anaconda tensorflow-gpu=2.3.0
+```
+and conda will take care of CUDA and cuDNN with their appropriate versions. In this way, you are better off by saving
+the trouble of looking for all required packages and their appropriate versions.
+
 ## Performance Test
 A code snippet from [TensorFlow's official guide page](https://www.tensorflow.org/guide/gpu) verified the usability of
 GPUs:
@@ -276,9 +271,9 @@ when executing `import tensorflow as tf`":
 
 ```
  Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
- cpu-only                                           |       yes     |   no (~tf-like)       |
- gpu with cuda+cudnn installed                      |       yes     |   yes                 |
- gpu without cuda+cudnn installed                   |       yes     |   no (~tf-like)       |
+ cpu-only                                           |      yes      |     no (~tf-like)     |
+ gpu with cuda+cudnn installed                      |      yes      |     yes               |
+ gpu without cuda+cudnn installed                   |      yes      |     no (~tf-like)     |
 ```
 <center><font face="Lora">Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</font></center><br/>
 
