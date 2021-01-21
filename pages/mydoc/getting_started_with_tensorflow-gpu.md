@@ -105,9 +105,9 @@ It is advisable to create a new, dedicated environment using Conda to accommodat
 environment from the installed Anaconda Navigator and have almost all the required packages there. Although searching
 plainly for "tensorflow" will prompt you to install TensorFlow, it might not be the specific version that serves your
 purpose. To resolve this, you probably have to download the specific version from TensorFlow's official website (e.g.
-`tensorflow-2.3.0`). If downloading with the web browser (e.g. <font face="Lora">Chrome</font>,
-<font face="Lora">Internet Explorer</font>) is unsuccessful due to poor Internet connections, you are encouraged to try
-an alternative software, such as <font face="Lora">BitTorrent</font>.
+`tensorflow-2.3.0`). If downloading with the web browser
+(e.g. <font face="Lora">Chrome</font>, <font face="Lora">Internet Explorer</font>) is unsuccessful due to poor Internet
+connections, you are encouraged to try an alternative software, such as <font face="Lora">BitTorrent</font>.
 
 ### Install CUDA & cuDNN
 Before you start, check that your machine should have GPUs, and should have their drivers correctly installed. Normally,
