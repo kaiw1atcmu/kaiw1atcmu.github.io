@@ -79,16 +79,17 @@ The <font face="Lora">community version</font> of this software is free and you 
 your machine already has PyCharm installed.
 
 ## Install Python & Conda
-</font face="Lora">Conda</font> is an open-source package management system and environment management system that runs
-on multiple OSes. It was created for Python programs but it can package and distribute software for nearly any language
-(e.g. C++/Java), with a focus on data sciences. Conda manager gives you the ability to create multiple environments with
-different versions of Python and other libraries. This becomes useful when some codes are written with specific versions
-of a library. The Conda package and environment manager is included in all versions of <font face="Lora">Anaconda
-</font>, <font face="Lora">Miniconda</font>, and <font face="Lora">Anaconda Repository</font>.
+&#000;<font face="Lora">Conda</font> is an open-source package management system and environment management system that
+runs on multiple OSes. It was created for Python programs but it can package and distribute software for nearly any
+language (e.g. C++/Java), with a focus on data sciences. Conda manager gives you the ability to create multiple
+environments with different versions of Python and other libraries. This becomes useful when some codes are written with
+specific versions of a library. The Conda package and environment manager is included in all versions
+of <font face="Lora">Anaconda</font>, <font face="Lora">Miniconda</font>,
+and <font face="Lora">Anaconda Repository</font>.
 
-<font face="Lora">Anaconda</font> is the world's most popular open-source, multi-channel Python distribution platform
-for free public Conda package hosting. The <font face="Lora">individual edition</font> of this software is free and you
-can download it through [its official website](https://www.anaconda.com/products/individual). To facilitate our
+&#000;<font face="Lora">Anaconda</font> is the world's most popular open-source, multi-channel Python distribution
+platform for free public Conda package hosting. The <font face="Lora">individual edition</font> of this software is free
+and you can download it through [its official website](https://www.anaconda.com/products/individual). To facilitate our
 discussion, I am supposing that your machine already has Anaconda installed.
 
 The good news is Anaconda provides integrated package installation and environment management utilities supported by
