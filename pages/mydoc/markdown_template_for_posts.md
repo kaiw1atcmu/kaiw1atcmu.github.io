@@ -182,7 +182,7 @@ _The End_
 A footnote starts with a caret and an identifier inside brackets[^1] which support multiple paragraphs and code by
 indentation[^bignote]. The content of the footnote also starts with a caret and its identifier inside brackets succeeded
 by a colon and text. You don’t have to put footnotes at the end of the document. However, the GitHub-flavored Markdown
-parser does <font face="Lora>not</font> support footnotes and stacks them at the bottom of the file, in the order of
+parser does <font face="Lora">not</font> support footnotes and stacks them at the bottom of the file, in the order of
 their appearance.
 
 [^1]: This is the first footnote.  
