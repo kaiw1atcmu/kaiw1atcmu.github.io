@@ -97,9 +97,10 @@ Conda, for Python IDEs like PyCharm. The bad news is, however, not all Python pa
 within Anaconda, such as <font face="Lora">jieba</font>, a frequently used natural language processing package for
 Chinese mandarin.
 
-For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`.
+For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`. As a personal
+preferences, I suggest using `pip` on Windows and using `conda` on Linux-like OSes.
 
-## Option One: Install TensorFlow And Required Packages Using pip 
+## For Windows Users: Install TensorFlow And Required Packages Using pip
 
 ### Install TensorFlow
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
@@ -197,7 +198,7 @@ coreClock: 1.6705GHz coreCount: 10 deviceMemorySize: 6.00GiB deviceMemoryBandwid
 2020-12-30 19:10:58.237211: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1060, Compute Capability 6.1
 ```
 
-## Option Two: Install TensorFlow And Required Packages Using conda
+## For Linux-Like OSes Users: Install TensorFlow And Required Packages Using conda
 After creating the environment using Conda to accommodate TensorFlow, searching plainly for "tensorflow-gpu" in
 [<font face="Lora">Anaconda Cloud</font>](#https://anaconda.org) will show you available TensorFlow channels/packages,
 and machine's platform types (i.e. machine's hardware architecture and operating system) that it supports. However, it
@@ -286,7 +287,14 @@ no longer provided in Anaconda channels. You could have it downloaded and instal
 use of GPUs, supposing that you have GPU hardware and appropriate CUDA/cuDNN installed.
 - Under a conda environment, installation of CUDA/cuDNN will automatically be done using `conda install tensorflow`, but
 `pip install tensorflow` won't so that you've got to install them manually.
- 
+
+{% include warning.html content="Regarding the last comment, I have tried installing tensorflow-gpu on both Windows 10
+and servers running Linux, and found that `conda` won't automatically search for and install all required CUDA/cuDNN
+packages associated with TensorFlow on Windows 10. But on servers running Linux, it really did." %}
+
+## Troubleshoot
+
+
 ## References
 [A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
 
