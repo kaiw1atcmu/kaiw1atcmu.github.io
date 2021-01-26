@@ -75,8 +75,8 @@ you don't need to worry about this if your machine is running Ubuntu since its c
 packaged into the CUDA Toolkit installation files.
 
 If you want to use the GPU version of TensorFlow you must have a CUDA-enabled GPU. (Our institutional server has a pair
-of <font face="Lora">NVIDIA GeForce GTX 2080 Graphic Card</font>, which are CUDA-enabled GPUs.) Then you need to install
-<font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
+of <font face="Lora">NVIDIA GeForce GTX 2080 Graphic Card</font>, which are CUDA-enabled GPUs.) Then you need to
+install <font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
 
 ## Install Appropriate CUDA Version
 The version numbers should be determined by the TensorFlow version you have installed. For example, after running a
@@ -99,7 +99,7 @@ command-line prompts. Type "accept" at the end of the line to continue.
 <center>
     <img src="{{ "images/20210125-1.PNG" }}" alt="Prompt To Accept End User License Agreement"/>
     <font face="Lora">Figure 1: Prompt To Accept End User License Agreement.</font>
-</center>
+</center><br/>
 
 You need only to install the CUDA Toolkit 10.1 if you already have its Driver installed. In this case, simply check the
 box preceding CUDA Toolkit 10.1 and leave other boxes unchecked.
@@ -107,14 +107,14 @@ box preceding CUDA Toolkit 10.1 and leave other boxes unchecked.
 <center>
     <img src="{{ "images/20210125-2.PNG" }}" alt="Prompt To Run Installer"/>
     <font face="Lora">Figure 2: Prompt To Run Installer.</font>
-</center>
+</center><br/>
 
 If CUDA Toolkit 10.1 is already installed, you could proceed by upgrading the existing installation.
 
 <center>
     <img src="{{ "images/20210125-3.PNG" }}" alt="Prompt To Proceed With Existing Installation"/>
     <font face="Lora">Figure 3: Prompt To Proceed With Existing Installation.</font>
-</center>
+</center><br/>
 
 Before finishing up, you're asked to update the cuda symbolic link so that it points to the CUDA Toolkit version you
 just installed, or ignore the update.
@@ -122,7 +122,7 @@ just installed, or ignore the update.
 <center>
     <img src="{{ "images/20210125-4.PNG" }}" alt="Prompt To Update Symbolic Link"/>
     <font face="Lora">Figure 4: Prompt To Update Symbolic Link.</font>
-</center>
+</center><br/>
 
 After installation, you will probably see system output.
 
@@ -278,7 +278,7 @@ without being explicitly told to do so. Finally, you should run the TensorFlow-i
 outputs and should observe significant execution speed-ups. You can also verify this by running the NVIDIA tool
 `nvidia-smi` in Ubuntu's terminal:
 
-```shell script
+```
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
 |-------------------------------+----------------------+----------------------+
