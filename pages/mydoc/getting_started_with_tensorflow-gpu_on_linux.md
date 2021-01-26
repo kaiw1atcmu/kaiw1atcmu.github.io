@@ -22,7 +22,7 @@ OS.
 Our institutional server has Ubuntu-18.04 LTS installed. For NVIDIA GPUs, The machine's important GPU specs are found by
 running the console tool `lspci` in Ubuntu's terminal (immaterial specs are omitted as `...` for simplicity):
 
-```shell script
+```
 ...
 17:00.0 VGA compatible controller: NVIDIA Corporation GV104 [GeForce GTX 1180] (rev a1)
 ...
@@ -84,7 +84,7 @@ TensorFlow-imported Python script, our institutional server generated the follow
 specifying that the required .dll version was `cudart64_101.dll`, and hence the required CUDA version was 10.1
 (Interesting enough, `tensorflow-2.4.0` would instead require CUDA version `11.0` and `cudart64_110.dll`.):
 
-```shell script
+```
 2021-01-25 17:17:53.730911: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory
 2021-01-25 17:17:53.730953: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 ```
@@ -126,7 +126,7 @@ just installed, or ignore the update.
 
 After installation, you will probably see system output.
 
-```shell script
+```
 Driver:   Not Selected
 Toolkit:  Installed in /usr/local/cuda-10.1/
 Samples:  Not Selected
@@ -163,7 +163,7 @@ After that, rerun the TensorFlow-imported Python script and see if error message
 the missing .dll file, which may be contained in an archive version of cuDNN. A little bit strange, though. For example,
 my laptop output a different error message at this moment:
 
-```shell script
+```
 2021-01-25 17:35:52.035282: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
 2021-01-25 17:35:52.786907: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
 2021-01-25 17:35:54.092861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
@@ -187,7 +187,7 @@ By searching Google, you probably will find out that `libcudnn.so.7` is included
 After placing this .so.7 into folder `lib64` of the CUDA installation folder, a third try suggested that all required
 files concerning our GPUs should be in place:
 
-```shell script
+```
 2021-01-26 12:30:13.414261: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
 2021-01-26 12:30:14.691369: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
 2021-01-26 12:30:14.695558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
@@ -246,7 +246,7 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 
 and the console output the number of GPUs available:
 
-```shell script
+```
 Num GPUs Available:  2
 ```
 
@@ -266,7 +266,7 @@ print(c)
 
 and the console output the location to execute operations:
 
-```shell script
+```
 Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
 tf.Tensor(
 [[22. 28.]
