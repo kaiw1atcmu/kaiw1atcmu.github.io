@@ -1,14 +1,14 @@
 ---
-title: "Getting Started With TensorFlow-gpu"
+title: "Getting Started With TensorFlow-gpu On Windows"
 keywords: tensorflow, gpu
 date: 2020-12-28 03:43:45 -0800
 last_updated: December 28, 2020
 tags: [deep_learning]
 summary: "TensorFlow has been a powerful yet subtle deep learning framework for the research community and the industry
-alike. Today let me devote this post to getting readers started with TensorFlow's GPU packages, from essentially the
-very beginning."
+alike. Today let me devote this post to getting readers started with TensorFlow's GPU packages on Windows, from
+essentially the very beginning."
 sidebar: none
-permalink: getting_started_with_tensorflow-gpu.html
+permalink: getting_started_with_tensorflow-gpu_on_linux.html
 folder: mydoc
 ---
 
@@ -16,14 +16,14 @@ TensorFlow has been a powerful yet subtle deep learning framework for the resear
 Today let me devote this post to getting readers started with TensorFlow's GPU packages, from essentially the very
 beginning. Throughout our discussion, I will showcase all installation procedures for a typical Windows 10 OS. Similar
 procedures apply to <font face="Lora">Unix</font>/<font face="Lora">Linux</font>-based OSes, such as <font face="Lora">
-Ubuntu-18.04</font>.
+Ubuntu-18.04</font>, and will be explained in detail in upcoming posts.
 
 ## My Operating System And Other Settings
 My <font face="Lora">LEGION</font> (a sub-brand of <font face="Lora">LENOVO</font>) laptop has Windows 10 installed. The
 machine's important specs are found by running command `systeminfo` in Windows 10's `CMD` terminal (immaterial specs are
 omitted as `...` for simplicity):
 
-```
+```shell script
 ...
 OS Name:                   Microsoft Windows 10 Home China
 OS Version:                10.0.18363 N/A Build 18363
@@ -98,20 +98,18 @@ within Anaconda, such as <font face="Lora">jieba</font>, a frequently used natur
 Chinese mandarin.
 
 For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`. As a personal
-preferences, I suggest using `pip` on Windows and using `conda` on Linux-like OSes.
+preferences, I suggest using `pip`since it provides users with more flexibility.
 
-## For Windows Users: Install TensorFlow And Required Packages Using pip
-
-### Install TensorFlow
+## Install TensorFlow Using pip
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
 environment from the installed Anaconda Navigator and have almost all the required packages there. Although searching
 plainly for "tensorflow" will prompt you to install TensorFlow, it might not be the specific version that serves your
 purpose. To resolve this, you probably have to download the specific version from TensorFlow's official website (e.g.
-`tensorflow-2.3.0`). If downloading with the web browser
+`tensorflow-2.3.0`). If downloading from e.g. [PyPI](https://pypi.org) with the web browser
 (e.g. <font face="Lora">Chrome</font>, <font face="Lora">Internet Explorer</font>) is unsuccessful due to poor Internet
 connections, you are encouraged to try an alternative software, such as <font face="Lora">BitTorrent</font>.
 
-### Install CUDA & cuDNN
+## Install CUDA Drivers
 Before you start, check that your machine should have GPUs, and should have their drivers correctly installed. Normally,
 you don't need to worry about this if your machine is pre-installed with Windows 10 and its corresponding hardware
 drivers, for example. Otherwise, you'll probably have to download and install the appropriate GPU drivers. I recommend
@@ -122,23 +120,23 @@ If you want to use the GPU version of TensorFlow you must have a CUDA-enabled GP
 laptop has an <font face="Lora">NVIDIA GeForce GTX 1060 Graphic Card</font>, which is a CUDA-enabled GPU.) Then you need
 to install <font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
 
-### Choose Appropriate CUDA Version
+## Install Appropriate CUDA Version
 The version numbers should be determined by the TensorFlow version you have installed. For example, after running a
 TensorFlow-imported Python script, my laptop generated the following console output, explicitly specifying that the
 required .dll version was `cudart64_101.dll`, and hence the required CUDA version was 10.1 (Interesting enough,
 `tensorflow-2.4.0` would instead require CUDA version `11.0` and `cudart64_110.dll`.):
 
-```
+```shell script
 2020-12-27 08:24:01.624720: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
 2020-12-27 08:24:01.625448: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 ```
 
 Next, find CUDA 10.1 in its appropriate format, depending on your machine's operating system (Windows/Ubuntu/...),
 architecture (x86_64/ppc/...), OS version (Windows 10/Windows Server 2019/...), etc. You might choose installer types
-between "network" (recommended when your Internet connection is unstable) and "local" (recommended when your Internet
-connection is stable).
+between "network" (recommended when you have low-bandwidth Internet connection) and "local" (recommended when your have
+access to high-bandwidth Internet connection) installer types.
 
-### Choose Appropriate cuDNN Version
+## Install Appropriate cuDNN Version
 Next, you should find the appropriate cuDNN version depending on your CUDA version, and find the appropriate choice of
 that cuDNN version according to your machine's operating system, architecture, OS version, etc. as before. For CUDA
 10.1, the newest appropriate cuDNN version is `8.0.4` (as of Oct. 2020). After unzipping the downloaded cuDNN .zip file,
@@ -146,12 +144,12 @@ merge the folder into the CUDA installation folder. That is, copy and paste file
 same hierarchical places in the CUDA installation folder. (This iterative work is done automatically in Windows 10 by
 only manipulating the top-level folder.) 
 
-### Maybe You'll Need To Download Archive cuDNN Versions Together
+## Maybe You'll Need To Download Archive cuDNN Versions Together
 After that, rerun the TensorFlow-imported Python script and see if error messages still appear. If so, search Google for
 the missing .dll file, which may be contained in an archive version of cuDNN. A little bit strange, though. For example,
 my laptop output a different error message at this moment:
 
-```
+```shell script
 2020-12-27 08:29:02.355320: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
 2020-12-27 08:29:02.355321: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
 Skipping registering GPU devices...
@@ -161,7 +159,7 @@ By searching Google, you probably will find out that `cudnn64_7.dll` is included
 After placing this .dll into folder `bin` of the CUDA installation folder, a third try suggested that all required files
 concerning our GPUs should be in place:
 
-```
+```shell script
 2020-12-30 19:10:49.972247: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
 2020-12-30 19:10:54.278534: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
 2020-12-30 19:10:55.162969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
@@ -205,11 +203,11 @@ and machine's platform types (i.e. machine's hardware architecture and operating
 might not be the specific TensorFlow version that serves your purpose. When revising this post (as of January 2021),
 tensorflow-gpu 2.4.0 is not yet available on Anaconda Cloud. You'd better install tensorflow-gpu 2.3.0 from a popular
 channel with the top number of downloads (e.g. channel <font face="Lora">anaconda</font>), and you simply need to key in
-```
+```shell script
 conda install -c anaconda tensorflow-gpu==2.3.0
 ```
 or
-```
+```shell script
 conda install -c anaconda tensorflow-gpu=2.3.0
 ```
 and conda will take care of CUDA and cuDNN with their appropriate versions. In this way, you are better off by saving
@@ -226,7 +224,7 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 
 and the console output the number of GPUs available:
 
-```
+```shell script
 Num GPUs Available:  1
 ```
 
@@ -246,7 +244,7 @@ print(c)
 
 and the console output the location to execute operations:
 
-```
+```shell script
 Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
 tf.Tensor(
 [[22. 28.]
@@ -293,7 +291,6 @@ and servers running Linux, and found that `conda` won't automatically search for
 packages associated with TensorFlow on Windows 10. But on servers running Linux, it really did." %}
 
 ## Troubleshoot
-
 
 ## References
 [A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
