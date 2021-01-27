@@ -75,8 +75,9 @@ you don't need to worry about this if your machine is running Ubuntu since its c
 packaged into the CUDA Toolkit installation files.
 
 If you want to use the GPU version of TensorFlow you must have a CUDA-enabled GPU. (Our institutional server has a pair
-of <font face="Lora">NVIDIA GeForce GTX 2080 Graphic Card</font>, which are CUDA-enabled GPUs.) Then you need to
-install <font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font> with their appropriate versions.
+of <font face="Lora">NVIDIA GeForce GTX 2080 Graphic Card</font>, aka <font face="Lora">RTX 1180 Graphic Card</font>,
+which are CUDA-enabled GPUs.) Then you need to install <font face="Lora">CUDA</font> and <font face="Lora">cuDNN</font>
+with their appropriate versions.
 
 ## Install Appropriate CUDA Version
 The version numbers should be determined by the TensorFlow version you have installed. For example, after running a
