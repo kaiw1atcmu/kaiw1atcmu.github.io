@@ -12,9 +12,6 @@ site_title: Kaiser's Tech Blog
 company_name: Kaiser Wang
 # this appears in the footer
 
-version: 20.12.24.00
-# this appears in the footer
-
 github_editme_path: kaiw1atcmu/kaiw1atcmu.github.io
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
