@@ -5,14 +5,15 @@ date: 2019-11-08 18:26:39 -0800
 last_updated: December 26, 2020
 tags: [miscellaneous]
 summary: "It's very easy to automate decorations with Markdown. That's why I primarily use markdown for this website. I
-am selectively expanding on advanced features Markdown here."
+am selectively expanding on advanced Markdown features here."
 sidebar: none
 permalink: markdown_template.html
 folder: mydoc
 ---
 
-It's very easy to automate decorations with Markdown since it cleverly adopts a *WYSIWYG (what you see is what you get)*
-philosophy, rendering webpages' source files uncluttered. I am selectively expanding on advanced features Markdown here.
+It's very easy to automate decorations with Markdown since it cleverly adopts a <font face="Lora">WYSIWYG (what you see
+is what you get)</font> philosophy, rendering webpages' source files uncluttered. I am selectively expanding on advanced
+Markdown features here.
 
 ## Latex Formulas with MathJax
 Configure MathJax module between script tags in HTML files under `_layouts` folder, and insert `set mathjax: true` in
