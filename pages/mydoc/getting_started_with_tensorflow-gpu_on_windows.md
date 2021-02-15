@@ -52,19 +52,7 @@ Logon Server:              \\LAPTOP-BFD2CE3C
 Hotfix(s):                 22 Hotfix(s) Installed.
 ...
 Network Card(s):           3 NIC(s) Installed.
-                           [01]: Realtek PCIe GbE Family Controller
-                                 Connection Name: 以太网
-                                 Status:          Media disconnected
-                           [02]: Realtek 8822BE Wireless LAN 802.11ac PCI-E NIC
-                                 Connection Name: WLAN
-                                 DHCP Enabled:    Yes
-                                 DHCP Server:     192.168.10.1
-                                 IP address(es)
-                                 [01]: 192.168.10.250
-                                 [02]: fe80::e941:523d:3760:8f5a
-                           [03]: Bluetooth Device (Personal Area Network)
-                                 Connection Name: 蓝牙网络连接
-                                 Status:          Media disconnected
+...
 Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
                            Virtualization Enabled In Firmware: No
                            Second Level Address Translation: Yes
@@ -196,23 +184,6 @@ coreClock: 1.6705GHz coreCount: 10 deviceMemorySize: 6.00GiB deviceMemoryBandwid
 2020-12-30 19:10:58.237211: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1060, Compute Capability 6.1
 ```
 
-## For Linux-Like OSes Users: Install TensorFlow And Required Packages Using conda
-After creating the environment using Conda to accommodate TensorFlow, searching plainly for "tensorflow-gpu" in
-[<font face="Lora">Anaconda Cloud</font>](#https://anaconda.org) will show you available TensorFlow channels/packages,
-and machine's platform types (i.e. machine's hardware architecture and operating system) that it supports. However, it
-might not be the specific TensorFlow version that serves your purpose. When revising this post (as of January 2021),
-tensorflow-gpu 2.4.0 is not yet available on Anaconda Cloud. You'd better install tensorflow-gpu 2.3.0 from a popular
-channel with the top number of downloads (e.g. channel <font face="Lora">anaconda</font>), and you simply need to key in
-```
-conda install -c anaconda tensorflow-gpu==2.3.0
-```
-or
-```
-conda install -c anaconda tensorflow-gpu=2.3.0
-```
-and conda will take care of CUDA and cuDNN with their appropriate versions. In this way, you are better off by saving
-the trouble of looking for all required packages and their appropriate versions.
-
 ## Performance Test
 A code snippet from [TensorFlow's official guide page](https://www.tensorflow.org/guide/gpu) verified the usability of
 GPUs:
@@ -261,6 +232,7 @@ of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which 
     <font face="Lora">Figure 1: Details about GPU 1 in the Performance tab of Task Manager while using TensorFlow's GPU functionalities.</font>
 </center>
 
+## Troubleshoot
 ## Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
 What is the differences between installing tensorflow and tensorflow-gpu, if both support GPU operations in the presence
 of GPU hardware, CUDA and cuDNN? According to a highly upvoted answer (updated for recently released TF versions) in
@@ -288,11 +260,9 @@ use of GPUs, supposing that you have GPU hardware and appropriate CUDA/cuDNN ins
 
 {% include warning.html content="Regarding the last comment, I have tried installing tensorflow-gpu on both Windows 10
 and servers running Linux, and found that `conda` won't automatically search for and install all required CUDA/cuDNN
-packages associated with TensorFlow on Windows 10. But on servers running Linux, it really did." %}
-
-## Troubleshoot
+packages associated with TensorFlow on Windows 10." %}
 
 ## References
-[A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
+[Easy TensorFlow: A Comprehensive Guide Website For TensorFlow Users](https://www.easy-tensorflow.com)
 
 {% include links.html %}

@@ -305,6 +305,6 @@ outputs and should observe significant execution speed-ups. You can also verify 
 ## Troubleshoot
 
 ## References
-[A Comprehensive Guide Website For TensorFlow Veterans And Novices Alike](https://www.easy-tensorflow.com)
+[Easy TensorFlow: A Comprehensive Guide Website For TensorFlow Users](https://www.easy-tensorflow.com)
 
 {% include links.html %}
