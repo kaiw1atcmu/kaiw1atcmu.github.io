@@ -4,6 +4,7 @@ tagName: learning_theories
 search: exclude
 permalink: tag_learning_theories.html
 sidebar: none
+toc: false
 folder: tags
 ---
 <!-- {% include taglogic.html %} -->

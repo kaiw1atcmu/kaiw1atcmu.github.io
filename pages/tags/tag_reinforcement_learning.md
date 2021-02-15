@@ -4,6 +4,7 @@ tagName: reinforcement_learning
 search: exclude
 permalink: tag_reinforcement_learning.html
 sidebar: none
+toc: false
 folder: tags
 ---
 <!-- {% include taglogic.html %} -->

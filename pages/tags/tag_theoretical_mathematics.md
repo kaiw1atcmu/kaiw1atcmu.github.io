@@ -4,6 +4,7 @@ tagName: theoretical_mathematics
 search: exclude
 permalink: tag_theoretical_mathematics.html
 sidebar: none
+toc: false
 folder: tags
 ---
 <!-- {% include taglogic.html %} -->

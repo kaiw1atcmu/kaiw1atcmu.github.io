@@ -4,6 +4,7 @@ tagName: algorithms
 search: exclude
 permalink: tag_algorithms.html
 sidebar: none
+toc: false
 folder: tags
 ---
 <!-- {% include taglogic.html %} -->
