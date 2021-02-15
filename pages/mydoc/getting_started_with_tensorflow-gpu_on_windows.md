@@ -233,7 +233,7 @@ of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which 
 </center>
 
 ## Troubleshoot
-## Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
+### Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
 What is the differences between installing tensorflow and tensorflow-gpu, if both support GPU operations in the presence
 of GPU hardware, CUDA and cuDNN? According to a highly upvoted answer (updated for recently released TF versions) in
 [stackoverflow](https://stackoverflow.com/questions/52624703/difference-between-installation-libraries-of-tensorflow-gpu-vs-cpu),
