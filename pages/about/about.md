@@ -1,5 +1,5 @@
 ---
-title: "About The Author"
+title: ""
 date: 2021-02-15 04:49:35 -0800
 last_updated: February 15, 2021
 sidebar: none
@@ -7,6 +7,8 @@ permalink: about.html
 toc: false
 folder: about
 ---  
+
+#### About The Author
 
 Hi there! I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. Welcome to my personal website!
 
