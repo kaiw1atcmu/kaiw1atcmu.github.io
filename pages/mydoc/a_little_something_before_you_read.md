@@ -45,7 +45,7 @@ adding most recent SOTA algorithms. Each update will be accompanied by a short n
 I will create a dedicated page to providing my updated personal information under <font face="Lora">About</font> in the
 navigation bar. Feedback for any issues or suggestions concerning this tech blog can be redirected to my email. 
 
-### Where To Find Github Repositories/Projects
+### Where To Find Github Pages
 I will provide a link to my GitHub front page under <font face="Lora">GitHub</font> in the navigation bar, where all my
 repositories/projects are displayed.
 
