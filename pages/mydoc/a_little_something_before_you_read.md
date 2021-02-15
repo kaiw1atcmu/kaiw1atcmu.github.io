@@ -31,8 +31,9 @@ This documentation-styled Jekyll Theme blog was forked from
 [Tom Johnson's GitHub Repo](https://github.com/tomjoht/documentation-theme-jekyll) as the outgrowth of over 40 active
 contributors' joint effort. According to the theme's owner, "<font face="Lora">[t]his theme has undergone several major
 iterations, and now it’s fairly stable and full of all the features that [he] need[s].</font>" Although the theme is
-primarily intended for hosting documentations (e.g. one for an open-source Python library), still I found it excellent
-if adapted or customized for the purpose of personal tech blog, if redundant functionality modules are removed.
+primarily intended for hosting documentation pages (e.g. one for an open-source Python library), still I found it
+excellent when adapted or customized for the purpose of personal tech blog, if redundant functionality modules are
+removed.
 
 ## Hierarchy Of This Site
 ### Where To Find Public Pages
