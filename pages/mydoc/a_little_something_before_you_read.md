@@ -19,11 +19,10 @@ folder: mydoc
 </center>
 
 ## About Me
-Hi there! I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. Welcome to my personal website!
-
-I'm a recent CS-related graduate student from Carnegie Mellon University, Pittsburgh, PA 15213. I will keep on authoring
-posts concerning algorithms, maths/statistics, machine learning/deep learning, as well as leisure stuff. I will be very
-appreciative if you can contact me via kaiw1atcmu[at]sina.com for any issues or suggestions concerning this weblog.
+I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. I'm a recent CS-related graduate student
+from Carnegie Mellon University, Pittsburgh, PA 15213. I will keep on authoring posts concerning algorithms,
+maths/statistics, machine learning/deep learning, as well as leisure stuff. I will be very appreciative if you can
+contact me via kaiw1atcmu[at]sina.com for any issues or suggestions concerning this tech blog.
 
 ## Motivation For Choosing This Theme
 This documentation-styled Jekyll Theme blog was forked from
@@ -31,7 +30,7 @@ This documentation-styled Jekyll Theme blog was forked from
 contributors' joint effort. According to the theme's owner, "[t]his theme has undergone several major iterations, and
 now it’s fairly stable and full of all the features that [he] need[s]." Although the theme is primarily intended for
 hosting documentations (e.g. one for an open-source Python library), still I found it excellent if adapted or customized
-for the purpose of personal weblogs.
+for the purpose of personal tech blog.
 
 Again, thanks for reading, and please keep an eye on what's going on here!
 
