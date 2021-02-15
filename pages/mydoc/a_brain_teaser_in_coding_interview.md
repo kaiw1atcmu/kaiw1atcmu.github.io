@@ -1,5 +1,5 @@
 ---
-title: "Brain Teaser In Coding Interview"
+title: "A Brain Teaser In Coding Interview"
 keywords: brain teaser, coding interview
 tags: [hacker's_delight]
 date: 2020-08-24 10:10:15 -0800
@@ -8,7 +8,7 @@ summary: "This post discussed a brain teaser in a coding interview. It is worth 
 problems require a significant amount of coding effort; on the contrary, this problem is not programming-heavy and
 requires analytical thinking skills instead."
 sidebar: none
-permalink: brain_teaser_in_coding_interview.html
+permalink: a_brain_teaser_in_coding_interview.html
 folder: mydoc
 ---
 
@@ -37,9 +37,9 @@ were at least two ways to factorize the product with integers ranging between 1 
 
 ## A In The Second Round
 Then A said he was able to decide the integers, which was to say situations like the following one should never happen.
-For example, if the sum of integers could be 28, then we would at least have two candidate pairs (20,8) or (18,10). In
-either case, B was not able to decide the integers, since the product of (20,8) could result from (10,16), and the
-product of (18,10) could result from (9,20). In conclusion, we have in effect reduced the problem to finding a pair of
+For example, if the sum of integers could be 28, then we would at least have two candidate pairs (20, 8) or (18, 10). In
+either case, B was not able to decide the integers, since the product of (20, 8) could result from (10, 16), and the
+product of (18, 10) could result from (9, 20). In conclusion, we have in effect reduced the problem to finding a pair of
 integers, such that given the sum, there was <font face="Lora">exactly</font> one choice of sum that enabled its product
 to be factorized in at least two ways with integers ranging between 1 and 20 inclusive. It is high time that we exhaust
 all of them:
@@ -59,17 +59,17 @@ all of them:
   23 |   (3, 20), (5, 18), etc.   |  24 |   (4, 20), (6, 18), etc.   |
   25 |   (5, 20), (9, 16), etc.   |  26 |   (6, 20), (8, 18), etc.   |
   27 |  (7, 20), (12, 15), etc.   |  28 |  (8, 20), (10, 18), etc.   |
-  29 |        (9, 20)             |  30 |           (none)           |
-  31 |       (15, 16)             |  32 |          (12, 20)          |
- >=33|         (none)             |     |                            |
+  29 |         (9, 20)            |  30 |           (none)           |
+  31 |        (15, 16)            |  32 |          (12, 20)          |
+ >=33|          (none)            |     |                            |
 ```
 <center><font face="Lora">Table 1: What A In The Second Round Was Able To Infer To The Best Of Information Known</font></center>
 
 ## B In The Second Round
 From this table, when A knew "<font face="Lora">the sum was 31</font>" and "<font face="Lora">B was not able to decide
-the solution with product told</font>", A inferred the product had to be 240, and then the solution was (15,16).
-Nevertheless, B was not able to tell (15,16) from (12,20) when he knew "<font face="Lora">the product was 240</font>"
-and "<font face="Lora">A already knew the solution</font>", since (12,20) also served this purpose. To better
+the solution with product told</font>", A inferred the product had to be 240, and then the solution was (15, 16).
+Nevertheless, B was not able to tell (15, 16) from (12, 20) when he knew "<font face="Lora">the product was 240</font>"
+and "<font face="Lora">A already knew the solution</font>", since (12, 20) also served this purpose. To better
 demonstrate B's view, another table has to be constructed:
 
 ```
@@ -82,7 +82,7 @@ demonstrate B's view, another table has to be constructed:
 
 ## The Solution
 From this table, B was able to infer the solution for products 4 and 180. Therefore, the possible answers to this puzzle
-are (20,9) and (2,2). To emphasize, we should never ignore the simpler solution (2,2), which is permissible if we don't
-explicitly require the integers to be distinct.
+are (20, 9) and (2, 2). To emphasize, we should never ignore the simpler solution (2, 2), which is permissible if we
+don't explicitly require the integers to be distinct.
 
 {% include links.html %}
