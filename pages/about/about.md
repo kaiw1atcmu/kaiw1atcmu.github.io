@@ -8,7 +8,7 @@ toc: false
 folder: about
 ---  
 
-#### About The Author
+<h4>About The Author</h4>
 
 Hi there! I'm Kaiser Wang, an awesome backend programmer and self-motivated researcher. Welcome to my personal website!
 
