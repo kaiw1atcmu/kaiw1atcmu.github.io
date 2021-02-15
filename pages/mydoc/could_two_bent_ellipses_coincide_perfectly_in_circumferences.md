@@ -3,7 +3,7 @@ title: "Could Two Bent Ellipses Coincide Perfectly in Circumferences?"
 keywords: 3D geometry
 date: 2019-11-26 14:23:38 -0800
 last_updated: December 26, 2020
-tags: [mathematics]
+tags: [applied_mathematics]
 summary: "Could two ellipses coincide perfectly in circumferences when bent along the major axis? In this post, let us
 try to approach this problem in a step-by-step, mathematically rigid manner."
 sidebar: none

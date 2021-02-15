@@ -2,7 +2,7 @@
 title: "Mathematics pages"
 tagName: mathematics
 search: exclude
-permalink: tag_mathematics.html
+permalink: tag_applied_mathematics.html
 sidebar: none
 folder: tags
 ---

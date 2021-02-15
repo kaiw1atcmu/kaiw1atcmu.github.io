@@ -3,7 +3,7 @@ title: "Gradient Descent, Newton's Method, and Beyond [more to come]"
 keywords: gradient descent, newton's method
 date: 2020-02-02 18:22:35 -0800
 last_updated: December 26, 2020
-tags: [mathematics,machine_learning,deep_learning]
+tags: [machine_learning,deep_learning]
 summary: "Optimization methods always lie in the core of many successful machine learning algorithms. Popular
 optimization methods include gradient descent or steepest descent, Newton's method, quasi Newton method,
 Davidson-Fletcher-Powell (DFP) algorithm, Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm, limited-memory BFGS or
