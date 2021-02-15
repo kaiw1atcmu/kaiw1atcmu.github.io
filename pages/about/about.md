@@ -13,7 +13,7 @@ folder: about
 Hi there, welcome to my personal website! My name is Kaiser Wang, an awesome backend programmer and self-motivated
 researcher. I'm a recent CS-related graduate student from Carnegie Mellon University, Pittsburgh, PA 15213. On this
 website, I will keep on authoring posts concerning algorithms, maths/statistics, machine learning/deep learning, as well
-as personal stuffs.
+as personal stuffs. Again, thanks for reading, and please keep an eye on what's going on here!
 
 <h2>Feedback Information</h2>
 
