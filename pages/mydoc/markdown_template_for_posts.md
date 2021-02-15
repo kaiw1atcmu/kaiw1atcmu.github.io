@@ -86,7 +86,7 @@ Instead, make sure you do a pull and update on your local after making any edits
 {% include important.html content="This is my important info." %}
 
 ## Troubleshoot
-### HTML and Markdown syntax (in)compatibilities
+### HTML and Markdown Syntax (In)Compatibilities
 The `<font>...</font>` HTML5 tags might introduce unexpected troubles when used in combination with Markdown. An obvious
 workaround might be to use `[<font>text</font>](#link)` for links, not to start newlines with `<font>...</font>`
 (you might put an unprintable character such as `&#000;` in front), and not to embed `<font>...</font>` in between the
