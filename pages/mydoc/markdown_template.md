@@ -63,9 +63,9 @@ The rendered output looks like this:
 - [ ] Contact the media
 
 ## Gists
-We can use gists to embed GitHub-flavored code blocks that appear exactly as in GitHub repos. To do so, we log in and
-create a gist in [GitHub's gist pages](#https://gist.github.com), copy its unique id, and follow the instructions
-dictated by [Jekyll-gist gem's website](#https://github.com/jekyll/jekyll-gist).
+We can use <font face="Lora">gists</font> to embed GitHub-flavored code blocks that appear exactly as in GitHub repos.
+To do so, we sign in and create a gist in [GitHub's gist pages](#https://gist.github.com), copy its unique id, and
+follow the instructions dictated by [Jekyll-gist gem's website](#https://github.com/jekyll/jekyll-gist).
 
 {% gist bdd62be479ea2d7ef30821772cdf8af9 %}
 
