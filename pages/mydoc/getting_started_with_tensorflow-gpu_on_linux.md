@@ -58,7 +58,7 @@ within Anaconda, such as <font face="Lora">jieba</font>, a frequently used natur
 Chinese mandarin.
 
 For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`. As a personal
-preferences, I suggest using `pip` since it provides users with more flexibility.
+preference, I suggest using `pip` since it provides users with more flexibility.
 
 ## Install TensorFlow Using pip
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
@@ -92,10 +92,10 @@ specifying that the required .dll version was `cudart64_101.dll`, and hence the 
 
 Next, find CUDA 10.1 in its appropriate format, depending on your machine's operating system (Windows/Ubuntu/...),
 architecture (x86_64/ppc/...), OS version (Windows 10/Windows Server 2019/...), etc. You might choose installer types
-between "network" (recommended when your have low-bandwidth Internet connection) and "local" (recommended when your have
-access to high-bandwidth Internet connection) installer types. You could start by choosing the `runfile (local)` option.
-After downloading the runfile (local) installer, run the command `sudo sh cuda_10.1.105_418.39_linux.run` and follow the
-command-line prompts. Type "accept" at the end of the line to continue.
+between "network" (recommended when you have a low-bandwidth Internet connection) and "local" (recommended when you have
+access to a high-bandwidth Internet connection) installer types. You could start by choosing the `runfile (local)`
+option. After downloading the runfile (local) installer, run the command `sudo sh cuda_10.1.105_418.39_linux.run` and
+follow the command-line prompts. Type "accept" at the end of the line to continue.
 
 <center>
     <img src="{{ "images/20210125-1.PNG" }}" alt="Prompt To Accept End User License Agreement"/>
@@ -154,10 +154,10 @@ called solitairetheme8. Convert this .solitairetheme8 file to an ordinary .tgz f
 `cp cudnn-10.1-linux-x64-v8.0.4.30.solitairetheme8 cudnn-10.1-linux-x64-v8.0.4.30.tgz`, and decompress the .tgz file to
 a folder called `cuda`by default by running `tar -xvzf cudnn-10.1-linux-x64-v8.0.4.30.tgz`.
 
-Next, you should find out where your CUDA installation path reside in Ubuntu's filesystem hierarchy. Normally, your
+Next, you should find out where your CUDA installation path resides in Ubuntu's filesystem hierarchy. Normally, your
 CUDA path should be `/usr/...` or `/usr/local/cuda/` or `/usr/local/cuda/cuda-10.1/`, etc. For our institutional server,
-it is `/usr/local/cuda-10.1/`. Then merge the untarred cuda folder into the CUDA installation folder. That is, copy and
-paste files in the untarred cuda folder into the same hierarchical places in the CUDA installation folder.
+it is `/usr/local/cuda-10.1/`. Then merge the untarred `cuda` folder into the CUDA installation folder. That is, copy
+and paste files in the untarred `cuda` folder into the same hierarchical places in the CUDA installation folder.
 
 ## Maybe You'll Need To Download Archive cuDNN Versions Together
 After that, rerun the TensorFlow-imported Python script and see if error messages still appear. If so, search Google for
