@@ -69,7 +69,10 @@ follow the instructions dictated by [Jekyll-gist gem's website](#https://github.
 
 {% gist bdd62be479ea2d7ef30821772cdf8af9 %}
 
-## Tips, Notes, Warnings, and Importants
+## Tips, Notes, Warnings, and Important Alerts
+These tips, notes, warnings, and important alerts make use of <font face="Lora">Bootstrap</font> styling and are
+available through data references, a remarkable utility provided by the documentation theme, not by Jekyll.
+
 {% include tip.html content="For a better terminal emulator on Windows, use
 [Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
 
