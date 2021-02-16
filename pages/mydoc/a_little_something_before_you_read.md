@@ -21,8 +21,8 @@ folder: mydoc
 ## About The Author
 My name is Kaiser Wang, an awesome backend programmer and self-motivated researcher. I'm a recent CS-related graduate
 student from Carnegie Mellon University, Pittsburgh, PA 15213. On this website, I will keep on authoring posts
-concerning algorithms, maths/statistics, machine learning/deep learning, as well as personal stuffs. Again, thanks for
-reading, and please keep an eye on what's going on here!Although I haven't activated the comment functionality provided
+concerning algorithms, maths/statistics, machine learning/deep learning, as well as personal stuff. Again, thanks for
+reading, and please keep an eye on what's going on here! Although I haven't activated the comment functionality provided
 by [commento.io](https://commento.io), I will be very appreciative if you can contact me via kaiw1atcmu[at]sina.com for
 any issues or suggestions concerning this tech blog.
 
@@ -32,14 +32,14 @@ This documentation-styled Jekyll Theme blog was forked from
 contributors' joint effort. According to the theme's owner, "<font face="Lora">[t]his theme has undergone several major
 iterations, and now it’s fairly stable and full of all the features that [he] need[s].</font>" Although the theme is
 primarily intended for hosting documentation pages (e.g. one for an open-source Python library), still I found it
-excellent when adapted or customized for the purpose of personal tech blog, if redundant functionality modules are
+excellent when adapted or customized for the purpose of a personal tech blog, if redundant functionality modules are
 removed.
 
 ## Hierarchy Of This Site
 ### Where To Find Public Pages
 I will place links to categories of pages in the display-mode menu on this website's homepage. The public pages that
 appear under their corresponding categories are fairly stable, while still being subject to minor updates, such as
-adding most recent SOTA algorithms. Each update will be accompanied by a short note in front of its content.
+adding the most recent SOTA algorithms. Each update will be accompanied by a short note in front of its content.
 
 ### Where To Find Author Information
 I will create a dedicated page to providing my updated personal information under <font face="Lora">About</font> in the
@@ -61,7 +61,7 @@ changes, in the front matter of each Markdown/HTML source file. For example,
 date: 2020-12-26 19:39:02 -0800
 last_updated: December 26, 2020
 ```
-However, the last modified dates at the footnote are automatically generated and are not at my choosing.
+However, the last modified dates at the footnote are automatically generated and are not of my choosing.
 
 ### Comment Areas
 I have to temporarily withhold the activation of comment areas powered by [commento.io](https://commento.io), since

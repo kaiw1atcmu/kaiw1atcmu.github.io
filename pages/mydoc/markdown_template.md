@@ -56,18 +56,18 @@ add an x in between the brackets ([x]).
 - [ ] Contact the media
 {% endhighlight %}
 
-The rendered output look like this:
+The rendered output looks like this:
 
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
 
 ## Gists
-We can use gists to embed GitHub-flavored code blocks that appear exactly as in GitHub repos. To do so, we login and
-create a gist in [GitHub' gist pages](#gist.github.com), copy its unique id, and follow the instructions dictated by
-[jekyll-gist gem's website](#https://github.com/jekyll/jekyll-gist).
+We can use gists to embed GitHub-flavored code blocks that appear exactly as in GitHub repos. To do so, we log in and
+create a gist in [GitHub's gist pages](#https://gist.github.com), copy its unique id, and follow the instructions
+dictated by [Jekyll-gist gem's website](#https://github.com/jekyll/jekyll-gist).
 
-{% gist c21b42b41f05ae3bd1f9f6264e5dae90 %}
+{% gist bdd62be479ea2d7ef30821772cdf8af9 %}
 
 ## Tips, Notes, Warnings, and Importants
 {% include tip.html content="For a better terminal emulator on Windows, use

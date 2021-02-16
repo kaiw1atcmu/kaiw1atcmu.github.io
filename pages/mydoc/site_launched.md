@@ -4,7 +4,7 @@ keywords: site introduction
 date: 2019-11-06 19:39:02 -0800
 last_updated: December 26, 2020
 tags: [miscellaneous]
-summary: "Welcome to my personal blog! Finally I got around to setting up my personal blog."
+summary: "Welcome to my personal blog! Finally, I got around to setting up my personal blog."
 sidebar: none
 permalink: site_launched.html
 folder: mydoc
@@ -13,7 +13,7 @@ folder: mydoc
 Welcome to my personal blog!
 
 ## Full-Featured Website For Free
-Finally I got around to setting up my personal blog. Hosted by <font face="Lora">GitHub</font> at essentially no cost,
+Finally, I got around to setting up my personal blog. Hosted by <font face="Lora">GitHub</font> at essentially no cost,
 this personal website is a light-weight one forked from
 [Tom Johnson's GitHub Repo](https://github.com/tomjoht/documentation-theme-jekyll). A lot easier than you thought it was
 going to be, isn't it? To be frank, I switched to GitHub powered by
@@ -27,9 +27,9 @@ that delivers succinct syntax and stays as powerful as other options. See [Markd
 details. In addition, there are a lot of excellent [Jekyll themes](https://jekyllrb.com/docs/themes) written in it.
 
 Besides, you have access to the <font face="Lora">JavaScript</font> display engine,
-[<font face="Lora">MathJax</font>](https://www.mathjax.org), that supports high-resolution mathematical formulas in web
+[<font face="Lora">MathJax</font>](https://www.mathjax.org), which supports high-resolution mathematical formulas in web
 browsers, and enables bloggers to write beautiful <font face="Lora">Latex</font>-styled content in their posts. However,
-you have to include it in the header part of the template html file. Typically, it is placed under folder `_posts`, and
+you have to include it in the header part of the template THML file. Typically, it is placed under folder `_posts` and
 is named `default.html` or so.
 
 {% include note.html content="Please be aware that the MathJax mechanism supports Latex-fashioned maths formulas. So far
