@@ -71,7 +71,7 @@ your machine already has PyCharm installed.
 runs on multiple OSes. It was created for Python programs but it can package and distribute software for nearly any
 language (e.g. C++/Java), with a focus on data sciences. Conda manager gives you the ability to create multiple
 environments with different versions of Python and other libraries. This becomes useful when some codes are written with
-specific versions of a library. The Conda package and environment manager is included in all versions
+specific versions of a library. The Conda package and environment manager are included in all versions
 of <font face="Lora">Anaconda</font>, <font face="Lora">Miniconda</font>,
 and <font face="Lora">Anaconda Repository</font>.
 
@@ -86,7 +86,7 @@ within Anaconda, such as <font face="Lora">jieba</font>, a frequently used natur
 Chinese mandarin.
 
 For the next step, you have two options to install TensorFlow from scratch, using `pip` or `conda`. As a personal
-preferences, I suggest using `pip`since it provides users with more flexibility.
+preference, I suggest using `pip`since it provides users with more flexibility.
 
 ## Install TensorFlow Using pip
 It is advisable to create a new, dedicated environment using Conda to accommodate TensorFlow. You can create a Conda
@@ -121,8 +121,8 @@ required .dll version was `cudart64_101.dll`, and hence the required CUDA versio
 
 Next, find CUDA 10.1 in its appropriate format, depending on your machine's operating system (Windows/Ubuntu/...),
 architecture (x86_64/ppc/...), OS version (Windows 10/Windows Server 2019/...), etc. You might choose installer types
-between "network" (recommended when you have low-bandwidth Internet connection) and "local" (recommended when your have
-access to high-bandwidth Internet connection) installer types.
+between "network" (recommended when you have a low-bandwidth Internet connection) and "local" (recommended when you have
+access to a high-bandwidth Internet connection) installer types.
 
 ## Install Appropriate cuDNN Version
 Next, you should find the appropriate cuDNN version depending on your CUDA version, and find the appropriate choice of
@@ -234,12 +234,12 @@ of Windows 10's Task Manager by pressing `Ctrl+Alt+Delete`. (Ignore GPU 0 which 
 
 ## Troubleshoot
 ### Difference Between TensorFlow-GPU, TensorFlow-CPU, and TensorFlow
-What is the differences between installing tensorflow and tensorflow-gpu, if both support GPU operations in the presence
-of GPU hardware, CUDA and cuDNN? According to a highly upvoted answer (updated for recently released TF versions) in
-[stackoverflow](https://stackoverflow.com/questions/52624703/difference-between-installation-libraries-of-tensorflow-gpu-vs-cpu),
+What are the differences between installing TensorFlow and TensorFlow-GPU, if both support GPU operations in the
+presence of GPU hardware, CUDA, and cuDNN? According to a highly upvoted answer (updated for recently released TF
+versions) in [stackoverflow](https://stackoverflow.com/questions/52624703/difference-between-installation-libraries-of-tensorflow-gpu-vs-cpu),
 the answers can be summarized below. Please note that running the script always work in all combinations, and
-the <font face="Lora">yes</font>/<font face="Lora">no</font> in the table means "if the package will work out of the box
-when executing `import tensorflow as tf`":
+the <font face="Lora">yes</font>/<font face="Lora">no</font> in the table means "<font face="Lora">if the package will
+work out of the box when executing</font> `import tensorflow as tf`":
 
 ```
  Support for TensorFlow libraries for hardware type | tensorflow/tf | tensorflow-gpu/tf-gpu |
@@ -249,16 +249,16 @@ when executing `import tensorflow as tf`":
 ```
 <center><font face="Lora">Table 1: How TensorFlow/TensorFlow-GPU behave when installed on different hardware settings.</font></center><br/>
 
-Please note that "~tf-like" means even though the library is TensorFlow-gpu, it would behave like the TensorFlow
-library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-cpu library, since it is
-no longer provided in Anaconda channels. You could have it downloaded and installed by executing
-`pip install tensorflow-cpu` and see what will happen. Two more comments in the post are worth mentioning, i.e.
+Please note that "~tf-like" means even though the library is TensorFlow-GPU, it would behave like the TensorFlow
+library. However, I am not sure about the behaviors when it comes to installing the TensorFlow-CPU library, since it is
+no longer recommended. You could have it downloaded and installed by executing `pip install tensorflow-cpu` and see what
+will happen. Two more comments in the post are worth mentioning, i.e.
 - From TensorFlow version 2.0 onward, these libraries are not separated, and you could simply install TensorFlow to make
 use of GPUs, supposing that you have GPU hardware and appropriate CUDA/cuDNN installed.
 - Under a conda environment, installation of CUDA/cuDNN will automatically be done using `conda install tensorflow`, but
 `pip install tensorflow` won't so that you've got to install them manually.
 
-{% include warning.html content="Regarding the last comment, I have tried installing tensorflow-gpu on both Windows 10
+{% include warning.html content="Regarding the last comment, I have tried installing TensorFlow-GPU on both Windows 10
 and servers running Linux, and found that `conda` won't automatically search for and install all required CUDA/cuDNN
 packages associated with TensorFlow on Windows 10." %}
 
