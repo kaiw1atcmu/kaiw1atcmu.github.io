@@ -1,0 +1,106 @@
+---
+title: "RNN Maths"
+keywords: rnn, maths
+date: 2021-03-10 00:45:02 -0800
+last_updated: March 10, 2021
+tags: [deep_learning, machine_learning, applied_mathematics]
+summary: "The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the
+network parameters via the BPTT formulas, are extremely too involved to analyze. In addition, RNNs in their vanilla form
+suffer from the notorious vanishing/exploding gradients problems."
+sidebar: none
+permalink: rnn_maths.html
+folder: mydoc
+---
+
+The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the network
+parameters via the BPTT formulas, are extremely too involved to analyze. In addition, RNNs in their vanilla form suffer
+from the notorious vanishing/exploding gradients problems. Let's explore the details!
+
+## Basic Formulas of LSTM
+The basic forward propagation formulas of LSTM are given by
+
+$$
+\begin{array}{l}
+    {f_t=\sigma(W_f x_t+U_f h_{t-1}+b_f)} \\
+    {i_t=\sigma(W_i x_t+U_i h_{t-1}+b_i)} \\
+    {o_t=\sigma(W_o x_t+U_o h_{t-1}+b_o)} \\
+    {\tilde{C_t}=\text{tanh}(W_c x_t+U_c h_{t-1}+b_c)} \\
+    {C_t=f_t\cdot C_{t-1}+i_t\cdot \tilde{C_t}} \\
+    {h_t=o_t\cdot \text{tanh}C_t} \\
+    {\partial E/\partial \theta=\sum_{1\le t\le k}\partial E_t/\partial \theta} \\
+    {=\sum_{1\le t\le k}\partial E_t/\partial h^T_t\partial h_t/\partial \theta}
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+    {\partial h_t/\partial \theta} \\
+    {=\text{diag}(o_t,1-\text{tanh}^2C_t)\partial C_t/\partial \theta+\text{diag}(\text{tanh}C_t)\partial o_t/\partial \theta} \\
+    {=\text{diag}(o_t,1-\text{tanh}^2C_t)} \\
+    {(\text{diag}(f_t)\partial C_{t-1}/\partial \theta+\text{diag}(C_{t-1})\partial f_t/\partial \theta
+    +\text{diag}(i_t)\partial \tilde{C_t}/\partial \theta+\text{diag}(\tilde{C_t})\partial i_t/\partial \theta)+\text{diag}(\text{tanh}C_t)\partial o_t/\partial \theta}
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+    {\partial h_t/\partial \theta=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(f_t)\partial C_{t-1}/\partial \theta} \\
+    {+\text{diag}(C_{t-1})\partial^+ f_t/\partial \theta+\text{diag}(C_{t-1},f_t,1-f_t)U_f\partial h_{t-1}/\partial \theta} \\
+    {+\text{diag}(i_t)\partial^+ \tilde{C_t}/\partial \theta+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\partial h_{t-1}/\partial \theta} \\
+    {+\text{diag}(\tilde{C_t})\partial^+ i_t/\partial\theta+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\partial h_{t-1}/\partial\theta}] \\
+    {+\text{diag}(1-\text{tanh}^2C_t)\partial^+o_t/\partial\theta+\text{diag}(1-\text{tanh}^2C_t,o_t,1-o_t)U_o\partial h_{t-1}/\partial \theta}
+\end{array}
+$$
+
+We have
+
+$$
+\begin{array}{l}
+    {\partial h_t/\partial \theta=A_{1,t}\partial h_{t-1}/\partial \theta+A_{2,t}\partial C_{t-1}/\partial \theta+A_{0,t}}
+\end{array}
+$$
+
+where
+
+$$
+\begin{array}{l}
+    {A_{1,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i]+\text{diag}(C_t,o_t,1-o_t)U_o} \\
+    {A_{2,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)\text{diag}(f_t)} \\
+    {A_{0,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1})\partial^+ f_t/\partial \theta+\text{diag}(i_t)\partial^+ \tilde{C_t}/\partial \theta+\text{diag}(\tilde{C_t})\partial^+ i_t/\partial\theta]+\text{diag}(1-\text{tanh}^2C_t)\partial^+o_t/\partial\theta}
+\end{array}
+$$
+
+Use the fact that
+
+$$
+\begin{array}{l}
+    {\partial C_t/\partial \theta=\text{diag}(f_t)\partial C_{t-1}/\partial \theta+\text{diag}(C_{t-1},f_t,1-f_t)U_f\partial h_{t-1}/\partial \theta+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\partial h_{t-1}/\partial \theta+\text{diag}(\tilde{C_t},i_t,1-i_t)U_i\partial h_{t-1}/\partial \theta} \\
+\end{array}
+$$
+
+We have
+
+$$
+\begin{array}{l}
+    {\partial C_t/\partial \theta=B_{1,t}\partial h_{t-1}/\partial \theta+B_{2,t}\partial C_{t-1}/\partial \theta+B_{0,t}}
+\end{array}
+$$
+
+where
+
+$$
+\begin{array}{l}
+    {B_{1,t}=\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C_t},i_t,1-i_t)U_i} \\
+    {B_{2,t}=\text{diag}(f_t)} \\
+    {B_{0,t}=0}
+\end{array}
+$$
+
+We have a set of iterative equations
+
+$$
+\begin{array}{l}
+    {\partial h_t/\partial \theta=A_{1,t}\partial h_{t-1}/\partial \theta+A_{2,t}\partial C_{t-1}/\partial \theta+A_{0,t}} \\
+    {\partial C_t/\partial \theta=B_{1,t}\partial h_{t-1}/\partial \theta+B_{2,t}\partial C_{t-1}/\partial \theta+B_{0,t}}
+\end{array}
+$$
