@@ -47,8 +47,8 @@ $$
 \end{array}
 $$
 
-Imagine network parameters $\theta$ as row vectors, and the gradients of hidden units $h_t$ with respect to $\theta$ are
-given by:
+Imagine network parameters $\theta$ as row vectors (so that gradients of columns vectors with respect to row vectors are
+conveniently defined as matrices), and the gradients of hidden units $h_t$ with respect to $\theta$ are given by:
 
 $$
 \begin{array}{l}
