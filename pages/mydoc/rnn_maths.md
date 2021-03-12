@@ -105,15 +105,15 @@ $$
     {\frac{\partial C_t}{\partial \theta}=B_{1,t}\frac{\partial h_{t-1}}{\partial \theta}+B_{2,t}\frac{\partial C_{t-1}}{\partial \theta}+B_{0,t}}
 $$
 
-with boundary conditions ${\partial h_0}/{\partial \theta}=0 and ${\partial c_t}/{\partial \theta}=0$. Or simply
+with boundary conditions ${\partial h_0}/{\partial \theta}=0$ and ${\partial c_0}/{\partial \theta}=0$. Or simply
 
 $$
-    {\frac{\partial hc_t}{\partial \theta}=D_t\frac{\partial hc_{t-1}}{\partial \theta}+E_t}
+    {\frac{\partial hC_t}{\partial \theta}=D_t\frac{\partial hC_{t-1}}{\partial \theta}+E_t}
 $$
 
 where ${\partial hc_t}/{\partial \theta}$ is constructed by vertically stacking ${\partial h_t}/{\partial \theta}$ and
-${\partial c_t}/{\partial \theta}$, respectively. $D_t$ and $E_t$ are the corresponding partitioned matrices constructed
-by $A_{1,t}, A_{2,t}, B_{1,t}, B_{2,t}$, and $A_{0,t}, B_{0,t}$, respectively. The initial conditions are
+${\partial C_t}/{\partial \theta}$, respectively. $D_t$ and $E_t$ are the corresponding partitioned matrices constructed
+by $A_{1,t}, A_{2,t}, B_{1,t}, B_{2,t}$, and $A_{0,t}, B_{0,t}$, respectively. The boundary conditions are
 ${\partial hc_0}/{\partial \theta}=0$.
 
 ## References
