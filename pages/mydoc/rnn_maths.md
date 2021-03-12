@@ -38,14 +38,17 @@ the exploding gradients problem, the error terms are obtained by writing the gra
 
 $$
 \begin{array}{l}
-    {\partial \Epsilon/\partial \theta=\sum_{1\le t\le T}\partial \Epsilon_t/\partial \theta
-    =\sum_{1\le t\le T}\partial \Epsilon_t/\partial h^T_t\partial h_t/\partial \theta} \\
-    {\partial \Epsilon_t/\partial \theta=\sum_{1\le k\le t}(\partial \Epsilon_t/\partial \h^T_t)
-    (\partial h_t/\partial \h^T_k)(\partial^+ h_k/\partial \theta)} \\
-    {\partial h_t/\partial \h^T_k=\prod_{t\le i\lt k}\partial \h_i/\partial h^T_{i-1}=
-    \prod_{t\le i\lt k}W^T_{rec}/\text{diag}\sigma'(h_{i-1})} \\
+    {\partial \varepsilon/\partial \theta=\sum_{1\le t\le T}\partial \varepsilon_t/\partial \theta
+    =\sum_{1\le t\le T}\partial \varepsilon_t/\partial h^T_t\partial h_t/\partial \theta} \\
+    {\partial \varepsilon_t/\partial \theta=\sum_{1\le k\le t}(\partial \varepsilon_t/\partial h^T_t)
+    (\partial h_t/\partial h^T_k)(\partial^+ h_k/\partial \theta)} \\
+    {\partial h_t/\partial h^T_k=\prod_{t\le i\lt k}\partial h_i/\partial h^T_{i-1}=
+    \prod_{t\le i\lt k}W^T_{rec}/\text{diag}\sigma'(h_{i-1})}
 \end{array}
 $$
+
+Imagine network parameters $\theta$ as row vectors, and the gradients of hidden units $h_t$ with respect to $\theta$ are
+given by:
 
 $$
 \begin{array}{l}
