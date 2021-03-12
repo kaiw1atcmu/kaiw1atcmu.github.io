@@ -61,7 +61,7 @@ $$
     +\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}} \\
     {+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta}
     +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial\theta}+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial\theta}}] \\
-    {+\text{diag}(1-\text{tanh}^2C_t)\frac{\partial^+o_t}{\partial\theta}+\text{diag}(1-\text{tanh}^2C_t,o_t,1-o_t)U_o\frac{\partial h_{t-1}}{\partial \theta}}
+    {+\text{diag}(\text{tanh}C_t)\frac{\partial^+o_t}{\partial\theta}+\text{diag}(\text{tanh}C_t,o_t,1-o_t)U_o\frac{\partial h_{t-1}}{\partial \theta}}
 $$
 
 We have
@@ -75,13 +75,16 @@ where
 $$
     {A_{1,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i]+\text{diag}(C_t,o_t,1-o_t)U_o} \\
     {A_{2,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)\text{diag}(f_t)} \\
-    {A_{0,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial\theta}]+\text{diag}(1-\text{tanh}^2C_t)\frac{\partial^+o_t}{\partial\theta}}
+    {A_{0,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial\theta}]+\text{diag}(\text{tanh}C_t)\frac{\partial^+o_t}{\partial\theta}}
 $$
 
 Use the fact that
 
 $$
-    {\frac{\partial C_t}{\partial \theta}=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta}+\text{diag}(\tilde{C_t},i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial \theta}} \\
+    {\frac{\partial C_t}{\partial \theta}=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta}+\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta}} \\
+    ={\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})[\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}]} \\
+    {+\text{diag}(i_t)[\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}{\partial \theta}]
+    +\text{diag}(\tilde{C_t})[\frac{\partial^+ i_t}{\partial \theta}+\text{diag}(i_t,1-i_t)U_i\frac{\partial h_t}{\partial \theta}]}
 $$
 
 We have
@@ -95,7 +98,7 @@ where
 $$
     {B_{1,t}=\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C_t},i_t,1-i_t)U_i} \\
     {B_{2,t}=\text{diag}(f_t)} \\
-    {B_{0,t}=0}
+    {B_{0,t}=\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta}}
 $$
 
 We have a set of iterative equations
@@ -105,16 +108,16 @@ $$
     {\frac{\partial C_t}{\partial \theta}=B_{1,t}\frac{\partial h_{t-1}}{\partial \theta}+B_{2,t}\frac{\partial C_{t-1}}{\partial \theta}+B_{0,t}}
 $$
 
-with boundary conditions ${\partial h_0}/{\partial \theta}=0$ and ${\partial c_0}/{\partial \theta}=0$. Or simply
+with boundary conditions ${\partial h_0}/{\partial \theta}=0$ and ${\partial C_0}/{\partial \theta}=0$. Or simply
 
 $$
     {\frac{\partial hC_t}{\partial \theta}=D_t\frac{\partial hC_{t-1}}{\partial \theta}+E_t}
 $$
 
-where ${\partial hc_t}/{\partial \theta}$ is constructed by vertically stacking ${\partial h_t}/{\partial \theta}$ and
+where ${\partial hC_t}/{\partial \theta}$ is constructed by vertically stacking ${\partial h_t}/{\partial \theta}$ and
 ${\partial C_t}/{\partial \theta}$, respectively. $D_t$ and $E_t$ are the corresponding partitioned matrices constructed
 by $A_{1,t}, A_{2,t}, B_{1,t}, B_{2,t}$, and $A_{0,t}, B_{0,t}$, respectively. The boundary conditions are
-${\partial hc_0}/{\partial \theta}=0$.
+${\partial hC_0}/{\partial \theta}=0$.
 
 ## References
 Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2013. On the difficulty of training Recurrent Neural Networks.
