@@ -5,8 +5,8 @@ date: 2021-03-10 00:45:02 -0800
 last_updated: March 10, 2021
 tags: [deep_learning, machine_learning, applied_mathematics]
 summary: "The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the
-network parameters via the BPTT formulas, are extremely too involved to analyze. In addition, RNNs in their vanilla form
-suffer from the notorious vanishing/exploding gradients problems."
+network parameters via the BPTT formulas, are too involved to analyze. In addition, RNNs in their vanilla form suffer
+from the notorious vanishing/exploding gradients problems. Luckily, RNN variants (e.g. LSTMs, GRUs) come to rescue."
 sidebar: none
 permalink: rnn_maths.html
 folder: mydoc
@@ -14,10 +14,13 @@ folder: mydoc
 
 The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the network
 parameters via the BPTT formulas, are extremely too involved to analyze. In addition, RNNs in their vanilla form suffer
-from the notorious vanishing/exploding gradients problems. Let's explore the details!
+from the notorious vanishing/exploding gradients problems. Luckily, RNN variants (e.g. LSTMs, GRUs) come to rescue. In
+this post, let's explore the mathematical details of them!
 
-## Basic Formulas of LSTM
-The basic forward propagation formulas of LSTM are given by
+## Basic RNN Formulas
+
+## Basic LSTM Formulas
+The basic LSTM forward propagation formulas of are given by
 
 $$
 \begin{array}{l}
@@ -25,8 +28,8 @@ $$
     {i_t=\sigma(W_i x_t+U_i h_{t-1}+b_i)} \\
     {o_t=\sigma(W_o x_t+U_o h_{t-1}+b_o)} \\
     {\tilde{C_t}=\text{tanh}(W_c x_t+U_c h_{t-1}+b_c)} \\
-    {C_t=f_t\cdot C_{t-1}+i_t\cdot \tilde{C_t}} \\
-    {h_t=o_t\cdot \text{tanh}C_t} \\
+    {C_t=f_t\odot C_{t-1}+i_t\odot \tilde{C_t}} \\
+    {h_t=o_t\odot \text{tanh}(C_t)} \\
     {\partial E/\partial \theta=\sum_{1\le t\le k}\partial E_t/\partial \theta} \\
     {=\sum_{1\le t\le k}\partial E_t/\partial h^T_t\partial h_t/\partial \theta}
 \end{array}
