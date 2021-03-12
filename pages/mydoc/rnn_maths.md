@@ -29,9 +29,21 @@ $$
     {o_t=\sigma(W_o x_t+U_o h_{t-1}+b_o)} \\
     {\tilde{C_t}=\text{tanh}(W_c x_t+U_c h_{t-1}+b_c)} \\
     {C_t=f_t\odot C_{t-1}+i_t\odot \tilde{C_t}} \\
-    {h_t=o_t\odot \text{tanh}(C_t)} \\
-    {\partial E/\partial \theta=\sum_{1\le t\le k}\partial E_t/\partial \theta} \\
-    {=\sum_{1\le t\le k}\partial E_t/\partial h^T_t\partial h_t/\partial \theta}
+    {h_t=o_t\odot \text{tanh}(C_t)}
+\end{array}
+$$
+
+As per notations in [On the difficulty of training Recurrent Neural Networks](#references), in order to better highlight
+the exploding gradients problem, the error terms are obtained by writing the gradients in a sum-of-products form:
+
+$$
+\begin{array}{l}
+    {\partial \Epsilon/\partial \theta=\sum_{1\le t\le T}\partial \Epsilon_t/\partial \theta
+    =\sum_{1\le t\le T}\partial \Epsilon_t/\partial h^T_t\partial h_t/\partial \theta} \\
+    {\partial \Epsilon_t/\partial \theta=\sum_{1\le k\le t}(\partial \Epsilon_t/\partial \h^T_t)
+    (\partial h_t/\partial \h^T_k)(\partial^+ h_k/\partial \theta)} \\
+    {\partial h_t/\partial \h^T_k=\prod_{t\le i\lt k}\partial \h_i/\partial h^T_{i-1}=
+    \prod_{t\le i\lt k}W^T_{rec}/\text{diag}\sigma'(h_{i-1})}
 \end{array}
 $$
 
@@ -107,3 +119,6 @@ $$
     {\partial C_t/\partial \theta=B_{1,t}\partial h_{t-1}/\partial \theta+B_{2,t}\partial C_{t-1}/\partial \theta+B_{0,t}}
 \end{array}
 $$
+
+# References
+Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2013. On the difficulty of training Recurrent Neural Networks.
