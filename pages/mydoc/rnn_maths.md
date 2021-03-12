@@ -36,7 +36,7 @@ the exploding gradients problem, the error terms are obtained by writing the gra
 
 $$
     {\frac{\partial \varepsilon}{\partial \theta}=\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial \theta}
-    =\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial h^T_t}{\partial h_t/\partial \theta}} \\
+    =\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial h^T_t}\frac{\partial h_t}{\partial \theta}} \\
     {\frac{\partial \varepsilon_t}{\partial \theta}=\sum_{1\le k\le t}\ \frac{\partial \varepsilon_t}{\partial h^T_t}
     \frac{\partial h_t}{\partial h^T_k}\frac{\partial^+ h_k}{\partial \theta}} \\
     {\frac{\partial h_t}{\partial h^T_k}=\prod_{t\le i\lt k}\frac{\partial h_i}{\partial h^T_{i-1}}=
@@ -47,18 +47,20 @@ Imagine network parameters $\theta$ as row vectors (so that gradients of columns
 conveniently defined as matrices), and the gradients of hidden units $h_t$ with respect to $\theta$ are given by:
 
 $$
-    {\frac{\partial h_t}{\partial \theta}} \\
-    {=\text{diag}(o_t,1-\text{tanh}^2C_t)\frac{\partial C_t}{\partial \theta}+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta}} \\
-    {=\text{diag}(o_t,1-\text{tanh}^2C_t)} \\
-    {(\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta}
-    +\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta}+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta}}
+    {\frac{\partial h_t}{\partial \theta}
+    =\text{diag}(o_t,1-\text{tanh}^2C_t)\frac{\partial C_t}{\partial \theta}+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta}} \\
+    {=\text{diag}(o_t,1-\text{tanh}^2C_t)
+    [\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta}
+    +\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta}]+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta}}
 $$
 
+That is
+
 $$
-    {\frac{\partial h_t}{\partial \theta}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}} \\
-    {+\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}} \\
-    {+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta}} \\
-    {+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial\theta}+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial\theta}}] \\
+    {\frac{\partial h_t}{\partial \theta}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}
+    +\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}} \\
+    {+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta}
+    +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial\theta}+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial\theta}}] \\
     {+\text{diag}(1-\text{tanh}^2C_t)\frac{\partial^+o_t}{\partial\theta}+\text{diag}(1-\text{tanh}^2C_t,o_t,1-o_t)U_o\frac{\partial h_{t-1}}{\partial \theta}}
 $$
 
@@ -102,6 +104,17 @@ $$
     {\frac{\partial h_t}{\partial \theta}=A_{1,t}\frac{\partial h_{t-1}}{\partial \theta}+A_{2,t}\frac{\partial C_{t-1}}{\partial \theta}+A_{0,t}} \\
     {\frac{\partial C_t}{\partial \theta}=B_{1,t}\frac{\partial h_{t-1}}{\partial \theta}+B_{2,t}\frac{\partial C_{t-1}}{\partial \theta}+B_{0,t}}
 $$
+
+with boundary conditions ${\partial h_0}/{\partial \theta}=0 and ${\partial c_t}/{\partial \theta}=0$. Or simply
+
+$$
+    {\frac{\partial hc_t}{\partial \theta}=D_t\frac{\partial hc_{t-1}}{\partial \theta}+E_t}
+$$
+
+where ${\partial hc_t}/{\partial \theta}$ is constructed by vertically stacking ${\partial h_t}/{\partial \theta}$ and
+${\partial c_t}/{\partial \theta}$, respectively. $D_t$ and $E_t$ are the corresponding partitioned matrices constructed
+by $A_{1,t}, A_{2,t}, B_{1,t}, B_{2,t}$, and $A_{0,t}, B_{0,t}$, respectively. The initial conditions are
+${\partial hc_0}/{\partial \theta}=0$.
 
 ## References
 Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2013. On the difficulty of training Recurrent Neural Networks.
