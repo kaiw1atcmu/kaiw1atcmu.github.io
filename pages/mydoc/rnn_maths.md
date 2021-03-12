@@ -43,7 +43,7 @@ $$
     {\partial \Epsilon_t/\partial \theta=\sum_{1\le k\le t}(\partial \Epsilon_t/\partial \h^T_t)
     (\partial h_t/\partial \h^T_k)(\partial^+ h_k/\partial \theta)} \\
     {\partial h_t/\partial \h^T_k=\prod_{t\le i\lt k}\partial \h_i/\partial h^T_{i-1}=
-    \prod_{t\le i\lt k}W^T_{rec}/\text{diag}\sigma'(h_{i-1})}
+    \prod_{t\le i\lt k}W^T_{rec}/\text{diag}\sigma'(h_{i-1})} \\
 \end{array}
 $$
 
