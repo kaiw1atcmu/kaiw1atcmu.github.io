@@ -82,8 +82,8 @@ Use the fact that
 
 $$
     {\frac{\partial C_t}{\partial \theta}=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta}+\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta}} \\
-    ={\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})[\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}]} \\
-    {+\text{diag}(i_t)[\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}{\partial \theta}]
+    {=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta}+\text{diag}(C_{t-1})[\frac{\partial^+ f_t}{\partial \theta}+\text{diag}(f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta}]} \\
+    {+\text{diag}(i_t)[\frac{\partial^+ \tilde{C_t}}{\partial \theta}+\text{diag}(1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta}]
     +\text{diag}(\tilde{C_t})[\frac{\partial^+ i_t}{\partial \theta}+\text{diag}(i_t,1-i_t)U_i\frac{\partial h_t}{\partial \theta}]}
 $$
 
