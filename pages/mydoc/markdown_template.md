@@ -33,6 +33,16 @@ $$
 \end{array}
 $$
 
+A parenthesized, partitioned matrix that might span multiple lines, with adjustable parenthesis sizes.
+
+$$
+\left(\begin{align}
+    {x_{11}  x_{12}  \ldots} \\
+    {x_{21}  x_{22}  \ldots} \\
+    {\vdots  \vdots  \ddots}
+\end{align}\right)
+$$
+
 ## Footnotes
 A footnote starts with a caret and an identifier inside brackets[^1] which support multiple paragraphs and code by
 indentation[^bignote]. The content of the footnote also starts with a caret and its identifier inside brackets succeeded
