@@ -23,12 +23,14 @@ this post, let's explore the mathematical details of them!
 The basic LSTM forward propagation formulas of are given by
 
 $$
+\begin{align*}
     {f_t=\sigma(W_f x_t+U_f h_{t-1}+b_f)} \\
     {i_t=\sigma(W_i x_t+U_i h_{t-1}+b_i)} \\
     {o_t=\sigma(W_o x_t+U_o h_{t-1}+b_o)} \\
     {\tilde{C_t}=\text{tanh}(W_c x_t+U_c h_{t-1}+b_c)} \\
     {C_t=f_t\odot C_{t-1}+i_t\odot \tilde{C_t}} \\
     {h_t=o_t\odot \text{tanh}(C_t)}
+\end{align*}
 $$
 
 As per notations in [On the difficulty of training Recurrent Neural Networks](#references), in order to better highlight
