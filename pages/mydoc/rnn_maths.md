@@ -67,7 +67,7 @@ $$
     =\prod_{t\ge i\gt k}\text{diag}(\sigma'(h_{i-1}))W_{rec}.}
 $$
 
-{% include note.html content="Note that $\theta$ is a non-trivial subset of $[W_{rec},W_{in},b]$ as a column vector." %}
+{% include note.html content="Note that $\theta$ is a non-empty subset of $[W_{rec},W_{in},b]$ as a column vector." %}
 
 ### Analysis For Vanishing/Exploding Gradients
 The authors further loosely distinguish between <font face="Lora">long term</font>
@@ -198,122 +198,29 @@ $$
 The proof for avoidance of the vanishing gradients problem is tantamount to showing that $\prod_{t\ge i\gt k}D_i$ won't
 converge in norm to 0 for $k\ll t$, at least asymptotically or almost surely. Now let us revisit $D_i$ by partitioning
 it into several $n\times n$ diagonal matrices $P$'s and $Q$'s, which are easily found by straight-forward computing and
-comparing weights.
+comparing weights of $U_f,U_c,U_i,U_o$. Let us define
 
 $$
-D_i=
-\left(\begin{align}
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {U_f 0\ 0\ 0\ 0} \\
-    {0\ U_c 0\ 0\ 0} \\
-    {0\ 0\ U_i 0\ 0} \\
-    {0\ 0\ 0\ U_o 0} \\
-    {0\ 0\ 0\ 0\ \ I}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {0\ I}
-\end{align}\right)\in R^{2n\times2n}
+    {PQ_i=P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i} \in R^{2n\times5n}} \\
+    {\quad Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i},} \\
+    {} \\
+    {\quad U_f 0\ 0\ 0\ 0} \\
+    {\quad 0\ U_c 0\ 0\ 0} \\
+    {U=0\ 0\ U_i 0\ 0 \in R^{5n\times5n}} \\
+    {\quad 0\ 0\ 0\ U_o 0} \\
+    {\quad 0\ 0\ 0\ 0\ \ I,} \\
+    {\text{and}} \\
+    {\quad I\ 0} \\
+    {\quad I\ 0} \\
+    {V=I\ 0 \in R^{5n\times2n}} \\
+    {\quad I\ 0} \\
+    {\quad 0\ I.}
 $$
 
-Since $D_i$'s are multiplied sequentially, we could equivalently analyze
+Since $D_i=PQ_iUV$ and $D_i$'s are multiplied sequentially, we could equivalently analyze
 
 $$
-\tilde{D_i}=\left(\begin{align}
-    {U_f 0\ 0\ 0\ 0} \\
-    {0\ U_c 0\ 0\ 0} \\
-    {0\ 0\ U_i 0\ 0} \\
-    {0\ 0\ 0\ U_o 0} \\
-    {0\ 0\ 0\ 0\ \ I}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {0\ I}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}}
-\end{align}\right)
-$$
-$$
-=\left(\begin{align}
-    {U_f 0\ 0\ 0\ 0} \\
-    {0\ U_c 0\ 0\ 0} \\
-    {0\ 0\ U_i 0\ 0} \\
-    {0\ 0\ 0\ U_o 0} \\
-    {0\ 0\ 0\ 0\ \ I}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}}
-\end{align}\right)\in R^{5n\times5n},
-$$
-
-or
-
-$$
-\bar{D_i}=\left(\begin{align}
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {I\ 0} \\
-    {0\ I}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {U_f 0\ 0\ 0\ 0} \\
-    {0\ U_c 0\ 0\ 0} \\
-    {0\ 0\ U_i 0\ 0} \\
-    {0\ 0\ 0\ U_o 0} \\
-    {0\ 0\ 0\ 0\ \ I}
-\end{align}\right)
-$$
-$$
-=\left(\begin{align}
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i}} \\
-    {Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}}
-\end{align}\right)
-$$
-$$
-\left(\begin{align}
-    {U_f 0\ 0\ 0\ 0} \\
-    {0\ U_c 0\ 0\ 0} \\
-    {0\ 0\ U_i 0\ 0} \\
-    {0\ 0\ 0\ U_o 0} \\
-    {0\ 0\ 0\ 0\ \ I}
-\end{align}\right)\in R^{5n\times5n},
+    {\tilde{D_i}=VPQ_iU \text{ or } \bar{D_i}=UVPQ_i,}
 $$
 
 except for the leading $D_t$ and the trailing $D_{k+1}$. In doing so, we managed to decouple the variables (i.e. ones
