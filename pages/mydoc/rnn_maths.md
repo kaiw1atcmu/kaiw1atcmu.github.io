@@ -202,7 +202,7 @@ computing and comparing weights of $U_f,U_c,U_i,U_o$. Let us define
 
 $$
     {J_i=[P_{1,i}\ P_{2,i}\ P_{3,i}\ P_{4,i}\ P_{5,i};Q_{1,i}\ Q_{2,i}\ Q_{3,i}\ Q_{4,i}\ Q_{5,i}]\in R^{2n\times5n},}\\
-    {U=\text{diag}(U_f,U_c,U_i,U_o,I) \in R^{5n\times5n},} \\
+    {U=\text{diag}([U_f;U_c;U_i;U_o;I]) \in R^{5n\times5n},} \\
     {V=[I,I,I,I,0;0,0,0,0,I]^T \in R^{5n\times2n}.}
 $$
 
