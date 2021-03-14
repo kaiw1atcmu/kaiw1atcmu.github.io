@@ -197,11 +197,11 @@ $$
 ### Analysis For Non-Vanishing/Exploding Gradients
 The proof for avoidance of the vanishing gradients problem is tantamount to showing that $\prod_{t\ge i\gt k}D_i$ won't
 converge in norm to 0 for $k\ll t$, at least asymptotically or almost surely. Now let us revisit $D_i$ by partitioning
-it into several $n\times n$ diagonal matrices $P_{1-5,i}$ and $Q_{1-5,i}$, which are easily found by straight-forward
+it into several $n\times n$ diagonal matrices $P_{1-5,i}$ and $Q_{1-5,i}$ which are easily found by straight-forward
 computing and comparing weights of $U_f,U_c,U_i,U_o$. Let us define
 
 $$
-    {J_i=[P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i};Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}] \in R^{2n\times5n},} \\
+    {J_i=[P_{1,i}\ P_{2,i}\ P_{3,i}\ P_{4,i}\ P_{5,i};Q_{1,i}\ Q_{2,i}\ Q_{3,i}\ Q_{4,i}\ Q_{5,i}]\in R^{2n\times5n},}\\
     {U=\text{diag}(U_f,U_c,U_i,U_o,I) \in R^{5n\times5n},} \\
     {V=[I,I,I,I,0;0,0,0,0,I]^T \in R^{5n\times2n}.}
 $$
