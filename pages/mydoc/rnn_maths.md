@@ -54,7 +54,7 @@ with the boundary condition that $h_0$ is a constant (using zero or random initi
 
 ### Solve For Recurrences
 $$
-    {\frac{\partial h_t}{\partial h^T_{t-1}=\text{diag}(\sigma'(h_{t-1}))W_{rec},\ \text{for } t>0.}
+    {\frac{\partial h_t}{\partial h^T_{t-1}}=\text{diag}(\sigma'(h_{t-1}))W_{rec},\ \text{for } t>0.}
 $$
 
 ### RNN Back-Propagation-Through-Time (BPTT) Formulas
