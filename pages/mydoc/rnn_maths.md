@@ -53,7 +53,9 @@ $$
 with the boundary condition that $h_0$ is a constant (using zero or random initialization).
 
 ### Solve For Recurrences
-More to come...
+$$
+    {\frac{\partial h_t}{\partial h^T_{t-1}=\text{diag}(\sigma'(h_{t-1}))W_{rec}.}
+$$
 
 ### RNN Back-Propagation-Through-Time (BPTT) Formulas
 As per notations in [On the difficulty of training Recurrent Neural Networks](#references) (with minor modifications to
