@@ -201,20 +201,9 @@ it into several $n\times n$ diagonal matrices $P$'s and $Q$'s, which are easily 
 comparing weights of $U_f,U_c,U_i,U_o$. Let us define
 
 $$
-    {PQ_i=P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i} \in R^{2n\times5n}} \\
-    {\quad Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i},} \\
-    {} \\
-    {\quad U_f 0\ 0\ 0\ 0} \\
-    {\quad 0\ U_c 0\ 0\ 0} \\
-    {U=0\ 0\ U_i 0\ 0 \in R^{5n\times5n}} \\
-    {\quad 0\ 0\ 0\ U_o 0} \\
-    {\quad 0\ 0\ 0\ 0\ \ I,} \\
-    {\text{and}} \\
-    {\quad I\ 0} \\
-    {\quad I\ 0} \\
-    {V=I\ 0 \in R^{5n\times2n}} \\
-    {\quad I\ 0} \\
-    {\quad 0\ I.}
+    {PQ_i=[P_{1,i}\ P_{2,i}\ P_{3,i} P_{4,i} P_{5,i};Q_{1,i} Q_{2,i} Q_{3,i} Q_{4,i} Q_{5,i}] \in R^{2n\times5n},} \\
+    {U=\text{diag}(U_f,U_c,U_i,U_o,I) \in R^{5n\times5n},} \\
+    {V=[I,I,I,I,0;0,0,0,0,I]^T \in R^{5n\times2n}.}
 $$
 
 Since $D_i=PQ_iUV$ and $D_i$'s are multiplied sequentially, we could equivalently analyze
