@@ -55,7 +55,7 @@ with the boundary condition that $h_0$ is a constant (using zero or random initi
 ### Solve For Recurrences
 
 $$
-    {\frac{\partial h_t}{\partial h^T_{t-1}}=\text{diag}(\sigma'(h_{t-1}))W_{rec},\ \text{for } t>0.}
+    {\frac{\partial h_t}{\partial h^T_{t-1}}=W_{rec}\text{diag}(\sigma'(h_{t-1})),\ \text{for } t>0.}
 $$
 
 ### RNN Back-Propagation-Through-Time (BPTT) Formulas
@@ -66,11 +66,12 @@ the error terms are obtained by writing the gradients in a sum-of-products form 
 constant with respect to $\theta^T$)
 
 $$
-    {\frac{\partial \varepsilon}{\partial \theta^T}=\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial \theta^T}} \\
+    {\frac{\partial \varepsilon}{\partial \theta^T}=\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial \theta^T}
+    \qquad\qquad\qquad\qquad\qquad\qquad} \\
     {\frac{\partial \varepsilon_t}{\partial \theta^T}=\sum_{1\le k\le t}\ \frac{\partial \varepsilon_t}{\partial h^T_t}
-    \frac{\partial h_t}{\partial h^T_k}\frac{\partial^+ h_k}{\partial \theta^T}} \\
+    \frac{\partial h_t}{\partial h^T_k}\frac{\partial^+ h_k}{\partial \theta^T}\qquad\qquad\qquad\quad\ } \\
     {\frac{\partial h_t}{\partial h^T_k}=\prod_{t\ge i\gt k}\frac{\partial h_i}{\partial h^T_{i-1}}
-    =\prod_{t\ge i\gt k}\text{diag}(\sigma'(h_{i-1}))W_{rec}.}
+    =\prod_{t\ge i\gt k}W_{rec}\text{diag}(\sigma'(h_{i-1})).}
 $$
 
 {% include note.html content="Note that $\theta$ is a non-empty subset of $[W_{rec},W_{in},b]$ as a column vector." %}
@@ -117,7 +118,8 @@ respect to $\theta^T$ take the form of (for $t>0$)
 
 $$
     {\frac{\partial h_t}{\partial \theta^T}
-    =\text{diag}(o_t,1-\text{tanh}^2C_t)\frac{\partial C_t}{\partial \theta^T}+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta^T}} \\
+    =\text{diag}(o_t,1-\text{tanh}^2C_t)\frac{\partial C_t}{\partial \theta^T}+\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta^T}
+    \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad} \\
     {=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta^T}
     +\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta^T}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta^T}]
     +\text{diag}(\text{tanh}C_t)\frac{\partial o_t}{\partial \theta^T}}
@@ -127,10 +129,10 @@ Expanding, that is
 
 $$
     {\frac{\partial h_t}{\partial \theta^T}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}
-    +\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta^T}} \\
-    {+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta^T}
-    +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial \theta^T}}] \\
-    {+\text{diag}(\text{tanh}C_t)\frac{\partial^+ o_t}{\partial \theta^T}+\text{diag}(\text{tanh}C_t,o_t,1-o_t)U_o\frac{\partial h_{t-1}}{\partial \theta^T}}
+    +\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(C_{t-1},f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta^T}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}} \\
+    {+\text{diag}(i_t,1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta^T}+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}
+    +\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial \theta^T}]
+    +\text{diag}(\text{tanh}C_t)\frac{\partial^+ o_t}{\partial \theta^T}\quad\ +\text{diag}(\text{tanh}C_t,o_t,1-o_t)U_o\frac{\partial h_{t-1}}{\partial \theta^T}\qquad\quad\ }
 $$
 
 In a more compact form, we have
@@ -143,18 +145,19 @@ where
 
 $$
     {A_{1,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C}_t,i_t,1-i_t)U_i]+\text{diag}(C_t,o_t,1-o_t)U_o} \\
-    {A_{2,t}=\text{diag}(o_t,1-\text{tanh}^2C_t,f_t)} \\
+    {A_{2,t}=\text{diag}(o_t,1-\text{tanh}^2C_t,f_t)\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\ \ } \\
     {A_{0,t}=\text{diag}(o_t,1-\text{tanh}^2C_t)[\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}
-    +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}]+\text{diag}(\text{tanh}C_t)\frac{\partial^+ o_t}{\partial \theta^T}}
+    +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}]+\text{diag}(\text{tanh}C_t)\frac{\partial^+ o_t}{\partial \theta^T}\qquad\qquad\qquad\qquad\ \ \ }
 $$
 
 Repeat similar procedures to obtain $\partial C_t/\partial \theta^T$. That is
 
 $$
-    {\frac{\partial C_t}{\partial \theta^T}=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta^T}+\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta^T}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta^T}} \\
-    {=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}+\text{diag}(C_{t-1})[\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta^T}]} \\
+    {\frac{\partial C_t}{\partial \theta^T}=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}+\text{diag}(C_{t-1})\frac{\partial f_t}{\partial \theta^T}
+    +\text{diag}(i_t)\frac{\partial \tilde{C_t}}{\partial \theta^T}+\text{diag}(\tilde{C_t})\frac{\partial i_t}{\partial \theta^T}\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad} \\
+    {=\text{diag}(f_t)\frac{\partial C_{t-1}}{\partial \theta^T}+\text{diag}(C_{t-1})[\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(f_t,1-f_t)U_f\frac{\partial h_{t-1}}{\partial \theta^T}]\qquad\qquad\qquad\qquad\qquad\qquad\qquad\ \ } \\
     {+\text{diag}(i_t)[\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}+\text{diag}(1-\tilde{C_t}^2)U_c\frac{\partial h_{t-1}}{\partial \theta^T}]
-    +\text{diag}(\tilde{C_t})[\frac{\partial^+ i_t}{\partial \theta^T}+\text{diag}(i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial \theta^T}]}
+    +\text{diag}(\tilde{C_t})[\frac{\partial^+ i_t}{\partial \theta^T}+\text{diag}(i_t,1-i_t)U_i\frac{\partial h_{t-1}}{\partial \theta^T}]\qquad\quad\ \ }
 $$
 
 In a more compact form, we have
@@ -167,8 +170,9 @@ where
 
 $$
     {B_{1,t}=\text{diag}(C_{t-1},f_t,1-f_t)U_f+\text{diag}(i_t,1-\tilde{C_t}^2)U_c+\text{diag}(\tilde{C_t},i_t,1-i_t)U_i} \\
-    {B_{2,t}=\text{diag}(f_t)} \\
-    {B_{0,t}=\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}+\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}}
+    {B_{2,t}=\text{diag}(f_t)\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\ \ } \\
+    {B_{0,t}=\text{diag}(C_{t-1})\frac{\partial^+ f_t}{\partial \theta^T}+\text{diag}(i_t)\frac{\partial^+ \tilde{C_t}}{\partial \theta^T}
+    +\text{diag}(\tilde{C_t})\frac{\partial^+ i_t}{\partial \theta^T}\qquad\qquad\qquad\quad\ \ \ }
 $$
 
 As a result, we find useful recurrences for BPTT (for $t>0$). That is
@@ -195,11 +199,13 @@ Interestingly, as with RNNs, the gradients of error $\varepsilon$ with respect t
 identical form of:
 
 $$
-    {\frac{\partial \varepsilon}{\partial \theta^T}=\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial \theta^T}} \\
+    {\frac{\partial \varepsilon}{\partial \theta^T}=\sum_{1\le t\le T}\ \frac{\partial \varepsilon_t}{\partial \theta^T}
+    \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad} \\
     {\frac{\partial \varepsilon_t}{\partial \theta^T}=\sum_{1\le k\le t}\ \frac{\partial \varepsilon_t}{\partial hC^T_t}
     \frac{\partial hC_t}{\partial hC^T_k}\frac{\partial^+ hC_k}{\partial \theta^T}
     =\sum_{1\le k\le t}\ \frac{\partial \varepsilon_t}{\partial hC^T_t}\frac{\partial hC_t}{\partial hC^T_k}E_k} \\
-    {\frac{\partial hC_t}{\partial hC^T_k}=\prod_{t\ge i\gt k}\frac{\partial hC_i}{\partial hC^T_{i-1}}=\prod_{t\ge i\gt k}D_i}
+    {\frac{\partial hC_t}{\partial hC^T_k}=\prod_{t\ge i\gt k}\frac{\partial hC_i}{\partial hC^T_{i-1}}=\prod_{t\ge i\gt k}D_i
+    \qquad\qquad\qquad\qquad\qquad\quad\ \ }
 $$
 
 ### Analysis For Non-Vanishing/Exploding Gradients
