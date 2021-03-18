@@ -30,9 +30,11 @@ $$
 and basic gradient rules as building blocks of our calculation
 
 $$
-    {\frac{\partial f\!\odot\! g}{\partial \theta^T}=\text{diag}(f)\frac{\partial g}{\partial \theta^T}+\text{diag}(g)\frac{\partial f}{\partial \theta^T},\ f,g\in R,\ \theta\in R^n} \\
-    {\frac{\partial Wu}{\partial u^T}=W,\ W\in R^{m\times n},\ u\in R^n} \\
-    {\frac{\partial f(Wu)}{\partial u^T}=\text{diag}(f'(Wu))W,\ f\in R^m,\ W\in R^{m\times n},\ u\in R^n.}
+\begin{align\*}
+    {\frac{\partial f\!\odot\! g}{\partial \theta^T} &= \text{diag}(f)\frac{\partial g}{\partial \theta^T}+\text{diag}(g)\frac{\partial f}{\partial \theta^T},\ f,g\in R,\ \theta\in R^n} \\
+    {\frac{\partial Wu}{\partial u^T} &= W,\ W\in R^{m\times n},\ u\in R^n} \\
+    {\frac{\partial f(Wu)}{\partial u^T} &= \text{diag}(f'(Wu))W,\ f\in R^m,\ W\in R^{m\times n},\ u\in R^n.}
+\end{align\*}
 $$
 
 One merit associated with our definition is the handy, transpose-free matrix-form Chain Rule
