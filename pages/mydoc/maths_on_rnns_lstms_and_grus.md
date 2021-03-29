@@ -244,6 +244,8 @@ $$
     {h_t=z_t\odot h_{t-1}+(1-z_t)\odot \tilde{h_t}}
 $$
 
+More to come...
+
 ### Solve For Recurrences
 
 ### GRU Back-Propagation-Through-Time (BPTT) Formulas
