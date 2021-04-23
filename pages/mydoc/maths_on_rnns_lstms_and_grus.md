@@ -10,7 +10,6 @@ from the notorious vanishing/exploding gradients problems. Luckily, RNN variants
 sidebar: none
 permalink: maths_on_rnns_lstms_and_grus.html
 folder: mydoc
-published: false
 ---
 
 The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the network
@@ -43,6 +42,18 @@ $$
 $$
 
 ## Maths On RNNs
+### The RNN Structure
+
+<center>
+    <img src="{{ "images/20210310-1.png" }}" alt="The RNN Structure"/>
+    <font face="Lora">Figure 1: The RNN Structure. By courtesy of Colah's blogs.</font>
+</center>
+
+<center>
+    <img src="{{ "images/20210310-2.png" }}" alt="Legends in the RNN Structure"/>
+    <font face="Lora">Figure 2: Legends in the RNN Structure. By courtesy of Colah's blogs.</font>
+</center>
+
 ### RNN Forward Propagation Formulas
 Supposing input vectors $x_t\in R^m$ and hidden vectors $h_t\in R^n$, the RNN forward propagation formulas take the form
 of (for $t>0$)
@@ -98,6 +109,13 @@ dependencies." %}
 More to come...
 
 ## Maths On LSTMs
+### The LSTM Structure
+
+<center>
+    <img src="{{ "images/20210310-3.png" }}" alt="The LSTM Structure"/>
+    <font face="Lora">Figure 3: The LSTM Structure. By courtesy of Colah's blogs.</font>
+</center>
+
 ### LSTM Forward Propagation Formulas
 Supposing input vectors $x_t\in R^m$, hidden vectors $h_t\in R^n$, and channel vectors $C_t\in R^n$, the LSTM forward
 propagation formulas take the form of (for $t>0$)
@@ -195,6 +213,20 @@ and ${\partial C_t}/{\partial\theta^T}$, $D_t$ is the partitioned matrix formed 
 and $E_t$ is the vertically concatenated matrices $A_{0,t}$ and $B_{0,t}$, respectively. The boundary conditions should
 be ${\partial hC_0}/{\partial \theta^T}=0$.
 
+### The LSTM Structure with Peepholes
+
+<center>
+    <img src="{{ "images/20210310-4.png" }}" alt="The LSTM Structure with Peepholes"/>
+    <font face="Lora">Figure 4: The LSTM Structure with Peepholes. By courtesy of Colah's blogs.</font>
+</center>
+
+### The LSTM Structure without Input Gates
+
+<center>
+    <img src="{{ "images/20210310-5.png" }}" alt="The LSTM Structure without Input Gates"/>
+    <font face="Lora">Figure 5: The LSTM Structure without Input Gates. By courtesy of Colah's blogs.</font>
+</center>
+
 ### LSTM Back-Propagation-Through-Time (BPTT) Formulas
 Interestingly, as with RNNs, the gradients of error $\varepsilon$ with respect to $\theta^T$ again take the almost
 identical form of:
@@ -234,6 +266,22 @@ $\prod_{t-1\ge i\gt k+1}\bar{D_i}$ won't converge in norm to 0 for $k\ll t$, the
 More to come...
 
 ## Maths On GRUs
+### The GRU Structure
+
+<center>
+    <img src="{{ "images/20210310-6.png" }}" alt="The GRU Structure"/>
+    <font face="Lora">Figure 6: The GRU Structure. By courtesy of Colah's blogs.</font>
+</center>
+
+Interestingly, the GRU structure could be constructed by sequentially modifying the LSTM structure with peepholes. The
+steps are: 1) prepose Output Gate before Forget Gate and Input Gate, 2) separately maintain Cell state and Hidden state,
+3) omit Input Gate by replacing it with the all-$1$ vector minus Forget Gate.
+
+<center>
+    <img src="{{ "images/20210310-7.png" }}" alt="Construct GRU by Modifying LSTM with Peepholes"/>
+    <font face="Lora">Figure 7: Construct GRU by Modifying LSTM with Peepholes. Adapted from Colah's blogs.</font>
+</center>
+ 
 ### GRU Forward Propagation Formulas
 Supposing input vectors $x_t\in R^m$, and hidden vectors $h_t\in R^n$, the GRU forward propagation formulas take the
 form of (for $t>0$)
