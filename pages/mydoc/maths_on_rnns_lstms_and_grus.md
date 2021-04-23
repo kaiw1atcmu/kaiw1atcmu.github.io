@@ -10,6 +10,7 @@ from the notorious vanishing/exploding gradients problems. Luckily, RNN variants
 sidebar: none
 permalink: maths_on_rnns_lstms_and_grus.html
 folder: mydoc
+published: false
 ---
 
 The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the network
