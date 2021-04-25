@@ -46,7 +46,6 @@ $$
 
 ## Maths On RNNs
 ### The RNN Structure
-
 <center>
     <img src="{{ "images/20210310-1.png" }}" alt="The RNN Structure"/>
     <font face="Lora">Figure 1: The RNN Structure. By courtesy of Colah's blogs.</font>
@@ -68,7 +67,6 @@ $$
 with the boundary condition that $h_0$ is a constant (using zero or random initialization).
 
 ### Solve For Recurrences
-
 $$
     {\frac{\partial h_t}{\partial h^T_{t-1}}=W_{rec}\text{diag}(\sigma'(h_{t-1})),\ \text{for } t>0.}
 $$
@@ -113,7 +111,6 @@ More to come...
 
 ## Maths On LSTMs
 ### The LSTM Structure
-
 <center>
     <img src="{{ "images/20210310-3.png" }}" alt="The LSTM Structure"/>
     <font face="Lora">Figure 3: The LSTM Structure. By courtesy of Colah's blogs.</font>
@@ -217,14 +214,12 @@ and $E_t$ is the vertically concatenated matrices $A_{0,t}$ and $B_{0,t}$, respe
 be ${\partial hC_0}/{\partial \theta^T}=0$.
 
 ### The LSTM Structure with Peepholes
-
 <center>
     <img src="{{ "images/20210310-4.png" }}" alt="The LSTM Structure with Peepholes"/>
     <font face="Lora">Figure 4: The LSTM Structure with Peepholes. By courtesy of Colah's blogs.</font>
 </center>
 
 ### The LSTM Structure without Input Gates
-
 <center>
     <img src="{{ "images/20210310-5.png" }}" alt="The LSTM Structure without Input Gates"/>
     <font face="Lora">Figure 5: The LSTM Structure without Input Gates. By courtesy of Colah's blogs.</font>
@@ -270,7 +265,6 @@ More to come...
 
 ## Maths On GRUs
 ### The GRU Structure
-
 <center>
     <img src="{{ "images/20210310-6.png" }}" alt="The GRU Structure"/>
     <font face="Lora">Figure 6: The GRU Structure. By courtesy of Colah's blogs.</font>
@@ -282,9 +276,9 @@ steps are: 1) prepose Output Gate before Forget Gate and Input Gate, 2) separate
 
 <center>
     <img src="{{ "images/20210310-7.png" }}" alt="Construct GRU by Modifying LSTM with Peepholes"/>
-    <font face="Lora">Figure 7: Construct GRU by Modifying LSTM with Peepholes. Adapted from Colah's blogs.</font>
+    <font face="Lora">Figure 7: Construct GRU by Modifying LSTM with Peepholes. Adapted from Colah's blogs.<br/></font>
 </center>
- 
+
 ### GRU Forward Propagation Formulas
 Supposing input vectors $x_t\in R^m$, and hidden vectors $h_t\in R^n$, the GRU forward propagation formulas take the
 form of (for $t>0$)
@@ -310,3 +304,5 @@ Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2013. On the difficulty of tra
 
 Bengio, Y., Simard, P., and Frasconi, P. 1994. Learning long-term dependencies with gradient descent is difficult. IEEE
 Transactions on Neural Networks, 5(2), 157-166.
+
+[Colah's blogs on Recurrent Neural Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
