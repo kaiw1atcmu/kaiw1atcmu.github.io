@@ -267,7 +267,7 @@ More to come...
 ### The GRU Structure
 <center>
     <img src="{{ "images/20210310-6.png" }}" alt="The GRU Structure"/>
-    <font face="Lora">Figure 6: The GRU Structure. By courtesy of Colah's blogs.</font>
+    <font face="Lora">Figure 6: The GRU Structure. By courtesy of Colah's blogs.<br/></font>
 </center>
 
 Interestingly, the GRU structure could be constructed by sequentially modifying the LSTM structure with peepholes. The
@@ -276,7 +276,7 @@ steps are: 1) prepose Output Gate before Forget Gate and Input Gate, 2) separate
 
 <center>
     <img src="{{ "images/20210310-7.png" }}" alt="Construct GRU by Modifying LSTM with Peepholes"/>
-    <font face="Lora">Figure 7: Construct GRU by Modifying LSTM with Peepholes. Adapted from Colah's blogs.<br/></font>
+    <font face="Lora">Figure 7: Construct GRU by Modifying LSTM with Peepholes. Adapted from Colah's blogs.</font>
 </center>
 
 ### GRU Forward Propagation Formulas
