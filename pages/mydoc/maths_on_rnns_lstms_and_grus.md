@@ -270,7 +270,7 @@ More to come...
     <font face="Lora">Figure 6: The GRU Structure. By courtesy of Colah's blogs.</font>
 </center>
 
-<br></br>
+<br>
 Interestingly, the GRU structure could be constructed by sequentially modifying the LSTM structure with peepholes. The
 steps are: 1) prepose Output Gate before Forget Gate and Input Gate, 2) separately maintain Cell state and Hidden state,
 3) omit Input Gate by replacing it with the all-$1$ vector minus Forget Gate.
