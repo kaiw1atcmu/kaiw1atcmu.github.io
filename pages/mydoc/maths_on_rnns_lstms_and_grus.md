@@ -10,13 +10,14 @@ from the notorious vanishing/exploding gradients problems. Luckily, RNN variants
 sidebar: none
 permalink: maths_on_rnns_lstms_and_grus.html
 folder: mydoc
-published: false
+published: true
 ---
 
 The exact maths of Recurrent Neural Networks (RNNs), especially their gradients of error with respect to the network
 parameters via the BPTT formulas, are extremely too involved to analyze. In addition, RNNs in their vanilla form suffer
-from the notorious vanishing/exploding gradients problems. Luckily, RNN variants (e.g. LSTMs, GRUs) come to rescue. In
-this post, let's explore the mathematical details of them!
+from the notorious vanishing/exploding gradients problems. Luckily, some RNN variants (e.g. LSTMs, GRUs) come to rescue.
+In this post, we will endeavor to showcase the structural components, analyze the inner workings, and explore the
+mathematical details of them!
 
 ## Warm-up
 Although it might seem obvious, still, we start by emphasizing that gradients of a quantity with respect to a variable
@@ -36,7 +37,8 @@ $$
     {\frac{\partial f(Wu)}{\partial u^T}=\text{diag}(f'(Wu))W,\ f\in R^m,\ W\in R^{m\times n},\ u\in R^n.}
 $$
 
-One merit associated with our definition is the handy, transpose-free matrix-form Chain Rule
+One merit associated with our definition is the handy, transpose-free matrix-form Chain Rule, which remains much the
+same as in the scalar case:
 
 $$
     {\frac{\partial f}{\partial \theta^T}=\frac{\partial f}{\partial v^T}\frac{\partial v}{\partial \theta^T}.}
